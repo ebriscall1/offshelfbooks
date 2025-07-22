@@ -1,0 +1,105 @@
+body {
+  font-family: "Red Hat Display", sans-serif;
+  margin: 0;
+  color: #fcfcfc;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: white;
+}
+
+/* We need to hide our menu by default. */
+header nav {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  /* We also need to position our menu so that it comes down over top of our content rather than bumping it down out of the way. */
+  position: absolute;
+  left: 0;
+  background-color: #fff;
+}
+
+.show-nav {
+  max-height: unset;
+}
+
+.header-logo img {
+  max-width: 236px;
+}
+
+nav img {
+  max-width: 15px;
+  color: #333333;
+}
+
+.hero-content {
+  display: grid;
+  padding: 40px 20px;
+}
+
+.carousel {
+  padding: 20px;
+}
+.carousel h2 {
+  margin-bottom: 10px;
+}
+.carousel .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  gap: 20px;
+}
+.carousel .carousel .card {
+  min-width: 180px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.carousel .carousel .card img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.carousel .carousel .card p {
+  padding: 10px;
+}
+
+.hero-blog, .hero-shop, .hero-about {
+  padding: 40px 20px;
+  text-align: center;
+}
+.hero-blog .btn, .hero-shop .btn, .hero-about .btn {
+  margin-top: 15px;
+  background: #b4bccb;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 30px 20px;
+}
+footer .footer-columns {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  footer .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+footer .footer-columns ul {
+  list-style: none;
+  padding: 0;
+}
+footer .footer-columns ul li {
+  margin: 4px 0;
+}/*# sourceMappingURL=style.css.map */
