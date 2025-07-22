@@ -1,23 +1,19 @@
-// Variables
-$primary-color: #2c2c2c;
-$accent: #444;
-$light-bg: #f9f9f9;
-$btn-bg: #ccc;
-$font-heading: 'Red Hat Display', sans-serif;
+// Color Variables
+$charcoal-gray: #333333;
+$light-gray: #d3d3d3;
+$smoke-blue: #b4bccb;
+$pampas: #ece6de;
+$bg-white: #fcfcfc;
 
-h1, h2, h3 {
-  font-family: $font-heading;
-}
+// Font Variables
+$red-hat: 'Red Hat Display', sans-serif;
 
-p {
-    font-family: $font-heading;
-}
+// Mixins
 
 body {
-  font-family: sans-serif;
+  font-family: $red-hat;
   margin: 0;
-  background: $light-bg;
-  color: $primary-color;
+  color: $bg-white;
 }
 
 header {
@@ -43,6 +39,15 @@ header nav {
 .show-nav {
     max-height: unset;
 }
+
+.header-logo img {
+  max-width: 236px;
+}
+
+nav img {
+  max-width: 15px;
+  color: $charcoal-gray;
+} 
 
 .hero-content {
   display: grid;
@@ -87,7 +92,7 @@ header nav {
 
   .btn {
     margin-top: 15px;
-    background: $btn-bg;
+    background: $smoke-blue;
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
