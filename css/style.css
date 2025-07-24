@@ -4,12 +4,20 @@ body {
   color: #fcfcfc;
 }
 
+h2, h3, h4, p {
+  color: #333333;
+}
+
+.description {
+  color: #fcfcfc;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background: white;
+  background: #d3d3d3;
 }
 
 /* We need to hide our menu by default. */
@@ -28,7 +36,7 @@ header nav {
 }
 
 .header-logo img {
-  max-width: 236px;
+  min-width: 236px;
 }
 
 nav img {
@@ -36,36 +44,38 @@ nav img {
   color: #333333;
 }
 
+/* Content Banner */
 .hero-content {
   display: grid;
   padding: 40px 20px;
+  background: url("../img/hero-content-banner.webp") center/cover;
 }
 
+/* Carousel */
 .carousel {
   padding: 20px;
 }
-.carousel h2 {
-  margin-bottom: 10px;
+
+.scrolling-wrapper {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-color: var(--accent) #e2e2e2;
 }
-.carousel .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  overflow-x: auto;
-  gap: 20px;
+
+.card {
+  white-space: normal;
+  background-color: #fff;
+  margin: 1rem 1rem 2rem 0rem;
+  text-align: left;
+  width: 230px;
+  height: 233px;
 }
-.carousel .carousel .card {
-  min-width: 180px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-.carousel .carousel .card img {
-  width: 100%;
-  border-radius: 8px 8px 0 0;
-}
-.carousel .carousel .card p {
-  padding: 10px;
+
+.card img {
+  width: 230px;
+  height: 130px;
 }
 
 .hero-blog, .hero-shop, .hero-about {
@@ -102,4 +112,25 @@ footer .footer-columns ul {
 }
 footer .footer-columns ul li {
   margin: 4px 0;
+}
+
+/* Media Query */
+@media only screen and (min-width: 720px) {
+  /* Hide the hamburger menu. */
+  .toggle-btn {
+    display: none;
+  }
+  /* Now, let's bring our menu back into the fold. */
+  header nav {
+    position: static;
+    max-height: unset;
+  }
+  header,
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo {
+    white-space: nowrap;
+  }
 }/*# sourceMappingURL=style.css.map */
