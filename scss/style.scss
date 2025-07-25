@@ -1,68 +1,197 @@
-// Color Variables
+// COLOR VARIABLES
 $charcoal-gray: #333333;
 $light-gray: #d3d3d3;
 $smoke-blue: #b4bccb;
 $pampas: #ece6de;
 $bg-white: #fcfcfc;
 
-// Font Variables
+// FONT VARIABLES
 $red-hat: 'Red Hat Display', sans-serif;
+$h1-size-desktop: 90px;
+$h1-size: 45px;
+$h2-size: 36px;
+$h3-size: 27px;
+$h4-size: 22.5px;
+$p-size: 18px;
 
-// Mixins
+// MIXINS
+@mixin h1-style {
+  font-size: $h1-size;
+  font-weight: bolder;
+  color: $bg-white;
+  margin: 0 0 36px 0;
+}
+
+@mixin h1-style-desktop {
+  font-size: $h1-size-desktop;
+  font-weight: bolder;
+  color: $bg-white;
+  margin: 0 0 36px 0;
+}
+
+@mixin h2-style {
+  font-size: $h2-size;
+  font-weight: bold;
+  color: $charcoal-gray;
+  margin: 0 0 36px 0;
+}
+
+@mixin h2-style-desktop {
+  font-size: $h1-size;
+  font-weight: bold;
+  color: $charcoal-gray;
+  margin: 0 0 36px 0;
+}
+
+@mixin h3-style {
+  font-size: $h3-size;
+  font-weight: 700;
+  color: $charcoal-gray;
+}
+
+@mixin h4-style {
+  font-size: $h4-size;
+  font-weight: 700;
+  color: $charcoal-gray;
+}
+
+@mixin p-style {
+  font-size: $p-size;
+  font-weight: 400;
+  color: $charcoal-gray;
+  margin: 0 0 18px 0;
+}
+
+@mixin banner-p-style {
+  font-size: $p-size;
+  font-weight: 400;
+  color: $bg-white;
+  margin: 0 0 18px 0;
+}
 
 body {
   font-family: $red-hat;
+  line-height: 1.5;
   margin: 0;
-  color: $bg-white;
 }
 
 h2, h3, h4, p {
   color: $charcoal-gray;
 }
 
-.description {
+h1, .description {
   color: $bg-white;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
+.site-header {
   background: $light-gray;
-}
-
-/* We need to hide our menu by default. */
-
-header nav {
+  .header-inner {
+    display: flex;
+    flex-direction: column; // Mobile default
+  }
+  .header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    .logo {line-height: 0;}
+    .logo img { width: auto; height: 50px; }
+    .toggle-btn {
+      background: none;
+      border: none;
+      min-width: 40px;
+      display: block;
+      img { width: 2rem; }
+    }
+  }
+  .main-nav {
     width: 100%;
     max-height: 0;
     overflow: hidden;
-    /* We also need to position our menu so that it comes down over top of our content rather than bumping it down out of the way. */
-    position: absolute;
-    left: 0;
-    background-color: #fff;
+    transition: max-height 0.3s;
+    &.show-nav { max-height: 500px; overflow: visible; }
+    .main-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .search-item { 
+        order: -1;
+        display: flex;
+        justify-content: start; 
+      }
+      li {
+        background: $light-gray;
+        position: relative;
+        display: flex; // ensures it fills the container
+        width: 100%;
+        justify-content: center;
+        a, .dropdown-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          color: $charcoal-gray;
+          padding: 1rem;
+          text-decoration: none;
+          border: none;
+          background: $light-gray;
+          img { margin-left: 0.5rem; width: 1rem; }
+        }
+        &.has-dropdown {
+          position: relative;
+          display: inline-block; // ensures it fills the container
+          width: 100%;
+          .second-tier {
+            display: none;
+            list-style: none;
+            flex-direction: column;
+            position: static;
+            padding: 0 !important;
+            background: $bg-white;
+
+            &.open {
+              display: block;
+            }
+            
+            li { border-bottom: 1px solid #ddd; }
+            a { color: $charcoal-gray;  // ensures it fills the container
+            width: 100%; }
+          }
+        }
+      }
+    }
+    form {
+      display: flex;
+      input { width: 100px;flex: 1; border-radius: 20px 0 0 20px; border: none; padding: 5px; }
+      button { border-radius: 0 20px 20px 0; border: none; background: $bg-white; }
+    }
+  }
 }
 
-.show-nav {
-    max-height: unset;
-}
 
-.header-logo img {
-  min-width: 236px;
-}
 
-nav img {
-  max-width: 15px;
-  color: $charcoal-gray;
-} 
-
-/* Content Banner */
+/* CONTENT BANNER */
 
 .hero-content {
   display: grid;
-  padding: 40px 20px;
-  background: url("../img/hero-content-banner.webp") center / cover;
+  height: 464px;
+  padding: 20px 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+  url("../img/hero-content-banner.webp") left / cover;
+    .text {
+    display: grid;
+    max-width: 1280px;
+    margin: auto;
+    h1 {
+      @include h1-style;
+    }
+    .description {
+      @include banner-p-style;
+    }
+  }
 }
 
 
@@ -94,66 +223,106 @@ nav img {
 }
 
 
-.hero-blog, .hero-shop, .hero-about {
-  padding: 40px 20px;
-  text-align: center;
+/* MEDIA QUERY 800px */
 
-  .btn {
-    margin-top: 15px;
-    background: $smoke-blue;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-  }
-}
+@media (min-width: 800px) {
+  .site-header {
+    align-items: center;
+    background: $light-gray;
 
-footer {
-  background: #222;
-  color: white;
-  padding: 30px 20px;
-
-  .footer-columns {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
+    .header-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: auto;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .header-bar {
+      .toggle-btn { display: none; }
+    }
 
-      li {
-        margin: 4px 0;
+    .main-nav {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      max-height: unset !important;
+      overflow: visible;
+      background: transparent;
+
+      .main-menu {
+        flex-direction: row !important;
+        align-items: center;
+
+        > li {
+          margin: 0;
+          &.has-dropdown:hover .second-tier:not(.open),
+          &.has-dropdown:focus-within .second-tier:not(.open) {
+            display: flex !important;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            z-index: 10;
+            list-style: none;
+          }
+
+          &.has-dropdown.active .second-tier {
+            display: none !important;
+          }
+          
+            .toggle-btn {
+            display: none;
+          }
+
+          .second-tier { 
+            display: none !important;
+            position: absolute;
+            background-color: $light-gray;
+            flex-direction: column;
+            list-style: none;
+          }
+        }
+
+        > li.search-item {
+          order: 99; // Desktop: search bar last
+          display: flex !important;; // Ensure flex for justify-content
+
+          form {
+            display: flex;
+            margin-right: 1rem;
+          }
+        }
       }
     }
   }
 }
 
-/* Media Query */
+.hero-content {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+  url("../img/hero-content-banner.webp") left / cover;
+    .text {
+    display: grid;
+    max-width: 500px;
+    margin: auto;
+    h1 {
+      @include h1-style;
+      max-width: 1000px;
+    }
+    .description {
+      @include banner-p-style;
+    }
+  }
+}
 
-@media only screen and (min-width: 720px) {
-    /* Hide the hamburger menu. */
-    .toggle-btn {
-        display: none;
-    }
-    
-    /* Now, let's bring our menu back into the fold. */
-    header nav {
-        position: static;
-        max-height: unset;
-    }
 
-    header,
-    .menu {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .logo {
-        white-space: nowrap;
-    }
+@media (min-width: 1280px) {
+  .header-inner {
+    max-width: 1270px;
+  }
+  .main-menu {
+    gap: 75px;
+  }
 }

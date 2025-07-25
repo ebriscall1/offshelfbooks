@@ -1,54 +1,153 @@
 body {
   font-family: "Red Hat Display", sans-serif;
+  line-height: 1.5;
   margin: 0;
-  color: #fcfcfc;
 }
 
 h2, h3, h4, p {
   color: #333333;
 }
 
-.description {
+h1, .description {
   color: #fcfcfc;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
+.site-header {
   background: #d3d3d3;
 }
-
-/* We need to hide our menu by default. */
-header nav {
+.site-header .header-inner {
+  display: flex;
+  flex-direction: column;
+}
+.site-header .header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.site-header .header-bar .logo {
+  line-height: 0;
+}
+.site-header .header-bar .logo img {
+  width: auto;
+  height: 50px;
+}
+.site-header .header-bar .toggle-btn {
+  background: none;
+  border: none;
+  min-width: 40px;
+  display: block;
+}
+.site-header .header-bar .toggle-btn img {
+  width: 2rem;
+}
+.site-header .main-nav {
   width: 100%;
   max-height: 0;
   overflow: hidden;
-  /* We also need to position our menu so that it comes down over top of our content rather than bumping it down out of the way. */
-  position: absolute;
-  left: 0;
-  background-color: #fff;
+  transition: max-height 0.3s;
 }
-
-.show-nav {
-  max-height: unset;
+.site-header .main-nav.show-nav {
+  max-height: 500px;
+  overflow: visible;
 }
-
-.header-logo img {
-  min-width: 236px;
+.site-header .main-nav .main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-nav img {
-  max-width: 15px;
+.site-header .main-nav .main-menu .search-item {
+  order: -1;
+  display: flex;
+  justify-content: start;
+}
+.site-header .main-nav .main-menu li {
+  background: #d3d3d3;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.site-header .main-nav .main-menu li a, .site-header .main-nav .main-menu li .dropdown-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
   color: #333333;
+  padding: 1rem;
+  text-decoration: none;
+  border: none;
+  background: #d3d3d3;
+}
+.site-header .main-nav .main-menu li a img, .site-header .main-nav .main-menu li .dropdown-link img {
+  margin-left: 0.5rem;
+  width: 1rem;
+}
+.site-header .main-nav .main-menu li.has-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.site-header .main-nav .main-menu li.has-dropdown .second-tier {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  position: static;
+  padding: 0 !important;
+  background: #fcfcfc;
+}
+.site-header .main-nav .main-menu li.has-dropdown .second-tier.open {
+  display: block;
+}
+.site-header .main-nav .main-menu li.has-dropdown .second-tier li {
+  border-bottom: 1px solid #ddd;
+}
+.site-header .main-nav .main-menu li.has-dropdown .second-tier a {
+  color: #333333;
+  width: 100%;
+}
+.site-header .main-nav form {
+  display: flex;
+}
+.site-header .main-nav form input {
+  width: 100px;
+  flex: 1;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  padding: 5px;
+}
+.site-header .main-nav form button {
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background: #fcfcfc;
 }
 
-/* Content Banner */
+/* CONTENT BANNER */
 .hero-content {
   display: grid;
-  padding: 40px 20px;
-  background: url("../img/hero-content-banner.webp") center/cover;
+  height: 464px;
+  padding: 20px 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/hero-content-banner.webp") left/cover;
+}
+.hero-content .text {
+  display: grid;
+  max-width: 1280px;
+  margin: auto;
+}
+.hero-content .text h1 {
+  font-size: 45px;
+  font-weight: bolder;
+  color: #fcfcfc;
+  margin: 0 0 36px 0;
+}
+.hero-content .text .description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fcfcfc;
+  margin: 0 0 18px 0;
 }
 
 /* Carousel */
@@ -78,59 +177,97 @@ nav img {
   height: 130px;
 }
 
-.hero-blog, .hero-shop, .hero-about {
-  padding: 40px 20px;
-  text-align: center;
-}
-.hero-blog .btn, .hero-shop .btn, .hero-about .btn {
-  margin-top: 15px;
-  background: #b4bccb;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-footer {
-  background: #222;
-  color: white;
-  padding: 30px 20px;
-}
-footer .footer-columns {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 768px) {
-  footer .footer-columns {
-    grid-template-columns: repeat(3, 1fr);
+/* MEDIA QUERY 800px */
+@media (min-width: 800px) {
+  .site-header {
+    align-items: center;
+    background: #d3d3d3;
   }
-}
-footer .footer-columns ul {
-  list-style: none;
-  padding: 0;
-}
-footer .footer-columns ul li {
-  margin: 4px 0;
-}
-
-/* Media Query */
-@media only screen and (min-width: 720px) {
-  /* Hide the hamburger menu. */
-  .toggle-btn {
+  .site-header .header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+  }
+  .site-header .header-bar .toggle-btn {
     display: none;
   }
-  /* Now, let's bring our menu back into the fold. */
-  header nav {
-    position: static;
-    max-height: unset;
+  .site-header .main-nav {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    max-height: unset !important;
+    overflow: visible;
+    background: transparent;
   }
-  header,
-  .menu {
+  .site-header .main-nav .main-menu {
+    flex-direction: row !important;
+    align-items: center;
+  }
+  .site-header .main-nav .main-menu > li {
+    margin: 0;
+  }
+  .site-header .main-nav .main-menu > li.has-dropdown:hover .second-tier:not(.open), .site-header .main-nav .main-menu > li.has-dropdown:focus-within .second-tier:not(.open) {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    list-style: none;
+  }
+  .site-header .main-nav .main-menu > li.has-dropdown.active .second-tier {
+    display: none !important;
+  }
+  .site-header .main-nav .main-menu > li .toggle-btn {
+    display: none;
+  }
+  .site-header .main-nav .main-menu > li .second-tier {
+    display: none !important;
+    position: absolute;
+    background-color: #d3d3d3;
+    flex-direction: column;
+    list-style: none;
+  }
+  .site-header .main-nav .main-menu > li.search-item {
+    order: 99;
+    display: flex !important;
+  }
+  .site-header .main-nav .main-menu > li.search-item form {
     display: flex;
-    justify-content: space-between;
+    margin-right: 1rem;
   }
-  .logo {
-    white-space: nowrap;
+}
+.hero-content {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/hero-content-banner.webp") left/cover;
+}
+.hero-content .text {
+  display: grid;
+  max-width: 500px;
+  margin: auto;
+}
+.hero-content .text h1 {
+  font-size: 45px;
+  font-weight: bolder;
+  color: #fcfcfc;
+  margin: 0 0 36px 0;
+  max-width: 1000px;
+}
+.hero-content .text .description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fcfcfc;
+  margin: 0 0 18px 0;
+}
+
+@media (min-width: 1280px) {
+  .header-inner {
+    max-width: 1270px;
+  }
+  .main-menu {
+    gap: 75px;
   }
 }/*# sourceMappingURL=style.css.map */
