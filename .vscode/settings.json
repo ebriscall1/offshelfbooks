@@ -1,3 +1,19 @@
 {
-    "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "liveSassCompile.settings.includeItems": ["/scss/style.scss"],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css"
+    }
+  ],
+  "liveSassCompile.settings.partialsList": [
+    "/scss/abstracts/**",
+    "/scss/base/**",
+    "/scss/components/**",
+    "/scss/layout/**",
+    "/scss/pages/**"
+  ],
+  "liveSassCompile.settings.watchOnLaunch": true
 }

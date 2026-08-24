@@ -6,7 +6,7 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 */
 
 // 1. CONFIGURATION & TOOLS
-@use "abstracts/variables";
+@use "abstracts/variables" as *;
 @use "abstracts/mixins";
 
 // 2. BASE STYLES & RESETS
@@ -24,19 +24,18 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 @use "components/carousel";
 
 // 5. UNIQUE PAGE STYLES (Home, About, Content)
-@use "pages/home.scss";
-@use "pages/content.scss";
-@use "pages/blog.scss";
-@use "pages/shop.scss";
-@use "pages/about.scss";
-@use "pages/about/contact.scss";
-@use "pages/content/conversations.scss";
-@use "pages/content/conversations.scss";
-@use "pages/content/hands-on.scss";
-@use "pages/content/reviews.scss";
-@use "pages/content/talk.scss";
-@use "pages/content/topic.scss";
-@use "pages/content/tour.scss";
+@use "pages/home";
+@use "pages/content";
+@use "pages/blog";
+@use "pages/shop";
+@use "pages/about";
+@use "pages/about/contact";
+@use "pages/content/conversations";
+@use "pages/content/hands-on";
+@use "pages/content/reviews";
+@use "pages/content/talk";
+@use "pages/content/topic";
+@use "pages/content/tour";
 
 html {
   overflow-y: scroll;

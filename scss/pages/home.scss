@@ -1,12 +1,14 @@
+@use "../abstracts/mixins" as *;
+
 /* CONTENT BANNER */
 
-.hero-content {
+.hero-content,
+.hero-shop,
+.hero-blog,
+.hero-about {
   display: grid;
   height: 464px;
   padding: 20px 20px;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("../img/hero-content-banner.webp") left / cover;
   .text {
     display: grid;
     margin: auto;
@@ -19,26 +21,70 @@
   }
 }
 
+.hero-content {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/hero-content-banner.webp") center / cover;
+}
+
+.hero-blog {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/blog-banner.webp") center / cover;
+  text-align: right;
+}
+
+.hero-shop {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/shop-banner.webp") center / cover;
+}
+
+.hero-about {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/about-banner.webp") center / cover;
+  text-align: right;
+}
+
 /* MEDIA QUERY 800px */
 
 @media (min-width: 800px) {
-  .hero-content {
-    background:
-      linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-      url("../img/hero-content-banner.webp") left / cover;
+  .hero-content,
+  .hero-shop,
+  .hero-blog,
+  .hero-about {
     .text {
-      display: grid;
       width: 100%;
-      justify-content: left;
       h1 {
-        @include h1-style;
         max-width: 500px;
-        margin-right: auto;
       }
       .description {
-        @include banner-p-style;
         max-width: 500px;
+      }
+    }
+  }
+
+  .hero-content,
+  .hero-shop {
+    .text {
+      justify-content: left;
+      h1,
+      .description,
+      .btn {
         margin-right: auto;
+      }
+    }
+  }
+
+  .hero-blog,
+  .hero-about {
+    .text {
+      justify-content: right;
+      h1,
+      .description,
+      .btn {
+        margin-left: auto;
       }
     }
   }
@@ -47,13 +93,25 @@
 /* MEDIA QUERY 1280px*/
 
 @media (min-width: 1280px) {
-  .hero-content {
+  .hero-content,
+  .hero-shop,
+  .hero-blog,
+  .hero-about {
     padding: 20px 20px 20px 40px;
   }
-  .hero-content {
+  .hero-content,
+  .hero-shop,
+  .hero-blog,
+  .hero-about {
     .text {
-      max-width: 1000px;
       margin: auto;
+      h1 {
+        max-width: 1000px;
+        line-height: 1.2;
+      }
+      .description {
+        max-width: 1000px;
+      }
     }
   }
 }

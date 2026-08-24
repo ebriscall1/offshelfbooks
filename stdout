@@ -450,7 +450,6 @@ p {
 
 .hero-blog {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/blog-banner.webp") center/cover;
-  text-align: right;
 }
 
 .hero-shop {
@@ -459,7 +458,6 @@ p {
 
 .hero-about {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/about-banner.webp") center/cover;
-  text-align: right;
 }
 
 /* MEDIA QUERY 800px */
@@ -487,11 +485,11 @@ p {
     justify-content: left;
   }
   .hero-content .text h1,
+  .hero-shop .text h1 {
+    margin-right: auto;
+  }
   .hero-content .text .description,
-  .hero-content .text .btn,
-  .hero-shop .text h1,
-  .hero-shop .text .description,
-  .hero-shop .text .btn {
+  .hero-shop .text .description {
     margin-right: auto;
   }
   .hero-blog .text,
@@ -499,11 +497,11 @@ p {
     justify-content: right;
   }
   .hero-blog .text h1,
+  .hero-about .text h1 {
+    margin-left: auto;
+  }
   .hero-blog .text .description,
-  .hero-blog .text .btn,
-  .hero-about .text h1,
-  .hero-about .text .description,
-  .hero-about .text .btn {
+  .hero-about .text .description {
     margin-left: auto;
   }
 }
@@ -526,13 +524,6 @@ p {
   .hero-blog .text h1,
   .hero-about .text h1 {
     max-width: 1000px;
-    line-height: 1.2;
-  }
-  .hero-content .text .description,
-  .hero-shop .text .description,
-  .hero-blog .text .description,
-  .hero-about .text .description {
-    max-width: 1000px;
   }
 }
 html {
@@ -545,4 +536,4 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: clip;
-}/*# sourceMappingURL=style.css.map */
+}

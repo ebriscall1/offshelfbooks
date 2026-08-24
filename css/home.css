@@ -1,8 +1,94 @@
+/* CONTENT BANNER */
+.hero-content,
+.hero-shop,
+.hero-blog,
+.hero-about {
+  display: grid;
+  height: 464px;
+  padding: 20px 20px;
+}
+.hero-content .text,
+.hero-shop .text,
+.hero-blog .text,
+.hero-about .text {
+  display: grid;
+  margin: auto;
+}
+.hero-content .text h1,
+.hero-shop .text h1,
+.hero-blog .text h1,
+.hero-about .text h1 {
+  font-size: 45px;
+  font-weight: bolder;
+  color: #fcfcfc;
+  margin: 0 0 36px 0;
+  line-height: 1.5;
+}
 @media (min-width: 1280px) {
-  .hero-content {
+  .hero-content .text h1,
+  .hero-shop .text h1,
+  .hero-blog .text h1,
+  .hero-about .text h1 {
+    font-size: 90px;
+  }
+}
+.hero-content .text .description,
+.hero-shop .text .description,
+.hero-blog .text .description,
+.hero-about .text .description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fcfcfc;
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
+.hero-content {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/hero-content-banner.webp") center/cover;
+}
+
+.hero-blog {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/blog-banner.webp") center/cover;
+}
+
+.hero-shop {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/shop-banner.webp") center/cover;
+}
+
+.hero-about {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/about-banner.webp") center/cover;
+}
+
+/* MEDIA QUERY 800px */
+@media (min-width: 800px) {
+  .hero-content .text,
+  .hero-shop .text {
+    width: 100%;
+    justify-content: left;
+  }
+  .hero-content .text h1,
+  .hero-shop .text h1 {
+    max-width: 500px;
+    margin-right: auto;
+  }
+  .hero-content .text .description,
+  .hero-shop .text .description {
+    max-width: 500px;
+    margin-right: auto;
+  }
+}
+/* MEDIA QUERY 1280px*/
+@media (min-width: 1280px) {
+  .hero-content,
+  .hero-shop,
+  .hero-blog,
+  .hero-about {
     padding: 20px 20px 20px 40px;
   }
-  .hero-content .text {
+  .hero-content .text,
+  .hero-shop .text,
+  .hero-blog .text,
+  .hero-about .text {
     max-width: 1000px;
     margin: auto;
   }
