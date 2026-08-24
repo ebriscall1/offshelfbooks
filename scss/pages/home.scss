@@ -38,6 +38,7 @@
   background:
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../img/shop-banner.webp") center / cover;
+  margin-bottom: 2rem;
 }
 
 .hero-about {
@@ -45,6 +46,7 @@
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../img/about-banner.webp") center / cover;
   text-align: right;
+  margin-bottom: 2rem;
 }
 
 /* MEDIA QUERY 800px */

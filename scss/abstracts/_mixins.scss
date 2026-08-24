@@ -14,7 +14,7 @@
   font-weight: bolder;
   color: $bg-white;
   margin: 0 0 36px 0;
-  line-height: 1.5;
+  line-height: 1.2;
 
   @include respond-to-desktop {
     font-size: $h1-size-desktop;
@@ -28,21 +28,21 @@
   font-weight: bold;
   color: $charcoal-gray;
   margin: 0 0 36px 0;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 @mixin h3-style {
   font-size: $h3-size;
   font-weight: 700;
   color: $charcoal-gray;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 @mixin h4-style {
   font-size: $h4-size;
   font-weight: 700;
   color: $charcoal-gray;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 @mixin p-style {

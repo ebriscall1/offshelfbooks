@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as *;
+
+footer {
+  background: $light-gray;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+  row-gap: 20px;
+}
+
+.footer-links img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-links {
+  div {
+    &:nth-of-type(2) {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 30px);
+        grid-template-rows: repeat(2);
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

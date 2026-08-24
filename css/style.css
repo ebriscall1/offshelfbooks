@@ -72,7 +72,7 @@ h1 {
   font-weight: bolder;
   color: #fcfcfc;
   margin: 0 0 36px 0;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 @media (min-width: 1280px) {
   h1 {
@@ -85,21 +85,21 @@ h2 {
   font-weight: bold;
   color: #333333;
   margin: 0 0 36px 0;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 h3 {
   font-size: 27px;
   font-weight: 700;
   color: #333333;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 h4 {
   font-size: 22.5px;
   font-weight: 700;
   color: #333333;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 p {
@@ -108,6 +108,41 @@ p {
   color: #333333;
   margin: 0 0 18px 0;
   line-height: 1.5;
+}
+
+footer {
+  background: #d3d3d3;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+  row-gap: 20px;
+}
+
+.footer-links img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-links div:nth-of-type(2) ul {
+  display: grid;
+  grid-template-columns: repeat(2, 30px);
+  grid-template-rows: repeat(2);
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-items: center;
+  justify-content: center;
 }
 
 .site-header {
@@ -423,7 +458,7 @@ p {
   font-weight: bolder;
   color: #fcfcfc;
   margin: 0 0 36px 0;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 @media (min-width: 1280px) {
   .hero-content .text h1,
@@ -455,11 +490,13 @@ p {
 
 .hero-shop {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/shop-banner.webp") center/cover;
+  margin-bottom: 2rem;
 }
 
 .hero-about {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/about-banner.webp") center/cover;
   text-align: right;
+  margin-bottom: 2rem;
 }
 
 /* MEDIA QUERY 800px */
