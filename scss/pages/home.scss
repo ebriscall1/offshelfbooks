@@ -1,0 +1,59 @@
+/* CONTENT BANNER */
+
+.hero-content {
+  display: grid;
+  height: 464px;
+  padding: 20px 20px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/hero-content-banner.webp") left / cover;
+  .text {
+    display: grid;
+    margin: auto;
+    h1 {
+      @include h1-style;
+    }
+    .description {
+      @include banner-p-style;
+    }
+  }
+}
+
+/* MEDIA QUERY 800px */
+
+@media (min-width: 800px) {
+  .hero-content {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url("../img/hero-content-banner.webp") left / cover;
+    .text {
+      display: grid;
+      width: 100%;
+      justify-content: left;
+      h1 {
+        @include h1-style;
+        max-width: 500px;
+        margin-right: auto;
+      }
+      .description {
+        @include banner-p-style;
+        max-width: 500px;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+/* MEDIA QUERY 1280px*/
+
+@media (min-width: 1280px) {
+  .hero-content {
+    padding: 20px 20px 20px 40px;
+  }
+  .hero-content {
+    .text {
+      max-width: 1000px;
+      margin: auto;
+    }
+  }
+}

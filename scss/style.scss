@@ -1,0 +1,51 @@
+/*
+Theme Name: Off Shelf Books
+Author: Evan
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
+
+// 1. CONFIGURATION & TOOLS
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+// 2. BASE STYLES & RESETS
+@use "base/reset";
+@use "base/typography";
+
+// 3. REUSABLE LAYOUT STRUCTURES (Headers, Footers, Sidebars)
+@use "layout/footer";
+@use "layout/header";
+
+// 4. MODULAR COMPONENTS (Buttons, Cards, Forms)
+@use "components/accordian";
+@use "components/buttons";
+@use "components/cards";
+@use "components/carousel";
+
+// 5. UNIQUE PAGE STYLES (Home, About, Content)
+@use "pages/home.scss";
+@use "pages/content.scss";
+@use "pages/blog.scss";
+@use "pages/shop.scss";
+@use "pages/about.scss";
+@use "pages/about/contact.scss";
+@use "pages/content/conversations.scss";
+@use "pages/content/conversations.scss";
+@use "pages/content/hands-on.scss";
+@use "pages/content/reviews.scss";
+@use "pages/content/talk.scss";
+@use "pages/content/topic.scss";
+@use "pages/content/tour.scss";
+
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: $red-hat;
+  line-height: 1.5;
+  margin: 0;
+  overflow-x: clip;
+}

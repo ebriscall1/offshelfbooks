@@ -1,0 +1,273 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: $light-gray;
+  .header-inner {
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column; // Mobile default
+  }
+  .header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 20px;
+    .logo {
+      line-height: 0;
+    }
+    .logo img {
+      width: auto;
+      height: 36px;
+    }
+    .toggle-btn {
+      background: none;
+      border: none;
+      min-width: 40px;
+      display: block;
+      img {
+        width: 2rem;
+      }
+    }
+  }
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    &.show-nav {
+      max-height: 500px;
+      overflow: visible;
+      width: 100%;
+    }
+    .main-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .search-item {
+        order: -1;
+        display: flex;
+        justify-content: start;
+      }
+      li {
+        background: $light-gray;
+        position: relative;
+        display: flex; // ensures it fills the container
+        width: 100%;
+        justify-content: center;
+        a,
+        .dropdown-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          color: $charcoal-gray;
+          padding: 1rem;
+          text-decoration: none;
+          border: none;
+          background: $light-gray;
+          img {
+            margin-left: 0.5rem;
+            width: 1rem;
+          }
+        }
+        &.has-dropdown {
+          position: relative;
+          display: inline-block; // ensures it fills the container
+          width: 100%;
+          .second-tier {
+            display: none;
+            list-style: none;
+            flex-direction: column;
+            position: absolute; // changed: absolute so it overlays content
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 0 !important;
+            background: $bg-white;
+            z-index: 10000;
+            margin: 0;
+
+            &.open {
+              display: block;
+            }
+
+            li {
+              border-bottom: 1px solid #ddd;
+              padding: 0.5rem 0;
+            }
+            a {
+              color: $charcoal-gray; // ensures it fills the container
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    form {
+      display: flex;
+      input {
+        width: 100px;
+        flex: 1;
+        border-radius: 20px 0 0 20px;
+        border: none;
+        padding: 5px;
+      }
+      button {
+        border-radius: 0 20px 20px 0;
+        border: none;
+        background: $bg-white;
+      }
+    }
+  }
+}
+
+/* MEDIA QUERY 800px */
+
+@media (min-width: 800px) {
+  .site-header {
+    align-items: center;
+    background: $light-gray;
+
+    .header-inner {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-bar {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      .logo {
+        line-height: 0;
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        width: auto;
+        height: 36px;
+        display: block;
+        flex-shrink: 0;
+      }
+      .toggle-btn {
+        display: none;
+      }
+    }
+
+    .main-nav {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      height: 69px;
+      max-height: none !important;
+      overflow: visible;
+      background: transparent;
+
+      .main-menu {
+        height: 100%;
+        flex-direction: row !important;
+        align-items: center;
+
+        > li {
+          margin: 0;
+          height: 69px;
+          display: flex;
+          align-items: center;
+          a,
+          .dropdown-link {
+            height: 100%;
+            padding: 0 1rem;
+          }
+          &.has-dropdown {
+            position: relative;
+            height: 69px;
+          }
+          &.has-dropdown:hover .second-tier:not(.open),
+          &.has-dropdown:focus-within .second-tier:not(.open) {
+            display: flex !important;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+            list-style: none;
+            margin-top: 0;
+          }
+
+          &.has-dropdown.active .second-tier {
+            display: none !important;
+          }
+
+          .toggle-btn {
+            display: none;
+          }
+
+          .second-tier {
+            display: none !important;
+            position: absolute;
+            background-color: $light-gray;
+            flex-direction: column;
+            list-style: none;
+
+            li {
+              padding: 0.5rem 0;
+            }
+          }
+        }
+
+        > li.search-item {
+          order: 99; // Desktop: search bar last
+          display: flex !important; // Ensure flex for justify-content
+
+          form {
+            display: flex;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* MEDIA QUERY 1280px */
+
+@media (min-width: 1280px) {
+  .site-header .header-inner {
+    max-width: 1270px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+
+  .site-header .header-bar {
+    padding: 1rem 20px 1rem 20px;
+  }
+
+  .site-header .header-inner {
+    justify-content: space-between;
+  }
+
+  .site-header .main-nav {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .main-menu {
+    gap: 75px;
+  }
+}

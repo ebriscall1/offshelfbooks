@@ -1,0 +1,62 @@
+@use "variables" as *;
+
+// Global Layout Helper (Put this at the top)
+@mixin respond-to-desktop {
+  @media (min-width: 1280px) {
+    // Adjust 992px to match your preferred desktop breakdown
+    @content;
+  }
+}
+
+// FONTS
+@mixin h1-style {
+  font-size: $h1-size;
+  font-weight: bolder;
+  color: $bg-white;
+  margin: 0 0 36px 0;
+  line-height: 1.5;
+
+  @include respond-to-desktop {
+    font-size: $h1-size-desktop;
+    // (Any other values like color or weight will automatically inherit from mobile
+    // unless you want to change them here!)
+  }
+}
+
+@mixin h2-style {
+  font-size: $h2-size;
+  font-weight: bold;
+  color: $charcoal-gray;
+  margin: 0 0 36px 0;
+  line-height: 1.5;
+}
+
+@mixin h3-style {
+  font-size: $h3-size;
+  font-weight: 700;
+  color: $charcoal-gray;
+  line-height: 1.5;
+}
+
+@mixin h4-style {
+  font-size: $h4-size;
+  font-weight: 700;
+  color: $charcoal-gray;
+  line-height: 1.5;
+}
+
+@mixin p-style {
+  font-size: $p-size;
+  font-weight: 400;
+  color: $charcoal-gray;
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
+@mixin banner-p-style {
+  font-size: $p-size;
+  font-weight: 400;
+  color: $bg-white;
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}

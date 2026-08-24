@@ -1,0 +1,57 @@
+// 1. Use a more intuitive box-sizing model
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// 2. Remove default margins and padding from structural elements
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+// 3. Set up core root defaults
+html {
+  scroll-behavior: smooth;
+}
+
+// 4. Make body setup predictable
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; // Smoother font rendering on Mac
+}
+
+// 5. Clean up lists
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// 6. Make images easier to work with
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+// 7. Inherit fonts for form inputs
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

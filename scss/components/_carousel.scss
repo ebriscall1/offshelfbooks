@@ -1,0 +1,37 @@
+/* Carousel */
+.carousel {
+  padding: 20px;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-color: var(--accent) #e2e2e2;
+}
+
+.card {
+  white-space: normal;
+  background-color: #fff;
+  margin: 1rem 1rem 2rem 0rem;
+  text-align: left;
+  width: 230px;
+  height: 233px;
+}
+
+.card img {
+  width: 230px;
+  height: 130px;
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 1280px) {
+  .carousel {
+    max-width: 1000px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin: auto;
+  }
+}

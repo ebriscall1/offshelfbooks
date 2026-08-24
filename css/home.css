@@ -1,0 +1,9 @@
+@media (min-width: 1280px) {
+  .hero-content {
+    padding: 20px 20px 20px 40px;
+  }
+  .hero-content .text {
+    max-width: 1000px;
+    margin: auto;
+  }
+}/*# sourceMappingURL=home.css.map */
