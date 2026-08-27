@@ -4,6 +4,11 @@ footer {
   background: $light-gray;
 }
 
+.footer-logo img {
+  height: 54px;
+  max-width: 350px;
+}
+
 .footer-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 100px));

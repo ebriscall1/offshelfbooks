@@ -1,6 +1,6 @@
 /*
 Theme Name: Off Shelf Books
-Author: Evan
+Author: Evan Briscall
 Version: 1.0
 Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 */
@@ -112,6 +112,11 @@ p {
 
 footer {
   background: #d3d3d3;
+}
+
+.footer-logo img {
+  height: 54px;
+  max-width: 350px;
 }
 
 .footer-columns {
@@ -550,7 +555,7 @@ footer {
   .hero-shop,
   .hero-blog,
   .hero-about {
-    padding: 20px 20px 20px 40px;
+    padding: 20px 40px 20px 40px;
   }
   .hero-content .text,
   .hero-shop .text,
@@ -582,4 +587,6 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: clip;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
