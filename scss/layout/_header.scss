@@ -5,34 +5,33 @@
   top: 0;
   z-index: 9999;
   background: $light-gray;
+
   .header-inner {
     margin: 0;
     position: relative;
     display: flex;
-    flex-direction: column; // Mobile default
+    flex-direction: column;
   }
+
   .header-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 20px;
-    .logo {
-      line-height: 0;
-    }
-    .logo img {
-      width: auto;
-      height: 36px;
-    }
+
+    .logo { line-height: 0; }
+    .logo img { width: auto; height: 36px; }
+
     .toggle-btn {
       background: none;
       border: none;
       min-width: 40px;
       display: block;
-      img {
-        width: 2rem;
-      }
+
+      img { width: 2rem; }
     }
   }
+
   .main-nav {
     position: absolute;
     top: 100%;
@@ -42,11 +41,13 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
+
     &.show-nav {
       max-height: 500px;
       overflow: visible;
       width: 100%;
     }
+
     .main-menu {
       display: flex;
       flex-direction: column;
@@ -54,17 +55,14 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      .search-item {
-        order: -1;
-        display: flex;
-        justify-content: start;
-      }
+
       li {
         background: $light-gray;
         position: relative;
-        display: flex; // ensures it fills the container
+        display: flex;
         width: 100%;
         justify-content: center;
+
         a,
         .dropdown-link {
           display: flex;
@@ -76,20 +74,23 @@
           text-decoration: none;
           border: none;
           background: $light-gray;
+
           img {
             margin-left: 0.5rem;
             width: 1rem;
           }
         }
+
         &.has-dropdown {
           position: relative;
-          display: inline-block; // ensures it fills the container
+          display: inline-block;
           width: 100%;
+
           .second-tier {
             display: none;
             list-style: none;
             flex-direction: column;
-            position: absolute; // changed: absolute so it overlays content
+            position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
@@ -98,41 +99,86 @@
             z-index: 10000;
             margin: 0;
 
-            &.open {
-              display: block;
-            }
-
-            li {
-              border-bottom: 1px solid #ddd;
-              padding: 0.5rem 0;
-            }
-            a {
-              color: $charcoal-gray; // ensures it fills the container
-              width: 100%;
-            }
+            &.open { display: block; }
+            li { border-bottom: 1px solid #ddd; padding: 0.5rem 0; }
+            a { color: $charcoal-gray; width: 100%; }
           }
         }
-      }
-    }
-    form {
-      display: flex;
-      input {
-        width: 100px;
-        flex: 1;
-        border-radius: 20px 0 0 20px;
-        border: none;
-        padding: 5px;
-      }
-      button {
-        border-radius: 0 20px 20px 0;
-        border: none;
-        background: $bg-white;
       }
     }
   }
 }
 
-/* MEDIA QUERY 800px */
+.site-header .main-nav form.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  height: 44px;
+  background: #f4f4f4;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 1px 5px rgba(51, 51, 51, 0.08);
+  transition: box-shadow 0.2s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #777;
+    border-radius: 50%;
+    transform: translateY(-60%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 31px;
+    top: calc(50% + 5px);
+    width: 9px;
+    height: 3px;
+    background: #777;
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  &:focus-within { box-shadow: 0 2px 8px rgba(51, 51, 51, 0.14); }
+
+  label {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+  }
+
+  .search-field {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 8px 18px 8px 52px;
+    color: $charcoal-gray;
+    font-size: 18px;
+    line-height: 28px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .search-submit {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+  }
+}
 
 @media (min-width: 800px) {
   .site-header {
@@ -145,25 +191,28 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
     }
 
     .header-bar {
       box-sizing: border-box;
       flex-shrink: 0;
+      flex-basis: auto;
+
       .logo {
         line-height: 0;
         display: flex;
         align-items: center;
       }
+
       .logo img {
         width: auto;
         height: 36px;
         display: block;
         flex-shrink: 0;
       }
-      .toggle-btn {
-        display: none;
-      }
+
+      .toggle-btn { display: none; }
     }
 
     .main-nav {
@@ -178,26 +227,33 @@
       max-height: none !important;
       overflow: visible;
       background: transparent;
+      flex: 1;
+      min-width: 0;
+      margin-left: 16px;
 
       .main-menu {
+        width: 100%;
         height: 100%;
-        flex-direction: row !important;
+        display: grid;
+        grid-template-columns: repeat(4, max-content) minmax(120px, 1fr);
         align-items: center;
+        gap: 12px;
 
         > li {
           margin: 0;
           height: 69px;
           display: flex;
           align-items: center;
+          width: auto;
+
           a,
           .dropdown-link {
             height: 100%;
-            padding: 0 1rem;
+            padding: 0 0.25rem;
+            white-space: nowrap;
           }
-          &.has-dropdown {
-            position: relative;
-            height: 69px;
-          }
+          &.has-dropdown { position: relative; height: 69px; }
+
           &.has-dropdown:hover .second-tier:not(.open),
           &.has-dropdown:focus-within .second-tier:not(.open) {
             display: flex !important;
@@ -212,13 +268,8 @@
             margin-top: 0;
           }
 
-          &.has-dropdown.active .second-tier {
-            display: none !important;
-          }
-
-          .toggle-btn {
-            display: none;
-          }
+          &.has-dropdown.active .second-tier { display: none !important; }
+          .toggle-btn { display: none; }
 
           .second-tier {
             display: none !important;
@@ -226,28 +277,29 @@
             background-color: $light-gray;
             flex-direction: column;
             list-style: none;
-
-            li {
-              padding: 0.5rem 0;
-            }
+            li { padding: 0.5rem 0; }
           }
         }
 
-        > li.search-item {
-          order: 99; // Desktop: search bar last
-          display: flex !important; // Ensure flex for justify-content
+        > li form.search-form {
+          width: 100%;
+          min-width: 120px;
+          max-width: none;
+          margin-right: 0;
+          align-self: center;
+        }
 
-          form {
-            display: flex;
-            margin-right: 1rem;
-          }
+        > li:last-child {
+          display: flex;
+          flex: none;
+          min-width: 120px;
+          width: auto;
+          align-items: center;
         }
       }
     }
   }
 }
-
-/* MEDIA QUERY 1280px */
 
 @media (min-width: 1280px) {
   .site-header .header-inner {
@@ -256,20 +308,17 @@
     margin: 0 auto;
   }
 
-  .site-header .header-bar {
-    padding: 1rem 20px 1rem 20px;
-  }
-
-  .site-header .header-inner {
-    justify-content: space-between;
-  }
-
+  .site-header .header-bar { padding: 1rem 20px; }
+  .site-header .header-inner { justify-content: space-between; }
   .site-header .main-nav {
     flex: 1;
     justify-content: flex-end;
-  }
 
-  .main-menu {
-    gap: 75px;
+    form.search-form { width: 380px; }
+  }
+  .site-header .main-nav .main-menu {
+    grid-template-columns: repeat(4, max-content) minmax(220px, 380px);
+    justify-content: end;
+    gap: 16px;
   }
 }

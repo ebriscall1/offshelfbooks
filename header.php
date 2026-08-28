@@ -58,8 +58,7 @@
                 <li><a href="#">Contact</a></li>
               </ul>
             </li>
-            <li class="search-item">
-              <!-- Replaced your static form with the native working WordPress form -->
+            <li>
               <?php get_search_form(); ?>
             </li>
           </ul>
