@@ -1,4 +1,5 @@
 <footer>
+    <div class="footer-container">
       <div class="footer-logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
           <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/off-shelf-books-logo.svg" alt="Off Shelf Books Logo" />
@@ -49,6 +50,7 @@
         </div>
       </div>
       <p>&copy; <?php echo date('Y'); ?> OFF SHELF BOOKS</p>
+    </div>
     </footer>
 
     <?php 
