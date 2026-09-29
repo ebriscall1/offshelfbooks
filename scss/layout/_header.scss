@@ -56,6 +56,10 @@
       margin: 0;
       padding: 0;
 
+        > li:last-child {
+          padding-bottom: 16px;
+        }
+
       li {
         background: $light-gray;
         position: relative;
@@ -100,8 +104,8 @@
             margin: 0;
 
             &.open { display: block; }
-            li { border-bottom: 1px solid #ddd; padding: 0.5rem 0; }
-            a { color: $charcoal-gray; width: 100%; }
+            li { border-bottom: 1px solid #ddd; padding: 0.5rem 0; background: $pampas; }
+            a { color: $charcoal-gray; width: 100%; background: $pampas; }
           }
         }
       }
@@ -113,7 +117,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 2rem);
   max-width: 420px;
   height: 44px;
   background: #f4f4f4;
@@ -223,7 +227,7 @@
       display: flex !important;
       justify-content: center;
       align-items: center;
-      height: 69px;
+      height: 68px;
       max-height: none !important;
       overflow: visible;
       background: transparent;
@@ -239,9 +243,14 @@
         align-items: center;
         gap: 12px;
 
+        > li:last-child {
+          padding-bottom: 0;
+        }
+
         > li {
           margin: 0;
-          height: 69px;
+          height: 68px;
+          padding-bottom: 0;
           display: flex;
           align-items: center;
           width: auto;
@@ -252,7 +261,7 @@
             padding: 0 0.25rem;
             white-space: nowrap;
           }
-          &.has-dropdown { position: relative; height: 69px; }
+          &.has-dropdown { position: relative; height: 68px; }
 
           &.has-dropdown:hover .second-tier:not(.open),
           &.has-dropdown:focus-within .second-tier:not(.open) {
@@ -282,10 +291,10 @@
         }
 
         > li form.search-form {
-          width: 100%;
+          width: 380px;
           min-width: 120px;
           max-width: none;
-          margin-right: 0;
+          margin-right: 1rem;
           align-self: center;
         }
 

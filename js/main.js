@@ -14,7 +14,15 @@ function toggleMenu(id) {
     if (window.innerWidth < 800) {
       e.preventDefault();
       const menu = this.nextElementSibling;
-      menu.classList.toggle('open');
+      const wasOpen = menu.classList.contains('open');
+
+      document.querySelectorAll('.second-tier').forEach(otherMenu => {
+        otherMenu.classList.remove('open');
+      });
+
+      if (!wasOpen) {
+        menu.classList.add('open');
+      }
     }
   });
 });

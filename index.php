@@ -41,6 +41,30 @@
             <h4>What Are Some of Your Favourite Authors and Why?</h4>
           </div>
           <!-- end of card -->
+          <div class="card">
+            <img
+              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/the-chosen-volume-one.webp"
+              alt="The Chosen Volume 1 Book Cover"
+            />
+            <h4>Experiencing The Chosen Series In Comic Book Format</h4>
+          </div>
+          <!-- end of card -->
+          <div class="card">
+            <img
+              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/what-are-some-of-your-favourite-authors-and-why.webp"
+              alt="Favourite Authors thumbnail"
+            />
+            <h4>What Are Some of Your Favourite Authors and Why?</h4>
+          </div>
+          <!-- end of card -->
+          <div class="card">
+            <img
+              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/what-are-some-of-your-favourite-authors-and-why.webp"
+              alt="Favourite Authors thumbnail"
+            />
+            <h4>What Are Some of Your Favourite Authors and Why?</h4>
+          </div>
+          <!-- end of card -->
         </div>
       </section>
 
@@ -56,13 +80,32 @@
 
       <section class="carousel">
         <h2>Latest Blogs</h2>
-        <div class="carousel">
+        <div class="scrolling-wrapper">
           <!-- Repeat this card as needed-->
           <div class="card">
-            <img src="img/" alt="Card Image" />
-            <p>Card Title</p>
+            <img
+              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp"
+              alt="Mere Christianity Book Cover"
+            />
+            <h4>What All Christians Believe</h4>
           </div>
-          <!-- ... -->
+          <!-- end of card -->
+          <div class="card">
+            <img
+              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/the-chosen-volume-one.webp"
+              alt="The Chosen Volume 1 Book Cover"
+            />
+            <h4>Experiencing The Chosen Series In Comic Book Format</h4>
+          </div>
+          <!-- end of card -->
+          <div class="card">
+            <img
+              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/what-are-some-of-your-favourite-authors-and-why.webp"
+              alt="Favourite Authors thumbnail"
+            />
+            <h4>What Are Some of Your Favourite Authors and Why?</h4>
+          </div>
+          <!-- end of card -->
         </div>
       </section>
 
