@@ -97,7 +97,7 @@ h3 {
 
 h4 {
   font-size: 22.5px;
-  font-weight: 700;
+  font-weight: 100;
   color: #333333;
   line-height: 1.2;
 }
@@ -547,6 +547,26 @@ footer p {
   text-decoration: none;
 }
 
+.content-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1rem 1rem 2rem 0rem;
+  text-align: left;
+  width: 357px;
+}
+.content-card img {
+  width: 357px;
+  height: 278px;
+  border-radius: 10%;
+}
+.content-card p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333333;
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
 /* Carousel */
 .carousel {
   padding: 20px;
@@ -576,6 +596,7 @@ footer p {
 .card img {
   width: 230px;
   height: 130px;
+  margin-bottom: 20px;
 }
 
 /* MEDIA QUERY */
@@ -729,6 +750,15 @@ footer p {
     max-width: 1000px;
   }
 }
+.hero-content-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/hero-content-banner.webp") center/cover;
+  width: 100%;
+  height: clamp(200px, 35vw, 464px);
+  display: flex;
+  justify-content: center; /* Horizontally centers */
+  align-items: center;
+}
+
 html {
   overflow-y: scroll;
   scrollbar-gutter: stable;

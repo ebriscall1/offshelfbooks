@@ -36,7 +36,7 @@
         <nav class="main-nav">
           <ul class="main-menu">
             <li class="has-dropdown">
-              <a href="#" class="dropdown-link" id="content-link">
+              <a href="content.php" class="dropdown-link" id="content-link">
                 Content <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" />
               </a>
               <ul class="second-tier" id="dropdownContent">

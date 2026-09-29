@@ -10,7 +10,7 @@
             to learn more!
           </p>
           <button class="primary-btn">
-            <a href="#" class="btn">Content</a>
+            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'content' ) ) ); ?>" class="btn">Content</a>
           </button>
         </div>
       </section>

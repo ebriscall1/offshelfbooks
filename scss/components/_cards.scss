@@ -1,0 +1,20 @@
+@use "../abstracts/mixins" as *;
+
+//Content Card
+
+.content-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1rem 1rem 2rem 0rem;
+    text-align: left;
+    width: 357px;
+    img {
+        width: 357px;
+        height: 278px;
+        border-radius: 10%;
+    }
+  
+    p {
+        @include p-style;
+    }
+}
