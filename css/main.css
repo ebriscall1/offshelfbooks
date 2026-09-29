@@ -521,6 +521,32 @@ footer p {
     gap: 16px;
   }
 }
+.primary-btn {
+  width: 167px;
+  height: 60px;
+  font-size: 22.5px;
+  font-weight: 700;
+  background-color: #b4bccb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+@media (min-width: 1280px) {
+  .primary-btn {
+    width: 254px;
+    height: 65px;
+    font-size: 24px;
+  }
+}
+
+.primary-btn > a {
+  color: #fcfcfc;
+  text-decoration: none;
+}
+
 /* Carousel */
 .carousel {
   padding: 20px;
@@ -574,7 +600,7 @@ footer p {
 .hero-blog,
 .hero-about {
   display: grid;
-  height: 464px;
+  min-height: 464px;
   padding: 20px 20px;
 }
 .hero-content .text,
@@ -616,21 +642,33 @@ footer p {
 .hero-content {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/hero-content-banner.webp") center/cover;
 }
+.hero-content .primary-btn {
+  margin-right: auto;
+}
 
 .hero-blog {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/blog-banner.webp") center/cover;
   text-align: right;
+}
+.hero-blog .primary-btn {
+  margin-left: auto;
 }
 
 .hero-shop {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/shop-banner.webp") center/cover;
   margin-bottom: 2rem;
 }
+.hero-shop .primary-btn {
+  margin-right: auto;
+}
 
 .hero-about {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/about-banner.webp") center/cover;
   text-align: right;
   margin-bottom: 2rem;
+}
+.hero-about .primary-btn {
+  margin-left: auto;
 }
 
 /* MEDIA QUERY 800px */
@@ -657,25 +695,9 @@ footer p {
   .hero-shop .text {
     justify-content: left;
   }
-  .hero-content .text h1,
-  .hero-content .text .description,
-  .hero-content .text .btn,
-  .hero-shop .text h1,
-  .hero-shop .text .description,
-  .hero-shop .text .btn {
-    margin-right: auto;
-  }
   .hero-blog .text,
   .hero-about .text {
     justify-content: right;
-  }
-  .hero-blog .text h1,
-  .hero-blog .text .description,
-  .hero-blog .text .btn,
-  .hero-about .text h1,
-  .hero-about .text .description,
-  .hero-about .text .btn {
-    margin-left: auto;
   }
 }
 /* MEDIA QUERY 1280px*/

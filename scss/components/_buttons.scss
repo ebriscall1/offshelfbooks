@@ -1,0 +1,11 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.primary-btn {
+    @include button-style;
+}
+
+.primary-btn > a {
+    color: $bg-white;
+    text-decoration: none;
+}

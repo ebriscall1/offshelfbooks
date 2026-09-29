@@ -60,3 +60,23 @@
   margin: 0 0 18px 0;
   line-height: 1.5;
 }
+
+@mixin button-style {
+  width: 167px;
+  height: 60px;
+  font-size: $button-size-mobile;
+  font-weight: 700;
+  background-color: $smoke-blue;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  @include respond-to-desktop {
+    width: 254px;
+    height: 65px;
+    font-size: $button-size-desktop;
+  }
+}

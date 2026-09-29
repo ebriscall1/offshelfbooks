@@ -7,7 +7,7 @@
 .hero-blog,
 .hero-about {
   display: grid;
-  height: 464px;
+  min-height: 464px;
   padding: 20px 20px;
   .text {
     display: grid;
@@ -25,6 +25,9 @@
   background:
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../img/hero-content-banner.webp") center / cover;
+          .primary-btn {
+        margin-right: auto;
+      }
 }
 
 .hero-blog {
@@ -32,6 +35,9 @@
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../img/blog-banner.webp") center / cover;
   text-align: right;
+  .primary-btn {
+        margin-left: auto;
+      }
 }
 
 .hero-shop {
@@ -39,6 +45,9 @@
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../img/shop-banner.webp") center / cover;
   margin-bottom: 2rem;
+        .primary-btn {
+        margin-right: auto;
+      }
 }
 
 .hero-about {
@@ -47,6 +56,9 @@
     url("../img/about-banner.webp") center / cover;
   text-align: right;
   margin-bottom: 2rem;
+    .primary-btn {
+        margin-left: auto;
+      }
 }
 
 /* MEDIA QUERY 800px */
@@ -71,11 +83,6 @@
   .hero-shop {
     .text {
       justify-content: left;
-      h1,
-      .description,
-      .btn {
-        margin-right: auto;
-      }
     }
   }
 
@@ -83,11 +90,6 @@
   .hero-about {
     .text {
       justify-content: right;
-      h1,
-      .description,
-      .btn {
-        margin-left: auto;
-      }
     }
   }
 }

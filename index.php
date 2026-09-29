@@ -9,7 +9,9 @@
             Jesus through testimonies of various authors. Check out our content
             to learn more!
           </p>
-          <a href="#" class="btn">Content</a>
+          <button class="primary-btn">
+            <a href="#" class="btn">Content</a>
+          </button>
         </div>
       </section>
 
@@ -74,7 +76,9 @@
           <p class="description">
             "Who do you say that I am?" is the famous question Jesus asked...
           </p>
-          <a href="#" class="btn">Blog</a>
+          <button class="primary-btn">
+            <a href="#" class="btn">Blog</a>
+          </button>
         </div>
       </section>
 
@@ -115,7 +119,9 @@
           <p class="description">
             Thoughtful accessories for readers, believers, and seekers...
           </p>
-          <a href="#" class="btn">Shop</a>
+          <button class="primary-btn">
+            <a href="#" class="btn">Shop</a>
+          </button>
         </div>
       </section>
 
@@ -125,7 +131,9 @@
           <p class="description">
             Thoughtful accessories for readers, believers, and seekers...
           </p>
-          <a href="#" class="btn">About</a>
+          <button class="primary-btn">
+            <a href="#" class="btn">About</a>
+          </button>
         </div>
       </section>
     </main>

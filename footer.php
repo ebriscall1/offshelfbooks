@@ -21,7 +21,7 @@
         </div>
         <div class="footer-links">
           <div>
-            <h4>Resources</h4>
+            <h4>About</h4>
             <ul>
               <li>Contact</li>
             </ul>
