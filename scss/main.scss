@@ -32,12 +32,9 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 @use "pages/shop";
 @use "pages/about";
 @use "pages/about/contact";
-@use "pages/content/conversations";
-@use "pages/content/hands-on";
-@use "pages/content/reviews";
-@use "pages/content/talk";
-@use "pages/content/topic";
-@use "pages/content/tour";
+
+// 6. SUB-PAGE STYLES (Content Subpages)
+@use "pages/content/subcontent";
 
 html {
   overflow-y: scroll;

@@ -1,6 +1,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 
+// Home Page Buttons
 .primary-btn {
     @include button-style;
 }
@@ -8,4 +9,22 @@
 .primary-btn > a {
     color: $bg-white;
     text-decoration: none;
+}
+
+// Content Page Buttons
+.overlay-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $bg-white;
+    border: 3px solid $bg-white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
 }

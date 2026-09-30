@@ -32,7 +32,7 @@
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/the-chosen-volume-one.webp"
               alt="The Chosen Volume 1 Book Cover"
             />
-            <h4>Experiencing The Chosen Series In Comic Book Format</h4>
+            <h4>Experiencing The Chosen Series In Comic Book Format For you to enjoy</h4>
           </div>
           <!-- end of card -->
           <div class="card">

@@ -1,6 +1,6 @@
 /* Carousel */
 .carousel {
-  padding: 20px;
+  padding: 0 20px 20px 20px;
 }
 
 .scrolling-wrapper {
@@ -13,21 +13,6 @@
 
 .scrolling-wrapper > .card {
   flex: 0 0 230px;
-}
-
-.card {
-  white-space: normal;
-  background-color: #fff;
-  margin: 1rem 1rem 2rem 0rem;
-  text-align: left;
-  width: 230px;
-  height: 233px;
-}
-
-.card img {
-  width: 230px;
-  height: 130px;
-  margin-bottom: 20px;
 }
 
 /* MEDIA QUERY */

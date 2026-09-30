@@ -25,3 +25,8 @@ function offshelfbooks_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'offshelfbooks_scripts' );
 
+function offshelfbooks_theme_setup() {
+    // Unlocks the Featured Image box across all posts and layout pages
+    add_theme_support( 'post-thumbnails' );
+}
+add_action( 'after_setup_theme', 'offshelfbooks_theme_setup' );
