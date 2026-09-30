@@ -9,57 +9,47 @@ Template Name: Sub-Content Grid Layout
     <h1><?php the_title(); ?></h1> 
 </section>
 
+<!-- 2. The Cards Container -->
 <section class="subcontent-container">
-    <!-- The WordPress loop will automatically load as much or as little content as you add to this specific page in the dashboard -->
+    <div class="subcontent-grid">
+        <?php
+        // Grabs the slug of the current page (e.g. 'topics', 'reviews', 'tour')
+        $current_page_slug = get_post_field('post_name', get_the_ID());
 
-    <!-- Card -->
-    <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>">
-        <div class="card-thumbnail">
-            <!-- Replace this placeholder URL with your local asset with this path later under img src "": https://placeholder.com -->
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp" alt="Mere Christianity Book Cover">
-            <h3>Mere Christianity</h3>
-        </div>
+        // Tells WordPress to fetch posts matching that exact category slug
+        $subcontent_args = array(
+            'post_type'      => 'post',
+            'category_name'  => $current_page_slug, 
+            'posts_per_page' => -1, // -1 tells WordPress to load ALL cards for this page
+        );
 
-    </a>
-    <!-- End of Card -->
+        $subcontent_query = new WP_Query($subcontent_args);
 
-        <!-- Card -->
-    <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>">
-        <div class="card-thumbnail">
-            <!-- Replace this placeholder URL with your local asset with this path later under img src "": https://placeholder.com -->
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp" alt="Mere Christianity Book Cover">
-            <h3>Mere Christianity</h3>
-        </div>
-    </a>
-    <!-- End of Card -->
+        // Run the dynamic loop
+        if ($subcontent_query->have_posts()) :
+            while ($subcontent_query->have_posts()) : $subcontent_query->the_post(); ?>
+                
+                <!-- This loop repeats this SINGLE card code block for every post found -->
+                <a href="<?php the_permalink(); ?>" class="subcontent-card-link">
+                    <div class="subcontent-card">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('medium'); ?>
+                        <?php else : ?>
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/mere-christianity.webp" alt="Default Cover">
+                        <?php endif; ?>
+                        
+                        <h3><?php the_title(); ?></h3>
+                    </div>
+                </a>
 
-    <!-- Card -->
-    <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>">
-        <div class="card-thumbnail">
-            <!-- Replace this placeholder URL with your local asset with this path later under img src "": https://placeholder.com -->
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp" alt="Mere Christianity Book Cover">
-            <h3>Mere Christianity</h3>
-        </div>
-    </a>
-    <!-- End of Card -->
-
-    <!-- Card -->
-    <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>">
-        <div class="card-thumbnail">
-            <!-- Replace this placeholder URL with your local asset with this path later under img src "": https://placeholder.com -->
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp" alt="Mere Christianity Book Cover">
-            <h3>Mere Christianity</h3>
-        </div>
-    </a>
-    <!-- End of Card -->
-
-    <?php 
-    if (have_posts()) : 
-        while (have_posts()) : the_post();
-            the_content();
-        endwhile; 
-    endif; 
-    ?>
+            <?php 
+            endwhile;
+            wp_reset_postdata(); // Cleans up the query memory
+        else : ?>
+            <!-- Fallback message if you haven't assigned posts to this category yet -->
+            <p class="no-posts-msg">No cards found in the <?php the_title(); ?> section yet.</p>
+        <?php endif; ?>
+    </div>
 </section>
 
 <?php get_footer(); ?>

@@ -608,14 +608,20 @@ footer p {
   position: relative;
 }
 
-.card-thumbnail {
+.subcontent-card {
   display: grid;
   grid-template-columns: 1fr;
-  width: 230px;
-  height: 130px;
-  margin: 0rem auto;
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+  margin: 0 auto 2rem;
 }
-.card-thumbnail h3 {
+.subcontent-card img {
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+}
+.subcontent-card h3 {
   font-size: 27px;
   font-weight: 700;
   color: #333333;
@@ -838,11 +844,16 @@ h2 {
 
 .subcontent-container {
   max-width: 1280px;
-  margin: 2rem auto;
+  margin: 2rem auto 0;
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: minmax(250px, auto);
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+
+.subcontent-container > a {
+  text-decoration: none;
 }
 
 @media (min-width: 800px) {

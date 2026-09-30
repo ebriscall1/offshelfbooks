@@ -11,11 +11,16 @@
 
 .subcontent-container {
   max-width: 1280px;
-  margin: 2rem auto;
+  margin: 2rem auto 0;
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: minmax(250px, auto);
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+
+.subcontent-container > a {
+  text-decoration: none;
 }
 
 @media (min-width: 800px) {
