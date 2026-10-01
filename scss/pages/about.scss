@@ -1,0 +1,99 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+:root {
+  interpolate-size: allow-keywords; /* Enables height: auto transitions! */
+}
+
+.hero-about-page {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/about-banner.webp") center / cover;
+    width: 100%;
+    height: clamp(200px, 35vw, 464px);
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; 
+}
+
+.about-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+    img {
+        width: 780px;
+        height: auto;
+        margin: 0 auto 2rem; /* Centers the image horizontally */
+    }
+
+    p {
+        @include p-style;
+        max-width: 780px;
+        margin: 0 auto 2rem; /* Centers the paragraph horizontally */
+    }
+}
+
+.faq-container {
+    display: grid;
+    max-width: 780px;
+    margin: 0 auto;
+
+    h2 {
+        @include h2-style;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .faq-item {
+        padding: 1rem;
+        background: $pampas;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+
+        /* 1. Target the hidden wrapper area natively created by the browser */
+        &::details-content {
+            transition: height 0.3s ease, opacity 0.3s ease, content-visibility 0.3s ease allow-discrete; 
+            height: 0;
+            opacity: 0;
+            overflow: hidden; /* Crucial so text doesn't spill out while shrinking */
+            transition-behavior: allow-discrete;
+        }
+
+        /* 2. Tell it what height to go to when the item is opened */
+        &[open]::details-content {
+            height: auto;
+            opacity: 1;
+        }
+
+        summary {
+            @include h3-style;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            cursor: pointer;
+            list-style: none;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+
+            img {
+                display: block;
+                flex: 0 0 1rem;
+                width: 1rem;
+                transition: transform 0.2s ease;
+            }
+        }
+
+        &[open] summary img {
+            transform: rotate(180deg);
+        }
+
+        p {
+            @include p-style;
+            margin-top: 0.75rem;
+        }
+    }
+}

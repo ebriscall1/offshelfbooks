@@ -77,7 +77,7 @@
             "Who do you say that I am?" is the famous question Jesus asked...
           </p>
           <button class="primary-btn">
-            <a href="#" class="btn">Blog</a>
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>" class="btn">Blog</a>
           </button>
         </div>
       </section>
@@ -120,7 +120,7 @@
             Thoughtful accessories for readers, believers, and seekers...
           </p>
           <button class="primary-btn">
-            <a href="#" class="btn">Shop</a>
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'shop' ) ) ); ?>" class="btn">Shop</a>
           </button>
         </div>
       </section>
@@ -132,7 +132,7 @@
             Thoughtful accessories for readers, believers, and seekers...
           </p>
           <button class="primary-btn">
-            <a href="#" class="btn">About</a>
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>" class="btn">About</a>
           </button>
         </div>
       </section>
