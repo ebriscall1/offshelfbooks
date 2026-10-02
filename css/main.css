@@ -841,6 +841,15 @@ h2 {
     grid-template-columns: repeat(3, 1fr); /* Locks into 3 equal columns */
   }
 }
+.hero-blog-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/blog-banner.webp") center/cover;
+  width: 100%;
+  height: clamp(200px, 35vw, 464px);
+  display: flex;
+  justify-content: center; /* Horizontally centers */
+  align-items: center;
+}
+
 :root {
   interpolate-size: allow-keywords; /* Enables height: auto transitions! */
 }

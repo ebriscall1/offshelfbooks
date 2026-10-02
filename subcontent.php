@@ -18,7 +18,7 @@ Template Name: Sub-Content Grid Layout
 
         // Tells WordPress to fetch posts matching that exact category slug
         $subcontent_args = array(
-            'post_type'      => 'post',
+            'post_type'      => 'offshelf_cards',
             'category_name'  => $current_page_slug, 
             'posts_per_page' => -1, // -1 tells WordPress to load ALL cards for this page
         );

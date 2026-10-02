@@ -77,7 +77,7 @@
             "Who do you say that I am?" is the famous question Jesus asked...
           </p>
           <button class="primary-btn">
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>" class="btn">Blog</a>
+            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>" class="btn">Blog</a>
           </button>
         </div>
       </section>

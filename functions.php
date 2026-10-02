@@ -30,3 +30,37 @@ function offshelfbooks_theme_setup() {
     add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'offshelfbooks_theme_setup' );
+
+
+// Register Custom Post Type for Sub-Content Sections
+function offshelfbooks_register_custom_post_type() {
+    $labels = array(
+        'name'               => 'Sub-Content Items',
+        'singular_name'      => 'Sub-Content Item',
+        'menu_name'          => 'Sub-Content',
+        'all_items'          => 'All Items',
+        'add_new_item'       => 'Add New Item',
+        'edit_item'          => 'Edit Item',
+        'new_item'           => 'New Item',
+        'view_item'          => 'View Item',
+        'search_items'       => 'Search Items',
+        'not_found'          => 'No items found',
+        'not_found_in_trash' => 'No items found in Trash',
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'has_archive'         => false,
+        'menu_icon'           => 'dashicons-portfolio', // Changes the dashboard menu icon to a briefcase/folder
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ), // Enables titles, block editor, and featured images
+        'hierarchical'        => false,
+        'show_in_rest'        => true, // CRITICAL: Enables the modern Gutenberg block editor
+        'taxonomies'          => array( 'category' ), // Lets this post type share your existing 6 categories
+    );
+
+    // Using 'offshelf_cards' ensures there are no URL clashes with subcontent.php
+    register_post_type( 'offshelf_cards', $args );
+
+}
+add_action( 'init', 'offshelfbooks_register_custom_post_type' );
