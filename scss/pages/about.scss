@@ -35,9 +35,9 @@
 }
 
 .faq-container {
-    display: grid;
-    max-width: 780px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 20px;
 
     h2 {
         @include h2-style;
@@ -46,6 +46,8 @@
     }
 
     .faq-item {
+        max-width: 780px;
+        margin: 0 auto;
         padding: 1rem;
         background: $pampas;
         margin-bottom: 1.5rem;
