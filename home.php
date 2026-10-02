@@ -13,7 +13,7 @@
             while ( have_posts() ) : the_post(); ?>
                 
                 <!-- 2. THIS IS THE SINGLE CARD TEMPLATE (Repeats automatically) -->
-                <div class="blog-card">
+                <article class="blog-card">
                     <div class="image-wrapper">
                         <?php if ( has_post_thumbnail() ) : ?>
                             <!-- Pulls the unique featured image you uploaded for this specific post -->
@@ -29,16 +29,14 @@
                         <h3><?php the_title(); ?></h3>
                         
                         <!-- Pulls the dynamic summary text snippet automatically -->
-                        <div class="excerpt-box">
-                            <?php the_excerpt(); ?>
-                        </div>
+                        <?php the_excerpt(); ?>
                         
                         <!-- Clean, valid HTML link pointing dynamically to the full single.php article -->
-                        <button class="primary-btn">
-                            <a href="<?php the_permalink(); ?>" class="btn">Read More</a>
-                        </button>
+
+                        <a href="<?php the_permalink(); ?>" class="primary-btn btn">Read More</a>
+
                     </div>  
-                </div>
+                </article>
                 <!-- END OF SINGLE CARD -->
 
             <?php 

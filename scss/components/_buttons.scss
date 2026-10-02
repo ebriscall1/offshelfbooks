@@ -1,9 +1,16 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 
-// Home Page Buttons
+// Home Page & Blog "Read More" Buttons
 .primary-btn {
     @include button-style;
+    min-width: max-content;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $bg-white;
+    text-decoration: none;
 }
 
 .primary-btn > a {
@@ -29,3 +36,5 @@
     text-decoration: none;
     text-transform: uppercase;
 }
+
+

@@ -11,3 +11,39 @@
     justify-content: center; /* Horizontally centers */
     align-items: center; 
 }
+
+.blog-container {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 800px) {
+  .blog-container {
+    grid-template-columns: repeat(2, 1fr); /* Switches to 2 equal columns */
+  }
+}
+
+/* 3. Desktop / Large Screens (1280px and up) */
+@media (min-width: 1280px) {
+    .blog-container {
+    grid-template-columns: repeat(1, 1fr); /* Switches to 2 equal columns */
+    }
+
+    .blog-card {
+      max-width: 1150px;
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .blog-card > .image-wrapper {
+      align-self: center;
+    }
+
+    .blog-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+    }
+}

@@ -9,9 +9,7 @@
             Jesus through testimonies of various authors. Check out our content
             to learn more!
           </p>
-          <button class="primary-btn">
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'content' ) ) ); ?>" class="btn">Content</a>
-          </button>
+          <a class="primary-btn" href="<?php echo esc_url( get_permalink( get_page_by_path( 'content' ) ) ); ?>">Content</a>
         </div>
       </section>
 
@@ -76,9 +74,7 @@
           <p class="description">
             "Who do you say that I am?" is the famous question Jesus asked...
           </p>
-          <button class="primary-btn">
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>" class="btn">Blog</a>
-          </button>
+          <a class="primary-btn" href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>">Blog</a>
         </div>
       </section>
 
@@ -119,9 +115,7 @@
           <p class="description">
             Thoughtful accessories for readers, believers, and seekers...
           </p>
-          <button class="primary-btn">
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'shop' ) ) ); ?>" class="btn">Shop</a>
-          </button>
+          <a class="primary-btn" href="<?php echo esc_url( get_permalink( get_page_by_path( 'shop' ) ) ); ?>">Shop</a>
         </div>
       </section>
 
@@ -131,9 +125,7 @@
           <p class="description">
             Thoughtful accessories for readers, believers, and seekers...
           </p>
-          <button class="primary-btn">
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>" class="btn">About</a>
-          </button>
+          <a class="primary-btn" href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>">About</a>
         </div>
       </section>
     </main>
