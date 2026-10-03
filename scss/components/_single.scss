@@ -1,0 +1,47 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.hero-single-page {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: clamp(200px, 35vw, 464px);
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    align-items: center; 
+}
+
+.post-hero-content {
+    padding: 20px;
+    text-align: center;
+
+    h1 {
+        max-width: 100%;
+        margin-bottom: 1rem;
+        font-size: clamp(24px, 7vw, 90px);
+        line-height: 1.1;
+    }
+}
+
+.post-date {
+    color: $bg-white;
+}
+
+.post-body-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+    img {
+        width: 780px;
+        height: auto;
+        margin: 0 auto 2rem; /* Centers the image horizontally */
+    }
+
+    p {
+        @include p-style;
+        max-width: 780px;
+        margin: 0 auto 2rem; /* Centers the paragraph horizontally */
+    }
+}

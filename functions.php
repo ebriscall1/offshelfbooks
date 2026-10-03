@@ -64,3 +64,15 @@ function offshelfbooks_register_custom_post_type() {
 
 }
 add_action( 'init', 'offshelfbooks_register_custom_post_type' );
+
+// 1. Limit the automatic blog post excerpt to exactly 20 words
+function offshelfbooks_custom_excerpt_length( $length ) {
+    return 20; 
+}
+add_filter( 'excerpt_length', 'offshelfbooks_custom_excerpt_length', 999 );
+
+// 2. Change the default [...] trailing text to a clean ellipsis
+function offshelfbooks_custom_excerpt_more( $more ) {
+    return '...'; 
+}
+add_filter( 'excerpt_more', 'offshelfbooks_custom_excerpt_more' );

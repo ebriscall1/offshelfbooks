@@ -20,6 +20,22 @@
 @media (min-width: 800px) {
   .blog-container {
     grid-template-columns: repeat(2, 1fr); /* Switches to 2 equal columns */
+    grid-auto-rows: minmax(380px, 1fr);
+  }
+
+  .blog-card {
+    align-self: stretch;
+  }
+
+  .blog-card .blog-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .blog-card .blog-content .primary-btn {
+    align-self: center;
+    margin-top: auto;
   }
 }
 
@@ -41,9 +57,14 @@
 
     .blog-content {
       display: flex;
+      flex: initial;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       max-width: 500px;
+    }
+
+    .blog-card .blog-content .primary-btn {
+      margin-top: 0;
     }
 }
