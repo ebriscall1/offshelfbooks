@@ -51,6 +51,6 @@
             <p>Taking a deeper look at the physical pages and artwork of unique books and products.</p>
         </div>
     </div>
-
+</section>
 
 <?php get_footer(); ?>

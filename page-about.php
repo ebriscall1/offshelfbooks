@@ -47,6 +47,6 @@
             <p>I aim to post new content regularly, but the frequency may vary depending on my schedule and the availability of new books to review.</p>
         </details>
     </div>
-
+</section>
 
 <?php get_footer(); ?>
