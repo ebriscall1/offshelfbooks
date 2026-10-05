@@ -16,55 +16,31 @@
       <section class="carousel">
         <h2>Latest Content</h2>
         <div class="scrolling-wrapper">
-          <!-- Repeat this card as needed-->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp"
-              alt="Mere Christianity Book Cover"
-            />
-            <h4>What All Christians Believe</h4>
-          </div>
-          <!-- end of card -->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/the-chosen-volume-one.webp"
-              alt="The Chosen Volume 1 Book Cover"
-            />
-            <h4>Experiencing The Chosen Series In Comic Book Format For you to enjoy</h4>
-          </div>
-          <!-- end of card -->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/what-are-some-of-your-favourite-authors-and-why.webp"
-              alt="Favourite Authors thumbnail"
-            />
-            <h4>What Are Some of Your Favourite Authors and Why?</h4>
-          </div>
-          <!-- end of card -->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/the-chosen-volume-one.webp"
-              alt="The Chosen Volume 1 Book Cover"
-            />
-            <h4>Experiencing The Chosen Series In Comic Book Format</h4>
-          </div>
-          <!-- end of card -->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/what-are-some-of-your-favourite-authors-and-why.webp"
-              alt="Favourite Authors thumbnail"
-            />
-            <h4>What Are Some of Your Favourite Authors and Why?</h4>
-          </div>
-          <!-- end of card -->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/what-are-some-of-your-favourite-authors-and-why.webp"
-              alt="Favourite Authors thumbnail"
-            />
-            <h4>What Are Some of Your Favourite Authors and Why?</h4>
-          </div>
-          <!-- end of card -->
+          <?php
+          $latest_content_query = new WP_Query( array(
+              'post_type'      => 'offshelf_cards',
+              'post_status'    => 'publish',
+              'posts_per_page' => 10,
+              'orderby'        => 'date',
+              'order'          => 'DESC',
+          ) );
+
+          if ( $latest_content_query->have_posts() ) :
+              while ( $latest_content_query->have_posts() ) : $latest_content_query->the_post(); ?>
+                  <div class="card">
+                    <a href="<?php the_permalink(); ?>">
+                      <?php if ( has_post_thumbnail() ) : ?>
+                        <?php the_post_thumbnail( 'medium' ); ?>
+                      <?php else : ?>
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp" alt="Default content thumbnail" />
+                      <?php endif; ?>
+                      <h4><?php the_title(); ?></h4>
+                    </a>
+                  </div>
+              <?php endwhile;
+              wp_reset_postdata();
+          endif;
+          ?>
         </div>
       </section>
 
@@ -81,31 +57,31 @@
       <section class="carousel">
         <h2>Latest Blogs</h2>
         <div class="scrolling-wrapper">
-          <!-- Repeat this card as needed-->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp"
-              alt="Mere Christianity Book Cover"
-            />
-            <h4>What All Christians Believe</h4>
-          </div>
-          <!-- end of card -->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/the-chosen-volume-one.webp"
-              alt="The Chosen Volume 1 Book Cover"
-            />
-            <h4>Experiencing The Chosen Series In Comic Book Format</h4>
-          </div>
-          <!-- end of card -->
-          <div class="card">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/what-are-some-of-your-favourite-authors-and-why.webp"
-              alt="Favourite Authors thumbnail"
-            />
-            <h4>What Are Some of Your Favourite Authors and Why?</h4>
-          </div>
-          <!-- end of card -->
+          <?php
+          $latest_blog_query = new WP_Query( array(
+              'post_type'      => 'post',
+              'post_status'    => 'publish',
+              'posts_per_page' => 10,
+              'orderby'        => 'date',
+              'order'          => 'DESC',
+          ) );
+
+          if ( $latest_blog_query->have_posts() ) :
+              while ( $latest_blog_query->have_posts() ) : $latest_blog_query->the_post(); ?>
+                  <div class="card">
+                    <a href="<?php the_permalink(); ?>">
+                      <?php if ( has_post_thumbnail() ) : ?>
+                        <?php the_post_thumbnail( 'medium' ); ?>
+                      <?php else : ?>
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/about-page.webp" alt="Default blog thumbnail" />
+                      <?php endif; ?>
+                      <h4><?php the_title(); ?></h4>
+                    </a>
+                  </div>
+              <?php endwhile;
+              wp_reset_postdata();
+          endif;
+          ?>
         </div>
       </section>
 

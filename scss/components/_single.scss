@@ -3,7 +3,7 @@
 
 .hero-single-page {
     background-position: center;
-    background-size: cover;
+    background-size: 110% auto;
     background-repeat: no-repeat;
     width: 100%;
     min-height: clamp(200px, 35vw, 464px);
@@ -13,6 +13,8 @@
 }
 
 .post-hero-content {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     text-align: center;
 
@@ -24,14 +26,39 @@
     }
 }
 
-.post-date {
+.post-date, .post-author {
     color: $bg-white;
+    font-size: clamp(10px, 5vw, 18px);
 }
 
 .post-body-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .wp-block-embed-youtube,
+    .wp-block-embed {
+        width: 100%;
+        max-width: 780px;
+        margin: 30px auto;
+    }
+
+    .wp-block-embed__wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+    }
+
+    .wp-block-embed__wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
 
     img {
         width: 780px;

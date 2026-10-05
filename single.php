@@ -10,12 +10,35 @@ if ( have_posts() ) :
             <header class="hero-single-page" style="background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>');">
                 <div class="post-hero-content">
                     <h1><?php the_title(); ?></h1>
-                    <span class="post-date">Published on <?php echo get_the_date(); ?></span>
+                    <span class="post-author">Written by <?php the_author(); ?></span>
+                    <span class="post-date">Published: <?php echo get_the_date(); ?></span>
                 </div>
             </header>
 
             <!-- 2. The Main Article Body Content -->
             <div class="post-body-container">
+                <?php
+                $video_field_value = get_field( 'video_url', get_the_ID() );
+                $video_embed = $video_field_value;
+
+                if ( is_string( $video_field_value ) && filter_var( $video_field_value, FILTER_VALIDATE_URL ) ) {
+                    $video_embed = wp_oembed_get( esc_url_raw( $video_field_value ) );
+                }
+
+                if ( ! $video_embed ) {
+                    $video_url = get_field( 'video_url', get_the_ID(), false );
+                    $video_embed = $video_url ? wp_oembed_get( esc_url_raw( $video_url ) ) : false;
+                }
+
+                if ( $video_embed ) :
+                ?>
+                    <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube">
+                        <div class="wp-block-embed__wrapper">
+                            <?php echo $video_embed; ?>
+                        </div>
+                    </figure>
+                <?php endif; ?>
+
                 <div class="post-entry-content">
                     <?php the_content(); ?> <!-- This grabs ALL paragraphs, images, and text typed in the dashboard editor -->
 

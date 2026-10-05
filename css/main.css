@@ -681,6 +681,13 @@ footer p {
   height: 233px;
 }
 
+.card > a {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
 .card img {
   width: 230px;
   height: 130px;
@@ -843,7 +850,7 @@ footer p {
 }
 .hero-single-page {
   background-position: center;
-  background-size: cover;
+  background-size: 110% auto;
   background-repeat: no-repeat;
   width: 100%;
   min-height: clamp(200px, 35vw, 464px);
@@ -853,6 +860,8 @@ footer p {
 }
 
 .post-hero-content {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   text-align: center;
 }
@@ -863,14 +872,36 @@ footer p {
   line-height: 1.1;
 }
 
-.post-date {
+.post-date, .post-author {
   color: #fcfcfc;
+  font-size: clamp(10px, 5vw, 18px);
 }
 
 .post-body-container {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.post-body-container .wp-block-embed-youtube,
+.post-body-container .wp-block-embed {
+  width: 100%;
+  max-width: 780px;
+  margin: 30px auto;
+}
+.post-body-container .wp-block-embed__wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.post-body-container .wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .post-body-container img {
   width: 780px;
@@ -885,6 +916,22 @@ footer p {
   line-height: 1.5;
   max-width: 780px;
   margin: 0 auto 2rem; /* Centers the paragraph horizontally */
+}
+
+blockquote,
+.wp-block-quote {
+  margin: 30px auto;
+  padding: 16px 24px;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.wp-block-quote p {
+  border-left: 4px solid #f59e0b;
+  margin: 0 auto;
+  padding: 0rem 1rem;
 }
 
 .book-review-grid-container {
