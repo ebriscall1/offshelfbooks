@@ -65,6 +65,44 @@ function offshelfbooks_register_custom_post_type() {
 }
 add_action( 'init', 'offshelfbooks_register_custom_post_type' );
 
+function offshelfbooks_card_permalink( $post_link, $post ) {
+    if ( 'offshelf_cards' !== $post->post_type ) {
+        return $post_link;
+    }
+
+    $categories = get_the_terms( $post->ID, 'category' );
+    if ( empty( $categories ) || is_wp_error( $categories ) ) {
+        return $post_link;
+    }
+
+    $category = reset( $categories );
+    $path = $category->slug . '/' . $post->post_name;
+
+    return home_url( user_trailingslashit( $path, 'single' ) );
+}
+add_filter( 'post_type_link', 'offshelfbooks_card_permalink', 10, 2 );
+
+function offshelfbooks_card_rewrite_rules() {
+    $categories = get_categories( array( 'hide_empty' => false ) );
+    if ( empty( $categories ) ) {
+        return;
+    }
+
+    $category_slugs = array_map(
+        function ( $category ) {
+            return preg_quote( $category->slug, '#' );
+        },
+        $categories
+    );
+
+    add_rewrite_rule(
+        '^(' . implode( '|', $category_slugs ) . ')/([^/]+)/?$',
+        'index.php?offshelf_cards=$matches[2]&category_name=$matches[1]',
+        'top'
+    );
+}
+add_action( 'init', 'offshelfbooks_card_rewrite_rules', 20 );
+
 // 1. Limit the automatic blog post excerpt to exactly 20 words
 function offshelfbooks_custom_excerpt_length( $length ) {
     return 20; 

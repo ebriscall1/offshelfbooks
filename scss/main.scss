@@ -25,6 +25,7 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 @use "components/cards";
 @use "components/carousel";
 @use "components/single";
+@use "components/book-review";
 
 // 5. UNIQUE PAGE STYLES (Home, About, Content)
 @use "pages/index";

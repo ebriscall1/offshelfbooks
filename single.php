@@ -18,6 +18,16 @@ if ( have_posts() ) :
             <div class="post-body-container">
                 <div class="post-entry-content">
                     <?php the_content(); ?> <!-- This grabs ALL paragraphs, images, and text typed in the dashboard editor -->
+
+                    <?php 
+                    /**
+                     * Check if this post is a book review.
+                     * Swap 'reviews' below with your exact category slug or category ID if it is different.
+                     */
+                    if ( has_category( 'reviews' ) ) {
+                        get_template_part( 'book-review-box' ); 
+                    }
+                    ?>
                 </div>
             </div>
 

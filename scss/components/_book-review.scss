@@ -1,0 +1,111 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+// Book Review Component Styles
+.book-review-grid-container {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 30px auto;
+    max-width: 650px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    .book-review-main-box {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .review-cover-col {
+        flex-shrink: 0;
+
+        .review-book-cover {
+            width: 120px;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            display: block;
+            margin: 0;
+        }
+    }
+
+    .review-details-col {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .rating-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .outlet-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin: 0;
+        }
+
+        .star-rating-wrapper {
+            position: relative;
+            display: inline-block;
+            font-size: 22px; 
+            line-height: 1;
+            font-family: Arial, sans-serif;
+            letter-spacing: 2px;
+
+            .stars-outer {
+                color: #e5e7eb;
+            }
+
+            .stars-inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                color: #f59e0b; // Amber star color
+                pointer-events: none;
+            }
+        }
+
+        .score-numerical {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+    }
+
+    .review-box-footer {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed #e5e7eb;
+        font-size: 0.85rem;
+        color: #9ca3af;
+        text-align: center;
+        font-style: italic;
+    }
+}
+
+@media (max-width: 600px) {
+    .book-review-grid-container {
+        padding: 18px;
+
+        .book-review-main-box {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-details-col {
+            width: 100%;
+        }
+
+        .rating-row {
+            gap: 10px;
+        }
+    }
+}
