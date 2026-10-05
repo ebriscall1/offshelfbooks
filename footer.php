@@ -10,12 +10,12 @@
           <div>
             <h4>Content</h4>
             <ul>
-              <li>Reviews</li>
-              <li>Conversations</li>
-              <li>Hands On</li>
-              <li>Topic</li>
-              <li>Talk</li>
-              <li>Tour</li>
+              <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>">Reviews</a></li>
+              <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'conversations' ) ) ); ?>">Conversations</a></li>
+              <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'hands-on' ) ) ); ?>">Hands On</a></li>
+              <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'topics' ) ) ); ?>">Topics</a></li>
+              <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'talks' ) ) ); ?>">Talks</a></li>
+              <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'tours' ) ) ); ?>">Tours</a></li>
             </ul>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <div>
             <h4>About</h4>
             <ul>
-              <li>Contact</li>
+              <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>">Contact</a></li>
             </ul>
           </div>
           <div>

@@ -42,34 +42,32 @@
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'content' ) ) ); ?>" class="dropdown-link desktop-dropdown-link">
                   Content <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" />
                 </a>
-                <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-expanded="false" aria-controls="dropdownContent">
-                  Content <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-label="Toggle Content submenu" aria-expanded="false" aria-controls="dropdownContent">
+                  <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
                 </button>
               </div>
               <ul class="second-tier" id="dropdownContent">
-                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'content' ) ) ); ?>">All Content</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Conversations</a></li>
-                <li><a href="#">Hands On</a></li>
-                <li><a href="#">Topic</a></li>
-                <li><a href="#">Talk</a></li>
-                <li><a href="#">Tour</a></li>
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>">Reviews</a></li>
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'conversations' ) ) ); ?>">Conversations</a></li>
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'hands-on' ) ) ); ?>">Hands On</a></li>
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'topics' ) ) ); ?>">Topics</a></li>
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'talks' ) ) ); ?>">Talks</a></li>
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'tours' ) ) ); ?>">Tours</a></li>
               </ul>
             </li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Shop</a></li>
+            <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>">Blog</a></li>
+            <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'shop' ) ) ); ?>">Shop</a></li>
             <li class="has-dropdown">
               <div class="dropdown-controls">
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>" class="dropdown-link desktop-dropdown-link">
                   About <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" />
                 </a>
-                <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-expanded="false" aria-controls="dropdownAbout">
-                  About <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-label="Toggle About submenu" aria-expanded="false" aria-controls="dropdownAbout">
+                  <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
                 </button>
               </div>
               <ul class="second-tier" id="dropdownAbout">
-                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>">Contact</a></li>
               </ul>
             </li>
             <li>

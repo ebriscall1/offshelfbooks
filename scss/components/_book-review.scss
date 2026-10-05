@@ -3,12 +3,17 @@
 
 // Book Review Component Styles
 .book-review-grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     padding: 24px;
     margin: 30px auto;
-    max-width: 650px;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
     .book-review-main-box {
@@ -21,7 +26,7 @@
         flex-shrink: 0;
 
         .review-book-cover {
-            width: 120px;
+            width: 160px;
             height: auto;
             border-radius: 6px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -42,9 +47,29 @@
         align-items: center;
         gap: 16px;
 
+        .outlet-rating-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            min-width: 0;
+        }
+
+        .outlet-rating-summary {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .review-count {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            color: #6b7280;
+        }
+
         .outlet-logo {
-            width: 24px;
-            height: 24px;
+            width: 36px;
+            height: 36px;
             object-fit: contain;
             border-radius: 4px;
             margin: 0;
@@ -75,7 +100,7 @@
         }
 
         .score-numerical {
-            font-size: 1rem;
+            font-size: clamp(0.75rem, 2.5vw, 1.25rem);
             color: #4b5563;
         }
     }
@@ -106,6 +131,10 @@
 
         .rating-row {
             gap: 10px;
+
+            .outlet-rating-summary {
+                gap: 10px;
+            }
         }
     }
 }

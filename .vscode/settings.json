@@ -1,6 +1,6 @@
 {
   "liveServer.settings.port": 5501,
-  "liveSassCompile.settings.includeItems": ["/scss/style.scss"],
+  "liveSassCompile.settings.includeItems": ["/scss/main.scss"],
   "liveSassCompile.settings.formats": [
     {
       "format": "expanded",
