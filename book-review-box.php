@@ -5,7 +5,9 @@
  * Displays your exact book outlets using clean, native PHP.
  */
 
-$cover_id         = get_field('book_cover'); // Grabs the Image ID from ACF
+$cover_id          = get_field('book_cover'); // Grabs the Image ID from ACF
+$amazon_url        = get_field( 'amazon_affiliate_link' );
+$has_amazon_url    = is_string( $amazon_url ) && filter_var( $amazon_url, FILTER_VALIDATE_URL );
 $amazon_score      = get_field('amazon_score');
 $amazon_count      = get_field('amazon_count');
 $goodreads_score   = get_field('goodreads_score');
@@ -60,14 +62,23 @@ function calculate_star_width($rating) {
         
         <!-- Left Column: Book Cover -->
         <div class="review-cover-col">
-            <?php 
-            if ( $cover_id ) {
-                // This dynamically prints the optimized <img> tag using your image ID
-                echo wp_get_attachment_image( $cover_id, 'medium', false, array( 'class' => 'review-book-cover' ) );
-            } else {
-                echo '<img src="https://placeholder.com" alt="No Cover Available" class="review-book-cover">';
-            }
-            ?>
+            <?php if ( $has_amazon_url ) : ?>
+                <a
+                    class="amazon-buy-link"
+                    href="<?php echo esc_url( $amazon_url ); ?>"
+                    target="_blank"
+                    rel="sponsored nofollow noopener"
+                >
+            <?php endif; ?>
+            <?php if ( $cover_id ) : ?>
+                <?php echo wp_get_attachment_image( $cover_id, 'medium', false, array( 'class' => 'review-book-cover' ) ); ?>
+            <?php else : ?>
+                <img src="https://placeholder.com" alt="No Cover Available" class="review-book-cover">
+            <?php endif; ?>
+            <?php if ( $has_amazon_url ) : ?>
+                    <span>Buy at Amazon</span>
+                </a>
+            <?php endif; ?>
         </div>
         
         <!-- Right Column: Star Rows -->

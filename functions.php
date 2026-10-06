@@ -3,8 +3,8 @@ function offshelfbooks_scripts() {
     // 1. Core Path to your compiled file
     $css_path = get_template_directory() . '/css/main.css';
     
-    // 2. Automatically generate a unique version number based on file save times
-    $css_version = file_exists( $css_path ) ? filemtime( $css_path ) : '1.0.0';
+    // 2. Generate a unique version for every compiled stylesheet change
+    $css_version = file_exists( $css_path ) ? hash_file( 'sha256', $css_path ) : '1.0.0';
 
     // 3. Load the stylesheet with the dynamic version tracker attached
     wp_enqueue_style( 

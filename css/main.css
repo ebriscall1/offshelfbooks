@@ -918,6 +918,10 @@ footer p {
   margin: 0 auto 2rem; /* Centers the paragraph horizontally */
 }
 
+.post-body-container small {
+  font-size: 0.75rem;
+}
+
 blockquote,
 .wp-block-quote {
   margin: 30px auto;
@@ -962,6 +966,13 @@ blockquote,
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   display: block;
   margin: 0;
+}
+.book-review-grid-container .review-cover-col .amazon-buy-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
 }
 .book-review-grid-container .review-details-col {
   flex-grow: 1;
@@ -1421,24 +1432,31 @@ h2 {
   max-width: 1280px;
   margin: 2rem auto 0;
   padding: 0 20px;
+}
+
+.subcontent-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.subcontent-container > a {
+.subcontent-card-link {
   text-decoration: none;
 }
 
+@media (min-width: 550px) {
+  .subcontent-grid {
+    grid-template-columns: repeat(2, 1fr); /* Switches to 2 equal columns */
+  }
+}
 @media (min-width: 800px) {
-  .subcontent-container {
+  .subcontent-grid {
     grid-template-columns: repeat(3, 1fr); /* Switches to 3 equal columns */
   }
 }
 /* 3. Desktop / Large Screens (1280px and up) */
 @media (min-width: 1280px) {
-  .subcontent-container {
+  .subcontent-grid {
     grid-template-columns: repeat(4, 1fr); /* Locks into 4 equal columns */
   }
 }

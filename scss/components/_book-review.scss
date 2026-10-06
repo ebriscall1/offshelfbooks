@@ -33,6 +33,14 @@
             display: block;
             margin: 0;
         }
+
+        .amazon-buy-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+        }
     }
 
     .review-details-col {

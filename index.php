@@ -27,7 +27,7 @@
 
           if ( $latest_content_query->have_posts() ) :
               while ( $latest_content_query->have_posts() ) : $latest_content_query->the_post(); ?>
-                  <div class="card">
+                  <article class="card">
                     <a href="<?php the_permalink(); ?>">
                       <?php if ( has_post_thumbnail() ) : ?>
                         <?php the_post_thumbnail( 'medium' ); ?>
@@ -36,7 +36,7 @@
                       <?php endif; ?>
                       <h4><?php the_title(); ?></h4>
                     </a>
-                  </div>
+                  </article>
               <?php endwhile;
               wp_reset_postdata();
           endif;
@@ -68,7 +68,7 @@
 
           if ( $latest_blog_query->have_posts() ) :
               while ( $latest_blog_query->have_posts() ) : $latest_blog_query->the_post(); ?>
-                  <div class="card">
+                  <article class="card">
                     <a href="<?php the_permalink(); ?>">
                       <?php if ( has_post_thumbnail() ) : ?>
                         <?php the_post_thumbnail( 'medium' ); ?>
@@ -77,7 +77,7 @@
                       <?php endif; ?>
                       <h4><?php the_title(); ?></h4>
                     </a>
-                  </div>
+                  </article>
               <?php endwhile;
               wp_reset_postdata();
           endif;
