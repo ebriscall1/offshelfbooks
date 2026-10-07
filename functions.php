@@ -145,7 +145,7 @@ function offshelfbooks_register_custom_post_type() {
         'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ), // Enables titles, block editor, and featured images
         'hierarchical'        => false,
         'show_in_rest'        => true, // CRITICAL: Enables the modern Gutenberg block editor
-        'taxonomies'          => array( 'category' ), // Lets this post type share your existing 6 categories
+        'taxonomies'          => array( 'category', 'post_tag' ), // Enables the existing categories and WordPress tags
     );
 
     // Using 'offshelf_cards' ensures there are no URL clashes with subcontent.php

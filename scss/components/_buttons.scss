@@ -20,9 +20,16 @@
 
 .load-more-button {
     @include button-style;
+    font-size: clamp(0.875rem, 3vw, 1.5rem);
+    white-space: nowrap;
+    min-width: max-content;
     display: block;
     margin: 2rem auto;
     color: $bg-white;
+}
+
+.post-return-link .primary-btn {
+    font-size: clamp(0.875rem, 3vw, 1.5rem);
 }
 
 .load-more-button:disabled {
