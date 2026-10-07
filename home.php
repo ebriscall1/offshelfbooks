@@ -6,50 +6,34 @@
 
 <section class="blog">
     <h2>Recent Blog Posts</h2>
-    <div class="blog-container">
+    <div class="blog-container" id="blog-post-grid">
         <?php 
         // 1. Check if there are any published blog posts in your database
         if ( have_posts() ) : 
             while ( have_posts() ) : the_post(); ?>
                 
-                <!-- 2. THIS IS THE SINGLE CARD TEMPLATE (Repeats automatically) -->
-                <article class="blog-card">
-                    <div class="image-wrapper">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <!-- Pulls the unique featured image you uploaded for this specific post -->
-                            <?php the_post_thumbnail( 'large' ); ?>
-                        <?php else : ?>
-                            <!-- Fallback image if you forget to upload a thumbnail in the dashboard -->
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/about-page.webp" alt="Fallback Cover" />
-                        <?php endif; ?>
-                    </div>
-                    
-                    <div class="blog-content">
-                        <!-- Pulls the dynamic post title from the dashboard -->
-                        <h3><?php the_title(); ?></h3>
-                        
-                        <!-- Pulls the dynamic summary text snippet automatically -->
-                        <?php the_excerpt(); ?>
-                        
-                        <!-- Clean, valid HTML link pointing dynamically to the full single.php article -->
-
-                        <a href="<?php the_permalink(); ?>" class="primary-btn btn">Read More</a>
-
-                    </div>  
-                </article>
-                <!-- END OF SINGLE CARD -->
-
-            <?php 
-            endwhile; 
-            
-            // Standard previous/next page navigation links if you have more than 10 posts
-            the_posts_navigation();
+                <?php get_template_part('template-parts/blog-card'); ?>
+            <?php
+            endwhile;
 
         else : ?>
             <!-- Fallback message if no posts have been published yet -->
             <p>No blog posts found on the server yet.</p>
         <?php endif; ?>
     </div>
+    <?php global $wp_query; ?>
+    <?php if ($wp_query->max_num_pages > 1) : ?>
+        <div class="load-more-controls">
+            <button
+                class="load-more-button"
+                type="button"
+                data-action="offshelfbooks_load_blog"
+                data-page="1"
+                aria-controls="blog-post-grid"
+            >Load More</button>
+            <p class="load-more-status" role="status" aria-live="polite"></p>
+        </div>
+    <?php endif; ?>
 </section>
 
 <?php get_footer(); ?>

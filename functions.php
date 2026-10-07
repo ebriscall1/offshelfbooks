@@ -5,6 +5,8 @@ function offshelfbooks_scripts() {
     
     // 2. Generate a unique version for every compiled stylesheet change
     $css_version = file_exists( $css_path ) ? hash_file( 'sha256', $css_path ) : '1.0.0';
+    $js_path = get_template_directory() . '/js/main.js';
+    $js_version = file_exists( $js_path ) ? hash_file( 'sha256', $js_path ) : '1.0.0';
 
     // 3. Load the stylesheet with the dynamic version tracker attached
     wp_enqueue_style( 
@@ -19,11 +21,98 @@ function offshelfbooks_scripts() {
         'offshelfbooks-main-script', 
         get_template_directory_uri() . '/js/main.js', 
         array(), 
-        '1.0.0', 
+        $js_version,
         true 
+    );
+
+    wp_localize_script(
+        'offshelfbooks-main-script',
+        'offshelfbooksLoadMore',
+        array(
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'nonces'  => array(
+                'offshelfbooks_load_subcontent' => wp_create_nonce('offshelfbooks_load_subcontent'),
+                'offshelfbooks_load_blog'       => wp_create_nonce('offshelfbooks_load_blog'),
+            ),
+        )
     );
 }
 add_action( 'wp_enqueue_scripts', 'offshelfbooks_scripts' );
+
+function offshelfbooks_load_subcontent() {
+    check_ajax_referer('offshelfbooks_load_subcontent', 'nonce');
+
+    $category_slug = isset($_POST['category']) ? sanitize_title(wp_unslash($_POST['category'])) : '';
+    $page = isset($_POST['page']) ? absint($_POST['page']) : 0;
+
+    if (!$category_slug || $page < 2 || !get_category_by_slug($category_slug)) {
+        wp_send_json_error(array('message' => 'Invalid request for more cards.'), 400);
+    }
+
+    $subcontent_query = new WP_Query(array(
+        'post_type'      => 'offshelf_cards',
+        'post_status'    => 'publish',
+        'category_name'  => $category_slug,
+        'posts_per_page' => 16,
+        'paged'          => $page,
+    ));
+
+    ob_start();
+    while ($subcontent_query->have_posts()) {
+        $subcontent_query->the_post();
+        get_template_part('template-parts/subcontent-card');
+    }
+    wp_reset_postdata();
+    $cards_html = ob_get_clean();
+
+    wp_send_json_success(array(
+        'html'      => $cards_html,
+        'hasMore'   => $page < $subcontent_query->max_num_pages,
+    ));
+}
+add_action('wp_ajax_offshelfbooks_load_subcontent', 'offshelfbooks_load_subcontent');
+add_action('wp_ajax_nopriv_offshelfbooks_load_subcontent', 'offshelfbooks_load_subcontent');
+
+function offshelfbooks_load_blog() {
+    check_ajax_referer('offshelfbooks_load_blog', 'nonce');
+
+    $page = isset($_POST['page']) ? absint(wp_unslash($_POST['page'])) : 0;
+
+    if ($page < 2) {
+        wp_send_json_error(array('message' => 'Invalid request for more blog posts.'), 400);
+    }
+
+    $blog_query = new WP_Query(array(
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'posts_per_page' => 16,
+        'paged'          => $page,
+        'ignore_sticky_posts' => true,
+    ));
+
+    ob_start();
+    while ($blog_query->have_posts()) {
+        $blog_query->the_post();
+        get_template_part('template-parts/blog-card');
+    }
+    wp_reset_postdata();
+    $cards_html = ob_get_clean();
+
+    wp_send_json_success(array(
+        'html'    => $cards_html,
+        'hasMore' => $page < $blog_query->max_num_pages,
+    ));
+}
+add_action('wp_ajax_offshelfbooks_load_blog', 'offshelfbooks_load_blog');
+add_action('wp_ajax_nopriv_offshelfbooks_load_blog', 'offshelfbooks_load_blog');
+
+function offshelfbooks_blog_page_size($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_home()) {
+        $query->set('posts_per_page', 16);
+        $query->set('ignore_sticky_posts', true);
+    }
+}
+add_action('pre_get_posts', 'offshelfbooks_blog_page_size');
 
 function offshelfbooks_theme_setup() {
     // Unlocks the Featured Image box across all posts and layout pages

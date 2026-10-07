@@ -52,7 +52,7 @@ if ( have_posts() ) :
                     }
                     ?>
 
-                    <p><small><strong>DISCLAIMER:</strong> This article may contain affiliate links that help you find products related to this topic. This means that if you <strong>make a purchase</strong> through one of these links, this site receives a small commission <strong>at no extra cost to you.</strong> While this helps us create more content, <strong>you are in NO WAY obligated to use these links.</strong> Thank you for your support!</small></p>
+                    <p class="affiliate-disclaimer"><small><strong>DISCLAIMER:</strong> This article may contain affiliate links that help you find products related to this topic. This means that if you <strong>make a purchase</strong> through one of these links, this site receives a small commission <strong>at no extra cost to you.</strong> While this helps us create more content, <strong>you are in NO WAY obligated to use these links.</strong> Thank you for your support!</small></p>
                 </div>
             </div>
 

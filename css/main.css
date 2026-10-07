@@ -107,7 +107,7 @@ p {
   font-weight: 400;
   color: #333333;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 footer {
@@ -654,6 +654,45 @@ footer p {
   text-decoration: none;
 }
 
+.load-more-button {
+  width: 167px;
+  height: 60px;
+  font-size: 22.5px;
+  font-weight: 700;
+  background-color: #b4bccb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+@media (min-width: 1280px) {
+  .load-more-button {
+    width: 254px;
+    height: 65px;
+    font-size: 24px;
+  }
+}
+.load-more-button {
+  display: block;
+  margin: 2rem auto 0;
+  color: #fcfcfc;
+}
+
+.load-more-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.load-more-status {
+  text-align: center;
+}
+
+.load-more-status:empty {
+  display: none;
+}
+
 .overlay-button {
   position: absolute;
   z-index: 1;
@@ -715,7 +754,7 @@ footer p {
   font-weight: 400;
   color: #333333;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
   font-size: clamp(12px, 5vw, 18px);
 }
 
@@ -790,7 +829,7 @@ footer p {
   font-weight: 400;
   color: #333333;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
   font-size: clamp(12px, 5vw, 18px);
   margin-top: 1rem;
 }
@@ -913,12 +952,15 @@ footer p {
   font-weight: 400;
   color: #333333;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
   max-width: 780px;
   margin: 0 auto 2rem; /* Centers the paragraph horizontally */
 }
 
-.post-body-container small {
+.post-body-container .affiliate-disclaimer {
+  line-height: 1.2;
+}
+.post-body-container .affiliate-disclaimer small {
   font-size: 0.75rem;
 }
 
@@ -926,15 +968,15 @@ blockquote,
 .wp-block-quote {
   margin: 30px auto;
   padding: 16px 24px;
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.6;
   color: #374151;
 }
 
 .wp-block-quote p {
+  font-style: italic;
+  font-size: 1.75rem;
   border-left: 4px solid #f59e0b;
   margin: 0 auto;
+  line-height: 1.5;
   padding: 0rem 1rem;
 }
 
@@ -1104,7 +1146,7 @@ blockquote,
   font-weight: 400;
   color: #fcfcfc;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 .hero-content {
@@ -1308,7 +1350,7 @@ h2 {
   font-weight: 400;
   color: #333333;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
   max-width: 780px;
   margin: 0 auto 2rem; /* Centers the paragraph horizontally */
   text-align: center;
@@ -1342,7 +1384,7 @@ h2 {
   font-weight: 400;
   color: #333333;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
   max-width: 780px;
   margin: 0 auto 2rem; /* Centers the paragraph horizontally */
 }
@@ -1413,7 +1455,7 @@ h2 {
   font-weight: 400;
   color: #333333;
   margin: 0 0 18px 0;
-  line-height: 1.5;
+  line-height: 2;
   margin-top: 0.75rem;
 }
 

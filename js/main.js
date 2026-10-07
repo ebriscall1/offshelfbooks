@@ -60,3 +60,47 @@ window.addEventListener('resize', () => {
     document.activeElement?.blur();
   }
 });
+
+document.querySelectorAll('.load-more-button, .subcontent-load-more').forEach(loadMoreButton => {
+  const cardGrid = document.getElementById(loadMoreButton.getAttribute('aria-controls'));
+  const loadStatus = loadMoreButton.closest('.load-more-controls, .subcontent-container')
+    .querySelector('.load-more-status, .subcontent-load-status');
+  loadMoreButton.addEventListener('click', async () => {
+    const nextPage = Number(loadMoreButton.dataset.page) + 1;
+    const action = loadMoreButton.dataset.action || 'offshelfbooks_load_subcontent';
+    loadMoreButton.disabled = true;
+    loadMoreButton.setAttribute('aria-busy', 'true');
+    loadStatus.textContent = '';
+
+    const requestData = new URLSearchParams({
+      action,
+      nonce: offshelfbooksLoadMore.nonces[action],
+      page: String(nextPage),
+    });
+    if (loadMoreButton.dataset.category) {
+      requestData.set('category', loadMoreButton.dataset.category);
+    }
+
+    try {
+      const response = await fetch(offshelfbooksLoadMore.ajaxUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        body: requestData,
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.data?.message || 'Unable to load more posts. Please try again.');
+      }
+
+      cardGrid.insertAdjacentHTML('beforeend', result.data.html);
+      loadMoreButton.dataset.page = String(nextPage);
+      loadMoreButton.hidden = !result.data.hasMore;
+    } catch (error) {
+      loadStatus.textContent = error.message;
+    } finally {
+      loadMoreButton.disabled = false;
+      loadMoreButton.removeAttribute('aria-busy');
+    }
+  });
+});
