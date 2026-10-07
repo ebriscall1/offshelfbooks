@@ -57,9 +57,30 @@ document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
 window.addEventListener('resize', () => {
   if (window.innerWidth >= 800) {
     closeMobileNav();
+    document.querySelector('.site-header').classList.remove('is-hidden');
     document.activeElement?.blur();
   }
 });
+
+const siteHeader = document.querySelector('.site-header');
+let previousScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+
+  if (window.innerWidth < 800) {
+    if (currentScrollY < previousScrollY && currentScrollY > 0) {
+      siteHeader.classList.remove('is-hidden');
+    } else if (currentScrollY > previousScrollY) {
+      closeMobileNav();
+      siteHeader.classList.add('is-hidden');
+    } else if (currentScrollY === 0) {
+      siteHeader.classList.remove('is-hidden');
+    }
+  }
+
+  previousScrollY = currentScrollY;
+}, { passive: true });
 
 document.querySelectorAll('.load-more-button, .subcontent-load-more').forEach(loadMoreButton => {
   const cardGrid = document.getElementById(loadMoreButton.getAttribute('aria-controls'));

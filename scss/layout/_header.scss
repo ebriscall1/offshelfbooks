@@ -5,6 +5,11 @@
   top: 0;
   z-index: 9999;
   background: $light-gray;
+  transition: transform 0.2s ease;
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
 
   .header-inner {
     margin: 0;
@@ -186,6 +191,12 @@
         }
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
   }
 }
 

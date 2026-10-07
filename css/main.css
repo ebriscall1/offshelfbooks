@@ -199,6 +199,10 @@ footer p {
   top: 0;
   z-index: 9999;
   background: #d3d3d3;
+  transition: transform 0.2s ease;
+}
+.site-header.is-hidden {
+  transform: translateY(-100%);
 }
 .site-header .header-inner {
   margin: 0;
@@ -372,6 +376,11 @@ footer p {
   background: #ece6de;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
+}
 .site-header .main-nav form.search-form {
   position: relative;
   display: flex;
@@ -676,13 +685,17 @@ footer p {
 }
 .load-more-button {
   display: block;
-  margin: 2rem auto 0;
+  margin: 2rem auto;
   color: #fcfcfc;
 }
 
 .load-more-button:disabled {
   cursor: wait;
   opacity: 0.7;
+}
+
+.load-more-button[hidden] {
+  display: none;
 }
 
 .load-more-status {
@@ -955,6 +968,12 @@ footer p {
   line-height: 2;
   max-width: 780px;
   margin: 0 auto 2rem; /* Centers the paragraph horizontally */
+}
+
+.post-return-link {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
 }
 
 .post-body-container .affiliate-disclaimer {

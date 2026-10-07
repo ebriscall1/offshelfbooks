@@ -42,6 +42,24 @@ if ( have_posts() ) :
                 <div class="post-entry-content">
                     <?php the_content(); ?> <!-- This grabs ALL paragraphs, images, and text typed in the dashboard editor -->
 
+                    <?php
+                    $post_categories = get_the_terms( get_the_ID(), 'category' );
+                    if ( $post_categories && ! is_wp_error( $post_categories ) ) {
+                        $post_category = reset( $post_categories );
+                        $category_page = get_page_by_path( $post_category->slug, OBJECT, 'page' );
+
+                        if ( $category_page ) :
+                    ?>
+                            <div class="post-return-link">
+                                <a class="primary-btn" href="<?php echo esc_url( get_permalink( $category_page ) ); ?>">
+                                    Back to <?php echo esc_html( $post_category->name ); ?>
+                                </a>
+                            </div>
+                    <?php
+                        endif;
+                    }
+                    ?>
+
                     <?php 
                     /**
                      * Check if this post is a book review.
