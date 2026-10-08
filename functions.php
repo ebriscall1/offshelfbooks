@@ -140,6 +140,7 @@ function offshelfbooks_register_custom_post_type() {
     $args = array(
         'labels'              => $labels,
         'public'              => true,
+        'exclude_from_search' => false,
         'has_archive'         => false,
         'menu_icon'           => 'dashicons-portfolio', // Changes the dashboard menu icon to a briefcase/folder
         'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ), // Enables titles, block editor, and featured images

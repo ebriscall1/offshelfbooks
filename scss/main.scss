@@ -30,6 +30,7 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 
 // 5. UNIQUE PAGE STYLES (Home, About, Content)
 @use "pages/index";
+@use "pages/search";
 @use "pages/content";
 @use "pages/home";
 @use "pages/shop";
