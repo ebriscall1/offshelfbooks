@@ -15,8 +15,9 @@
 
       <section class="carousel">
         <h2>Latest Content</h2>
-        <div class="scrolling-wrapper">
+        <div class="scrolling-wrapper" id="latest-content-carousel">
           <?php
+          // Fetch the ten newest content cards for the homepage carousel.
           $latest_content_query = new WP_Query( array(
               'post_type'      => 'offshelf_cards',
               'post_status'    => 'publish',
@@ -25,6 +26,7 @@
               'order'          => 'DESC',
           ) );
 
+          // Render the shared card structure, then restore the main page query.
           if ( $latest_content_query->have_posts() ) :
               while ( $latest_content_query->have_posts() ) : $latest_content_query->the_post(); ?>
                   <article class="card">
@@ -42,6 +44,10 @@
           endif;
           ?>
         </div>
+        <!-- The custom scrollbar is linked to the overflow container by aria-controls. -->
+        <div class="carousel-scrollbar" role="scrollbar" aria-label="Latest content carousel position" aria-controls="latest-content-carousel" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <div class="carousel-scrollbar-thumb"></div>
+        </div>
       </section>
 
       <section class="hero-blog">
@@ -56,8 +62,9 @@
 
       <section class="carousel">
         <h2>Latest Blogs</h2>
-        <div class="scrolling-wrapper">
+        <div class="scrolling-wrapper" id="latest-blogs-carousel">
           <?php
+          // Fetch the ten newest standard posts for the second homepage carousel.
           $latest_blog_query = new WP_Query( array(
               'post_type'      => 'post',
               'post_status'    => 'publish',
@@ -66,6 +73,7 @@
               'order'          => 'DESC',
           ) );
 
+          // Render blog cards and restore the main page query when complete.
           if ( $latest_blog_query->have_posts() ) :
               while ( $latest_blog_query->have_posts() ) : $latest_blog_query->the_post(); ?>
                   <article class="card">
@@ -82,6 +90,10 @@
               wp_reset_postdata();
           endif;
           ?>
+        </div>
+        <!-- Keep the blogs scrollbar independently connected to its own carousel. -->
+        <div class="carousel-scrollbar" role="scrollbar" aria-label="Latest blogs carousel position" aria-controls="latest-blogs-carousel" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <div class="carousel-scrollbar-thumb"></div>
         </div>
       </section>
 

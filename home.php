@@ -10,6 +10,7 @@
         <?php 
         // 1. Check if there are any published blog posts in your database
         if ( have_posts() ) : 
+            // Render each post through the shared blog-card template.
             while ( have_posts() ) : the_post(); ?>
                 
                 <?php get_template_part('template-parts/blog-card'); ?>
@@ -22,6 +23,7 @@
         <?php endif; ?>
     </div>
     <?php global $wp_query; ?>
+    <!-- Show batch loading only when the archive has additional pages. -->
     <?php if ($wp_query->max_num_pages > 1) : ?>
         <div class="load-more-controls">
             <button

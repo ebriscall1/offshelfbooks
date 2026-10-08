@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-// Global Layout Helper (Put this at the top)
+// Shared breakpoint wrapper for styles that only apply at desktop widths.
 @mixin respond-to-desktop {
   @media (min-width: 1280px) {
     // Adjust 992px to match your preferred desktop breakdown
@@ -8,7 +8,7 @@
   }
 }
 
-// FONTS
+// Typography mixins keep heading and body styles aligned with the theme scale.
 @mixin h1-style {
   font-size: $h1-size;
   font-weight: bolder;

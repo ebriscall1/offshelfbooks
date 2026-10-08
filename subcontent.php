@@ -26,6 +26,7 @@ Template Name: Sub-Content Grid Layout
 
         $subcontent_query = new WP_Query($subcontent_args);
 
+        // Render the first batch using the same card template as AJAX-loaded results.
         if ($subcontent_query->have_posts()) :
             while ($subcontent_query->have_posts()) : $subcontent_query->the_post(); ?>
                 <?php get_template_part('template-parts/subcontent-card'); ?>
@@ -36,6 +37,7 @@ Template Name: Sub-Content Grid Layout
             <p class="no-posts-msg">No cards found in the <?php the_title(); ?> section yet.</p>
         <?php endif; ?>
     </div>
+    <!-- Offer more results only when this category has another page of cards. -->
     <?php if ($subcontent_query->max_num_pages > 1) : ?>
         <button
             class="load-more-button subcontent-load-more"

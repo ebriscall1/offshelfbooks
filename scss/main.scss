@@ -7,19 +7,19 @@ Version: 1.0
 Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 */
 
-// 1. CONFIGURATION & TOOLS
+// Theme variables and mixins are shared by the partials imported below.
 @use "abstracts/variables" as *;
 @use "abstracts/mixins";
 
-// 2. BASE STYLES & RESETS
+// Global reset and type styles load before component-specific styling.
 @use "base/reset";
 @use "base/typography";
 
-// 3. REUSABLE LAYOUT STRUCTURES (Headers, Footers, Sidebars)
+// Site-wide header and footer layout.
 @use "layout/footer";
 @use "layout/header";
 
-// 4. MODULAR COMPONENTS (Buttons, Cards, Forms)
+// Reusable UI components.
 @use "components/accordian";
 @use "components/buttons";
 @use "components/cards";
@@ -28,7 +28,7 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 @use "components/quotes";
 @use "components/book-review";
 
-// 5. UNIQUE PAGE STYLES (Home, About, Content)
+// Page-level layouts and their responsive styles.
 @use "pages/index";
 @use "pages/search";
 @use "pages/content";
@@ -37,10 +37,11 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 @use "pages/about";
 @use "pages/about/contact";
 
-// 6. SUB-PAGE STYLES (Content Subpages)
+// Category-based content listing layout.
 @use "pages/content/subcontent";
 
 html {
+  // Reserve the vertical scrollbar gutter to avoid page-width shifts.
   overflow-y: scroll;
   scrollbar-gutter: stable;
 }
@@ -50,6 +51,7 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: clip;
+  // Let the footer settle at the bottom on short pages.
   display: flex;
   flex-direction: column;
 }

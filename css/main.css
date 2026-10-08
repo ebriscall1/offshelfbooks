@@ -337,6 +337,9 @@ footer p {
 .site-header .main-nav .main-menu li .mobile-dropdown-toggle[aria-expanded=true] .mobile-chevron {
   transform: rotate(180deg);
 }
+.site-header .main-nav .main-menu li .desktop-dropdown-toggle {
+  display: none;
+}
 .site-header .main-nav .main-menu li .desktop-chevron {
   display: none;
 }
@@ -531,7 +534,8 @@ footer p {
     position: relative;
     height: 68px;
   }
-  .site-header .main-nav .main-menu > li.has-dropdown:hover .second-tier:not(.open), .site-header .main-nav .main-menu > li.has-dropdown:focus-within .second-tier:not(.open) {
+  .site-header .main-nav .main-menu > li.has-dropdown.hover-open .second-tier:not(.open),
+  .site-header .main-nav .main-menu > li.has-dropdown.focus-open .second-tier:not(.open) {
     display: flex !important;
     opacity: 1;
     visibility: visible;
@@ -540,7 +544,8 @@ footer p {
     transition-delay: 0s;
   }
   @starting-style {
-    .site-header .main-nav .main-menu > li.has-dropdown:hover .second-tier:not(.open), .site-header .main-nav .main-menu > li.has-dropdown:focus-within .second-tier:not(.open) {
+    .site-header .main-nav .main-menu > li.has-dropdown.hover-open .second-tier:not(.open),
+    .site-header .main-nav .main-menu > li.has-dropdown.focus-open .second-tier:not(.open) {
       opacity: 0;
       transform: translateY(-4px);
     }
@@ -559,11 +564,27 @@ footer p {
   .site-header .main-nav .main-menu > li .mobile-chevron {
     display: none;
   }
+  .site-header .main-nav .main-menu > li .desktop-dropdown-toggle {
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.25rem;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
   .site-header .main-nav .main-menu > li .desktop-dropdown-link {
     display: flex;
   }
   .site-header .main-nav .main-menu > li .desktop-chevron {
     display: block;
+    width: 1rem;
+    margin: 0 0 0 0.125rem;
+    transition: transform 0.2s ease;
+  }
+  .site-header .main-nav .main-menu > li .desktop-dropdown-toggle[aria-expanded=true] .desktop-chevron {
+    transform: rotate(180deg);
   }
   .site-header .main-nav .main-menu > li.has-dropdown .second-tier {
     display: none !important;
@@ -586,6 +607,14 @@ footer p {
     transform: translateY(-4px);
     transition: opacity 0.18s ease, transform 0.18s ease, display 0.18s allow-discrete;
     transition-delay: 0.06s;
+  }
+  .site-header .main-nav .main-menu > li.has-dropdown .second-tier.open {
+    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
   }
   .site-header .main-nav .main-menu > li.has-dropdown .second-tier li {
     padding: 0.5rem 0;
@@ -883,14 +912,63 @@ footer p {
 
 .scrolling-wrapper {
   display: flex;
-  overflow-x: scroll;
+  align-items: flex-start;
+  overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  scrollbar-color: var(--accent) #e2e2e2;
+  scrollbar-width: none;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-scrollbar {
+  position: relative;
+  height: 22px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e2e2;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.carousel-scrollbar[hidden] {
+  display: none;
+}
+
+.carousel-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-width: 36px;
+  background-color: #333333;
+  border-radius: 999px;
+  cursor: grab;
+}
+
+.carousel-scrollbar-thumb:active {
+  cursor: grabbing;
+}
+
+.carousel-scrollbar:focus-visible {
+  outline: 3px solid #333333;
+  outline-offset: 3px;
+}
+
+.carousel-scrollbar.is-disabled {
+  display: none;
 }
 
 .scrolling-wrapper > .card {
   flex: 0 0 230px;
+  height: auto;
+}
+
+.scrolling-wrapper > .card > a {
+  height: auto;
 }
 
 /* MEDIA QUERY */
@@ -907,6 +985,10 @@ footer p {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .carousel-scrollbar {
+    max-width: 1280px;
+    margin: auto;
   }
 }
 .hero-single-page {
@@ -1697,18 +1779,33 @@ h2 {
   font-weight: 700;
 }
 
+.contact .wpcf7 form p {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
 /* Style the input fields and text area */
 .contact-form-row input[type=text],
 .contact-form-row input[type=email],
 .contact-form-row textarea {
   width: 100%;
   max-width: 780px;
-  margin: 0 auto 1rem; /* Centers the input fields horizontally */
+  margin: 6px 0 0;
   padding: 12px;
-  margin-top: 6px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.contact-form-row textarea {
+  display: block;
+  /* 1. Prevent resizing left and right completely */
+  resize: vertical;
+  /* 2. Set the starting size of the box */
+  height: 150px;
+  /* 3. Limit how far they can stretch it up or down */
+  min-height: 100px;
+  max-height: 350px;
 }
 
 /* Style the submit button */
@@ -1726,6 +1823,18 @@ h2 {
 
 .contact-form-submit input[type=submit]:hover {
   background-color: #005177;
+}
+
+/* Style the error messages */
+.contact .wpcf7 .wpcf7-not-valid-tip {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 2px;
+  line-height: 1.25;
+}
+
+.contact .wpcf7 .wpcf7-response-output {
+  margin: 0.5rem 0 0;
 }
 
 .hero-subcontent-page {

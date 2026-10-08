@@ -3,6 +3,7 @@
 
 h1,
 .description {
+  // Hero text sits over darkened imagery.
   color: $bg-white;
 }
 
@@ -14,6 +15,7 @@ p {
 }
 
 h1 {
+  // Apply the shared responsive heading scale.
   @include h1-style;
 }
 

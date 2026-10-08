@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <?php 
+// Render the queried post and all of its single-page components.
 if ( have_posts() ) : 
     while ( have_posts() ) : the_post(); ?>
 
@@ -18,6 +19,7 @@ if ( have_posts() ) :
             <!-- 2. The Main Article Body Content -->
             <div class="post-body-container">
                 <?php
+                // Resolve the optional ACF video field to an embeddable provider response.
                 $video_field_value = get_field( 'video_url', get_the_ID() );
                 $video_embed = $video_field_value;
 
@@ -56,6 +58,7 @@ if ( have_posts() ) :
                     }
                     ?>
 
+                    <!-- Build share URLs from the current post and its title. -->
                     <div class="article-share" aria-label="Share this article">
                         <span class="article-share-label">Share this article:</span>
                         <a
@@ -77,6 +80,7 @@ if ( have_posts() ) :
                     </div>
 
                     <?php
+                    // Choose the return destination by post type, falling back safely for blogs.
                     $return_url = '';
                     $return_label = '';
 
@@ -109,6 +113,7 @@ if ( have_posts() ) :
 
 
                     <?php
+                    // Find up to three recent posts sharing any tag with this post.
                     $post_tags = get_the_terms( get_the_ID(), 'post_tag' );
                     if ( $post_tags && ! is_wp_error( $post_tags ) ) :
                         $tag_ids = wp_list_pluck( $post_tags, 'term_id' );
@@ -135,6 +140,7 @@ if ( have_posts() ) :
                                 <h2 id="related-content-title">You May Also Like</h2>
                                 <div class="related-content-grid">
                                     <?php
+                                    // Reuse a shared compact card template for mixed post types.
                                     while ( $related_query->have_posts() ) :
                                         $related_query->the_post();
                                         get_template_part( 'template-parts/related-content-card' );

@@ -1,5 +1,6 @@
 <article class="search-result">
     <?php
+    // Blog posts get a fixed type label; content cards use their first category.
     $search_result_category_label = 'Blog';
 
     if ( 'post' !== get_post_type() ) {
@@ -13,6 +14,7 @@
     }
     ?>
     <a class="search-result-thumbnail" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( sprintf( 'Read %s', get_the_title() ) ); ?>">
+        <!-- Prefer the post's featured image; use a type-specific fallback otherwise. -->
         <?php if ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'thumbnail', array( 'alt' => '' ) ); ?>
         <?php elseif ( 'post' === get_post_type() ) : ?>

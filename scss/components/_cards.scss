@@ -2,6 +2,7 @@
 @use "../abstracts/variables" as *;
 
 // Carousel Cards
+// These fixed-width tiles are sized for horizontal scrolling on the homepage.
 .card {
   white-space: normal;
   background-color: #fff;
@@ -12,6 +13,7 @@
 }
 
 .card > a {
+    // Make the complete image-and-title tile one clickable target.
     display: block;
     height: 100%;
     color: inherit;
@@ -24,6 +26,7 @@
 }
 
 //Content Cards
+// Editorial cards used in page grids rather than the homepage carousels.
 .content-card {
     display: grid;
     grid-template-columns: 1fr;
@@ -62,6 +65,7 @@
 }
 
 // SubContent Cards
+// Cards shown in category-specific content grids.
 .subcontent-card {
     display: grid;
     grid-template-columns: 1fr;
@@ -84,6 +88,7 @@
 
 
 // Blog Cards
+// Larger cards used on the blog archive and its Load More results.
 .blog-container {
     margin: 0 auto;
     padding: 0 20px;
@@ -126,4 +131,3 @@
         }
     }
 }
-

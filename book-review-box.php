@@ -5,6 +5,7 @@
  * Displays your exact book outlets using clean, native PHP.
  */
 
+// Read review details from the current post's ACF fields.
 $cover_id          = get_field('book_cover'); // Grabs the Image ID from ACF
 $amazon_url        = get_field( 'amazon_affiliate_link' );
 $has_amazon_url    = is_string( $amazon_url ) && filter_var( $amazon_url, FILTER_VALIDATE_URL );
@@ -17,9 +18,7 @@ $barnes_count      = get_field('barnes_and_noble_count');
 $off_shelf_books   = get_field('off_shelf_books_score'); // Optional 4th row
 $off_shelf_count   = get_field('off_shelf_books_count'); // Optional 4th row
 
-/**
- * PASTE YOUR REAL MEDIA LIBRARY LOGO URLS HERE
- */
+// Keep outlet data together so each rating row can use the same rendering logic.
 $outlets = [
     [
         'score' => $amazon_score, 
@@ -51,6 +50,7 @@ $outlets = [
     ],
 ];
 
+// Convert a five-star score to the percentage width used to clip the filled stars.
 function calculate_star_width($rating) {
     if (!$rating) return 0;
     return (floatval($rating) / 5) * 100;
@@ -83,6 +83,7 @@ function calculate_star_width($rating) {
         
         <!-- Right Column: Star Rows -->
         <div class="review-details-col">
+            <!-- Render available outlet ratings using the shared row layout. -->
             <?php foreach ($outlets as $outlet) : ?>
                 <?php
                 $has_rating = $outlet['score'] !== null && $outlet['score'] !== '';

@@ -7,6 +7,7 @@
 
 <section class="content">
     <h2>Our Videos</h2>
+    <!-- These manually curated links lead to each content category landing page. -->
     <div class="content-container">
         <div class="content-card">
             <div class="image-wrapper">

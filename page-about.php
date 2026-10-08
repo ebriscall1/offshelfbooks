@@ -5,6 +5,7 @@
 </section>
 
 <section class="about">
+    <!-- The about text and image are maintained directly in this page template. -->
     <h2>Our Short Story</h2>
     <div class="about-container">
         <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/about-page.webp" alt="" />
@@ -21,6 +22,7 @@
 
 <section class="faq">
     <h2>FAQ</h2>
+    <!-- Native details/summary elements provide accessible, no-JavaScript accordions. -->
     <div class="faq-container">
         <details class="faq-item">
             <summary>Why "Off Shelf Books"?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>

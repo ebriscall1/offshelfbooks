@@ -29,18 +29,36 @@
     font-weight: 700;
 }
 
+.contact .wpcf7 form p {
+    // Tighten each CF7 field row so validation tips stay near their fields.
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
 /* Style the input fields and text area */
 .contact-form-row input[type="text"],
 .contact-form-row input[type="email"],
 .contact-form-row textarea {
     width: 100%;
     max-width: 780px;
-    margin: 0 auto 1rem; /* Centers the input fields horizontally */
+    margin: 6px 0 0;
     padding: 12px;
-    margin-top: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+.contact-form-row textarea {
+    display: block;
+    /* 1. Prevent resizing left and right completely */
+    resize: vertical; 
+  
+    /* 2. Set the starting size of the box */
+    height: 150px;    
+  
+    /* 3. Limit how far they can stretch it up or down */
+    min-height: 100px; 
+    max-height: 350px; 
 }
 
 /* Style the submit button */
@@ -58,4 +76,18 @@
 
 .contact-form-submit input[type="submit"]:hover {
     background-color: #005177;
+}
+
+/* Style the error messages */
+.contact .wpcf7 .wpcf7-not-valid-tip {
+    // Keep field-level errors legible without adding excessive vertical spacing.
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 2px;
+    line-height: 1.25;
+}
+
+.contact .wpcf7 .wpcf7-response-output {
+    // Position the form-wide validation result close to the submit control.
+    margin: 0.5rem 0 0;
 }

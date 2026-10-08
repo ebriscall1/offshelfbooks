@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 
 .site-header {
+  // Keep the header available while scrolling; mobile JS hides it on downward scroll.
   position: sticky;
   width: 100%;
   top: 0;
@@ -133,6 +134,7 @@
         }
 
         .mobile-dropdown-toggle {
+          // Mobile users explicitly expand each submenu with its own arrow button.
           display: flex;
           justify-content: center;
           flex: initial;
@@ -152,6 +154,11 @@
           &[aria-expanded="true"] .mobile-chevron {
             transform: rotate(180deg);
           }
+        }
+
+        .desktop-dropdown-toggle {
+          // Desktop submenu arrows stay separate from links to their parent pages.
+          display: none;
         }
 
         .desktop-chevron {
@@ -354,8 +361,9 @@
           }
           &.has-dropdown { position: relative; height: 68px; }
 
-          &.has-dropdown:hover .second-tier:not(.open),
-          &.has-dropdown:focus-within .second-tier:not(.open) {
+          // Text-link hover/focus opens automatically; chevron clicks use the .open class.
+          &.has-dropdown.hover-open .second-tier:not(.open),
+          &.has-dropdown.focus-open .second-tier:not(.open) {
             display: flex !important;
             opacity: 1;
             visibility: visible;
@@ -385,12 +393,30 @@
             display: none;
           }
 
+          .desktop-dropdown-toggle {
+            display: flex;
+            flex: none;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0.25rem;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+          }
+
           .desktop-dropdown-link {
             display: flex;
           }
 
           .desktop-chevron {
             display: block;
+            width: 1rem;
+            margin: 0 0 0 0.125rem;
+            transition: transform 0.2s ease;
+          }
+
+          .desktop-dropdown-toggle[aria-expanded="true"] .desktop-chevron {
+            transform: rotate(180deg);
           }
 
           &.has-dropdown .second-tier {
@@ -416,6 +442,15 @@
             transition-delay: 0.06s;
 
             li { padding: 0.5rem 0; }
+          }
+
+          &.has-dropdown .second-tier.open {
+            display: flex !important;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+            transition-delay: 0s;
           }
         }
 

@@ -5,6 +5,7 @@
 </section>
 
 <section class="shop">
+    <!-- Replace this placeholder section when products become available. -->
     <h2>Coming Soon</h2>
     <div class="shop-container">
         <p>We do not have any products to sell yet. But check back later at another time.

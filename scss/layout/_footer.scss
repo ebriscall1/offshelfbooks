@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 
 footer {
+  // Stretch the footer background while its inner content remains constrained.
   background: $light-gray;
   width: 100%;
   padding: 20px;
@@ -58,6 +59,7 @@ footer p {
 }
 
 @media (min-width: 800px) {
+  // Arrange the logo and navigation side by side on wider screens.
   .footer-container {
     display: flex;
     flex-wrap: wrap;

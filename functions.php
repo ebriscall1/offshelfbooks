@@ -1,14 +1,13 @@
 <?php
+// Load the compiled theme assets and pass AJAX settings to the browser script.
 function offshelfbooks_scripts() {
-    // 1. Core Path to your compiled file
     $css_path = get_template_directory() . '/css/main.css';
     
-    // 2. Generate a unique version for every compiled stylesheet change
+    // Content hashes ensure browsers fetch updated files without manual version changes.
     $css_version = file_exists( $css_path ) ? hash_file( 'sha256', $css_path ) : '1.0.0';
     $js_path = get_template_directory() . '/js/main.js';
     $js_version = file_exists( $js_path ) ? hash_file( 'sha256', $js_path ) : '1.0.0';
 
-    // 3. Load the stylesheet with the dynamic version tracker attached
     wp_enqueue_style( 
         'offshelfbooks-main-style', 
         get_template_directory_uri() . '/css/main.css', 
@@ -16,7 +15,6 @@ function offshelfbooks_scripts() {
         $css_version 
     );
 
-    // 4. Load your main.js mobile toggle script smoothly
     wp_enqueue_script( 
         'offshelfbooks-main-script', 
         get_template_directory_uri() . '/js/main.js', 
@@ -39,6 +37,7 @@ function offshelfbooks_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'offshelfbooks_scripts' );
 
+// Return the next page of category-filtered content cards for the Load More control.
 function offshelfbooks_load_subcontent() {
     check_ajax_referer('offshelfbooks_load_subcontent', 'nonce');
 
@@ -57,6 +56,7 @@ function offshelfbooks_load_subcontent() {
         'paged'          => $page,
     ));
 
+    // Capture rendered card templates so the client can append them to the existing grid.
     ob_start();
     while ($subcontent_query->have_posts()) {
         $subcontent_query->the_post();
@@ -73,6 +73,7 @@ function offshelfbooks_load_subcontent() {
 add_action('wp_ajax_offshelfbooks_load_subcontent', 'offshelfbooks_load_subcontent');
 add_action('wp_ajax_nopriv_offshelfbooks_load_subcontent', 'offshelfbooks_load_subcontent');
 
+// Return the next batch of blog cards for the blog archive.
 function offshelfbooks_load_blog() {
     check_ajax_referer('offshelfbooks_load_blog', 'nonce');
 
@@ -90,6 +91,7 @@ function offshelfbooks_load_blog() {
         'ignore_sticky_posts' => true,
     ));
 
+    // Reuse the archive card template to keep initial and AJAX-loaded cards consistent.
     ob_start();
     while ($blog_query->have_posts()) {
         $blog_query->the_post();
@@ -106,6 +108,7 @@ function offshelfbooks_load_blog() {
 add_action('wp_ajax_offshelfbooks_load_blog', 'offshelfbooks_load_blog');
 add_action('wp_ajax_nopriv_offshelfbooks_load_blog', 'offshelfbooks_load_blog');
 
+// Apply the same batch size used by the blog Load More endpoint to the main archive query.
 function offshelfbooks_blog_page_size($query) {
     if (!is_admin() && $query->is_main_query() && $query->is_home()) {
         $query->set('posts_per_page', 16);
@@ -114,14 +117,15 @@ function offshelfbooks_blog_page_size($query) {
 }
 add_action('pre_get_posts', 'offshelfbooks_blog_page_size');
 
+// Register WordPress theme supports used throughout the templates.
 function offshelfbooks_theme_setup() {
-    // Unlocks the Featured Image box across all posts and layout pages
+    // Enable featured images for supported posts and pages.
     add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'offshelfbooks_theme_setup' );
 
 
-// Register Custom Post Type for Sub-Content Sections
+// Register the editorial content-card post type used by category landing pages.
 function offshelfbooks_register_custom_post_type() {
     $labels = array(
         'name'               => 'Sub-Content Items',
@@ -160,6 +164,7 @@ function offshelfbooks_card_permalink( $post_link, $post ) {
         return $post_link;
     }
 
+    // Nest each content card under its first category in the public URL.
     $categories = get_the_terms( $post->ID, 'category' );
     if ( empty( $categories ) || is_wp_error( $categories ) ) {
         return $post_link;
@@ -178,6 +183,7 @@ function offshelfbooks_card_rewrite_rules() {
         return;
     }
 
+    // Match category/card paths and resolve them to the custom post type query.
     $category_slugs = array_map(
         function ( $category ) {
             return preg_quote( $category->slug, '#' );
@@ -193,13 +199,13 @@ function offshelfbooks_card_rewrite_rules() {
 }
 add_action( 'init', 'offshelfbooks_card_rewrite_rules', 20 );
 
-// 1. Limit the automatic blog post excerpt to exactly 20 words
+// Keep generated excerpts a consistent length across the theme.
 function offshelfbooks_custom_excerpt_length( $length ) {
     return 20; 
 }
 add_filter( 'excerpt_length', 'offshelfbooks_custom_excerpt_length', 999 );
 
-// 2. Change the default [...] trailing text to a clean ellipsis
+// Replace WordPress's default excerpt suffix with a plain ellipsis.
 function offshelfbooks_custom_excerpt_more( $more ) {
     return '...'; 
 }

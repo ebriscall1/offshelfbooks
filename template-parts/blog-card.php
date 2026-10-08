@@ -1,4 +1,5 @@
 <article class="blog-card">
+    <!-- Use a featured image when available and a theme fallback otherwise. -->
     <div class="image-wrapper">
         <?php if (has_post_thumbnail()) : ?>
             <?php the_post_thumbnail('large'); ?>

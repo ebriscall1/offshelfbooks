@@ -2,6 +2,7 @@
 @use "../abstracts/variables" as *;
 
 .hero-single-page {
+    // The featured image is supplied inline by the single-post template.
     background-position: center;
     background-size: 110% auto;
     background-repeat: no-repeat;
@@ -32,6 +33,7 @@
 }
 
 .post-body-container {
+    // Constrain article copy and embedded media to a readable measure.
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
@@ -82,6 +84,7 @@
 }
 
 .article-share {
+    // Keep share links centered beneath the article content.
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,6 +116,7 @@
 }
 
 .related-content-grid {
+    // Recommendations start in one column and expand at larger breakpoints.
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1rem;

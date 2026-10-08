@@ -2,6 +2,7 @@
 @use "../abstracts/variables" as *;
 
 // Book Review Component Styles
+// Layout for the ACF-powered ratings panel rendered on review posts.
 .book-review-grid-container {
     display: flex;
     flex-direction: column;
@@ -84,6 +85,7 @@
         }
 
         .star-rating-wrapper {
+            // Layered star strings let the inner color fill to the score percentage.
             position: relative;
             display: inline-block;
             font-size: 22px; 

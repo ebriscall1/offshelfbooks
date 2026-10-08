@@ -12,7 +12,9 @@
     align-items: center; 
 }
 
+// The archive grid changes layout at tablet and desktop widths.
 .blog-container {
+  // The blog archive grid is promoted to multiple columns at tablet size.
   display: grid;
   gap: 2rem;
 }

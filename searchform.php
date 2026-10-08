@@ -1,3 +1,4 @@
+<!-- Shared search form used in the header and on search results. -->
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
   <label>
     <span class="screen-reader-text"><?php echo esc_html_x( 'Search for:', 'label', 'offshelfbooks' ); ?></span>

@@ -16,6 +16,7 @@
 }
 
 .subcontent-grid {
+  // Grid columns increase with viewport width so cards wrap naturally.
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1rem;

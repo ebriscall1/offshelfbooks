@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as *;
 
 body.search {
+  // WordPress adds "search" to the body; reset its outer page spacing only here.
   margin: 0;
   padding: 0;
 }
@@ -47,6 +48,7 @@ body.search {
 }
 
 .search-results-list {
+  // Center a readable-width results column without constraining the shared header/footer.
   align-self: center;
   width: 100%;
   max-width: 960px;

@@ -27,10 +27,12 @@
     </div>
 </section>
 
+<!-- WordPress adds the class "search-results" to body, so this main uses a distinct class. -->
 <main class="search-results-list">
     <?php if ( have_posts() ) : ?>
         <div class="search-results-grid">
             <?php
+            // Use one compact result template for standard posts and content cards.
             while ( have_posts() ) :
                 the_post();
                 get_template_part( 'template-parts/search-result' );

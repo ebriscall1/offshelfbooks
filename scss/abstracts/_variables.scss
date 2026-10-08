@@ -1,11 +1,11 @@
-// COLOR VARIABLES
+// Shared brand palette; update colors here to keep components consistent.
 $charcoal-gray: #333333;
 $light-gray: #d3d3d3;
 $smoke-blue: #b4bccb;
 $pampas: #ece6de;
 $bg-white: #fcfcfc;
 
-// FONT VARIABLES
+// Type families and scale values used by typography and button mixins.
 $red-hat: "Red Hat Display", sans-serif;
 $red-hat-bold: "Red Hat Display", bold, sans-serif;
 $h1-size-desktop: 90px;

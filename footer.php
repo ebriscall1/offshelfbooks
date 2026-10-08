@@ -1,10 +1,12 @@
 <footer>
     <div class="footer-container">
+      <!-- Site identity links back to the homepage. -->
       <div class="footer-logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
           <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/off-shelf-books-logo.svg" alt="Off Shelf Books Logo" />
         </a>
       </div>
+      <!-- Footer navigation mirrors the site's main content and About sections. -->
       <div class="footer-columns">
         <div class="footer-menu">
           <div>
@@ -49,6 +51,7 @@
           </div>
         </div>
       </div>
+      <!-- Keep the copyright year current automatically. -->
       <p>&copy; <?php echo date('Y'); ?> OFF SHELF BOOKS</p>
     </div>
     </footer>

@@ -7,7 +7,7 @@
 <section class="contact">
     <h2>Give us a shout!</h2>
 
-        <!-- Render the Contact Form 7 layout directly -->
+        <!-- The shortcode renders the Contact Form 7 form configured in WordPress. -->
     <?php echo do_shortcode('[contact-form-7 id="2e65e00" title="Contact Form"]'); ?>
 </section>
 

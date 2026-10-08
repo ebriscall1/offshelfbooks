@@ -1,4 +1,5 @@
 <article class="subcontent-card-item">
+    <!-- The whole card links to its content item; use a fallback cover if needed. -->
     <a href="<?php the_permalink(); ?>" class="subcontent-card-link">
         <div class="subcontent-card">
             <?php if (has_post_thumbnail()) : ?>

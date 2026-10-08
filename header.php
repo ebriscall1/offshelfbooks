@@ -35,13 +35,18 @@
           </button>
         </div>
 
+        <!-- Desktop text links navigate; separate arrow buttons toggle their submenus. -->
         <nav class="main-nav" id="site-navigation">
           <ul class="main-menu">
             <li class="has-dropdown">
               <div class="dropdown-controls">
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'content' ) ) ); ?>" class="dropdown-link desktop-dropdown-link">
-                  Content <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" />
+                  Content
                 </a>
+                <!-- The desktop and mobile toggles share the submenu but have separate responsive behavior. -->
+                <button type="button" class="dropdown-link desktop-dropdown-toggle" aria-label="Toggle Content submenu" aria-expanded="false" aria-controls="dropdownContent">
+                  <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                </button>
                 <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-label="Toggle Content submenu" aria-expanded="false" aria-controls="dropdownContent">
                   <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
                 </button>
@@ -60,8 +65,11 @@
             <li class="has-dropdown">
               <div class="dropdown-controls">
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>" class="dropdown-link desktop-dropdown-link">
-                  About <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" />
+                  About
                 </a>
+                <button type="button" class="dropdown-link desktop-dropdown-toggle" aria-label="Toggle About submenu" aria-expanded="false" aria-controls="dropdownAbout">
+                  <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                </button>
                 <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-label="Toggle About submenu" aria-expanded="false" aria-controls="dropdownAbout">
                   <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
                 </button>
