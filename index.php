@@ -36,7 +36,7 @@
                       <?php else : ?>
                         <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/mere-christianity.webp" alt="Default content thumbnail" />
                       <?php endif; ?>
-                      <h4><?php the_title(); ?></h4>
+                      <h3><?php the_title(); ?></h3>
                     </a>
                   </article>
               <?php endwhile;
@@ -52,7 +52,7 @@
 
       <section class="hero-blog">
         <div class="text">
-          <h1>Explore the reliability <br />of Jesus</h1>
+          <h2>Explore the reliability <br />of Jesus</h2>
           <p class="description">
             "Who do you say that I am?" is the famous question Jesus asked...
           </p>
@@ -83,7 +83,7 @@
                       <?php else : ?>
                         <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/about-page.webp" alt="Default blog thumbnail" />
                       <?php endif; ?>
-                      <h4><?php the_title(); ?></h4>
+                      <h3><?php the_title(); ?></h3>
                     </a>
                   </article>
               <?php endwhile;
@@ -99,7 +99,7 @@
 
       <section class="hero-shop">
         <div class="text">
-          <h1>Discover our latest items</h1>
+          <h2>Discover our latest items</h2>
           <p class="description">
             Thoughtful accessories for readers, believers, and seekers...
           </p>
@@ -109,7 +109,7 @@
 
       <section class="hero-about">
         <div class="text">
-          <h1>Learn more about <br />Off Shelf Books</h1>
+          <h2>Learn more about <br />Off Shelf Books</h2>
           <p class="description">
             Thoughtful accessories for readers, believers, and seekers...
           </p>

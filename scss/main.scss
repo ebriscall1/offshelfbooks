@@ -9,7 +9,6 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 
 // Theme variables and mixins are shared by the partials imported below.
 @use "abstracts/variables" as *;
-@use "abstracts/mixins";
 
 // Global reset and type styles load before component-specific styling.
 @use "base/reset";
@@ -20,7 +19,6 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 @use "layout/header";
 
 // Reusable UI components.
-@use "components/accordian";
 @use "components/buttons";
 @use "components/cards";
 @use "components/carousel";

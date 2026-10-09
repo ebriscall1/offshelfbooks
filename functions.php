@@ -37,6 +37,36 @@ function offshelfbooks_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'offshelfbooks_scripts' );
 
+// Let the browser discover the homepage's CSS background image before stylesheets load.
+function offshelfbooks_preload_homepage_lcp_image() {
+    if ( ! is_front_page() ) {
+        return;
+    }
+
+    $image_url = get_template_directory_uri() . '/img/hero-content-banner.webp';
+    printf(
+        "<link rel=\"preload\" as=\"image\" href=\"%s\" fetchpriority=\"high\">\n",
+        esc_url( $image_url )
+    );
+}
+add_action( 'wp_head', 'offshelfbooks_preload_homepage_lcp_image', 1 );
+
+// Establish Google Fonts connections early to reduce stylesheet and font latency.
+function offshelfbooks_google_fonts_resource_hints( $urls, $relation_type ) {
+    if ( 'preconnect' !== $relation_type ) {
+        return $urls;
+    }
+
+    $urls[] = 'https://fonts.googleapis.com';
+    $urls[] = array(
+        'href'        => 'https://fonts.gstatic.com',
+        'crossorigin' => 'anonymous',
+    );
+
+    return $urls;
+}
+add_filter( 'wp_resource_hints', 'offshelfbooks_google_fonts_resource_hints', 10, 2 );
+
 // Return the next page of category-filtered content cards for the Load More control.
 function offshelfbooks_load_subcontent() {
     check_ajax_referer('offshelfbooks_load_subcontent', 'nonce');

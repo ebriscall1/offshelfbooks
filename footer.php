@@ -10,7 +10,7 @@
       <div class="footer-columns">
         <div class="footer-menu">
           <div>
-            <h4>Content</h4>
+            <h3><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'content' ) ) ); ?>">Content</a></h3>
             <ul>
               <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>">Reviews</a></li>
               <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'conversations' ) ) ); ?>">Conversations</a></li>
@@ -23,7 +23,7 @@
         </div>
         <div class="footer-links">
           <div>
-            <h4>About</h4>
+            <h3><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>">About</a></h3>
             <ul>
               <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>">Contact</a></li>
             </ul>

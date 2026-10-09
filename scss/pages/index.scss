@@ -11,13 +11,29 @@
   padding: 20px 20px;
   .text {
     display: grid;
+    width: 100%;
     margin: auto;
-    h1 {
+    h1,
+    h2 {
       @include h1-style;
     }
     .description {
       @include banner-p-style;
     }
+  }
+}
+
+.hero-content,
+.hero-shop {
+  .text {
+    justify-content: left;
+  }
+}
+
+.hero-blog,
+.hero-about {
+  .text {
+    justify-content: right;
   }
 }
 
@@ -35,6 +51,9 @@
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../img/blog-banner.webp") center / cover;
   text-align: right;
+  .text h2 {
+    text-align: right;
+  }
   .primary-btn {
         margin-left: auto;
       }
@@ -45,6 +64,9 @@
     linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../img/shop-banner.webp") center / cover;
   margin-bottom: 2rem;
+  .text h2 {
+    text-align: left;
+  }
         .primary-btn {
         margin-right: auto;
       }
@@ -69,27 +91,13 @@
   .hero-blog,
   .hero-about {
     .text {
-      width: 100%;
-      h1 {
+      h1,
+      h2 {
         max-width: 500px;
       }
       .description {
         max-width: 500px;
       }
-    }
-  }
-
-  .hero-content,
-  .hero-shop {
-    .text {
-      justify-content: left;
-    }
-  }
-
-  .hero-blog,
-  .hero-about {
-    .text {
-      justify-content: right;
     }
   }
 }
@@ -110,7 +118,8 @@
     .text {
       margin: auto;
       max-width: 1270px;
-      h1 {
+      h1,
+      h2 {
         max-width: 1000px;
         line-height: 1.2;
       }

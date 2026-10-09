@@ -3,10 +3,11 @@
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Off Shelf Books - Exploring Faith Based Books</title>
 
     <!-- Meta Tags -->
     <meta name="author" content="Evan Briscall | ebriscall1 on GitHub" />
-
+    <meta name="description" content="Off Shelf Books is an online platform dedicated to examining the credibility of Christianity and the reliability of Jesus through testimonies of various authors." />
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap"

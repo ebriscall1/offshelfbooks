@@ -6,6 +6,11 @@
   padding: 0 20px 20px 20px;
 }
 
+.carousel > h2 {
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .scrolling-wrapper {
   display: flex;
   align-items: flex-start;
@@ -56,10 +61,6 @@
   outline-offset: 3px;
 }
 
-.carousel-scrollbar.is-disabled {
-  display: none;
-}
-
 .scrolling-wrapper > .card {
   // Let each card grow only enough to fit its title lines.
   flex: 0 0 230px;
@@ -68,6 +69,11 @@
 
 .scrolling-wrapper > .card > a {
   height: auto;
+}
+
+.scrolling-wrapper > .card h3 {
+  font-size: $h4-size;
+  font-weight: 700;
 }
 
 /* MEDIA QUERY */
