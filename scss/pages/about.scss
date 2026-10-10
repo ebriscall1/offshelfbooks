@@ -17,6 +17,12 @@
     align-items: center; 
 }
 
+.about > h2,
+.faq > h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
 .about-container {
   max-width: 1280px;
   margin: 0 auto;

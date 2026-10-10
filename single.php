@@ -96,7 +96,7 @@ if ( have_posts() ) :
 
                             if ( $category_page ) {
                                 $return_url = get_permalink( $category_page );
-                                $return_label = sprintf( 'Back to %s', $post_category->name );
+                                $return_label = sprintf($post_category->name );
                             }
                         }
                     }

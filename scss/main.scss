@@ -28,6 +28,7 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 
 // Page-level layouts and their responsive styles.
 @use "pages/index";
+@use "pages/404";
 @use "pages/search";
 @use "pages/content";
 @use "pages/home";

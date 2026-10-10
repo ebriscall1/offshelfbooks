@@ -12,6 +12,11 @@
     align-items: center; 
 }
 
+.blog > h2 {
+  margin-top: 20px;
+  text-align: center;
+}
+
 // The archive grid changes layout at tablet and desktop widths.
 .blog-container {
   // The blog archive grid is promoted to multiple columns at tablet size.

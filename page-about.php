@@ -26,27 +26,27 @@
     <div class="faq-container">
         <details class="faq-item">
             <summary>Why "Off Shelf Books"?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>Off Shelf Books is a platform that explores faith based books where I get to share what I am learning while keeping books off my shelf rather than on it.</p>
+            <p>The name comes from having too many unread books on my book shelf. Books are never read on the shelf. So the more I read, the more I keep books off my shelf rather than on it. So once a book was read, it would be taken “off the book shelf”. Off Shelf just sounded better.</p>
         </details>
         <details class="faq-item">
             <summary>Will You review my book?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>I aim to post new content regularly, but the frequency may vary depending on my schedule and the availability of new books to review.</p>
+            <p>Not likely. You can always suggest a book, but do not expect it to be reviewed. With so many books out there, we are very selective in our choices. If our platform grows in size, then that may be a possibility. But as of now, we accept suggestions; not submissions.</p>
         </details>
         <details class="faq-item">
             <summary>Do you accept free books to review?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>Off Shelf Books is a platform that explores faith based books where I get to share what I am learning while keeping books off my shelf rather than on it.</p>
+            <p>We sometimes accept free books, but ONLY from established publishers. Generally we buy our books in order to freely give our own honest opinion without any obligation or pressure of having to give a favorable one.</p>
         </details>
         <details class="faq-item">
-            <summary>Do you focus on books outside faith based?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>I aim to post new content regularly, but the frequency may vary depending on my schedule and the availability of new books to review.</p>
+            <summary>Do you focus on books outside of 'Faith Based'?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
+            <p>Our tagline is, "Exploring Faith Based Books". So we generally do not. But we believe every person, let alone author, places their faith in something or someone. We explore what that is.</p>
         </details>
         <details class="faq-item">
             <summary>Do you explore other faiths aside from Christianity?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>Off Shelf Books is a platform that explores faith based books where I get to share what I am learning while keeping books off my shelf rather than on it.</p>
+            <p>Yes. While the Christian is faith is the one we overwhelmingly explore, we do want to explore other faiths.</p>
         </details>
         <details class="faq-item">
             <summary>Do you have a bias towards Christianity?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>I aim to post new content regularly, but the frequency may vary depending on my schedule and the availability of new books to review.</p>
+            <p>Everyone has a bias. We along with everyone should strive to remove as much bias as possible and seek truth above all.</p>
         </details>
     </div>
 </section>

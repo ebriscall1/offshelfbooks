@@ -54,7 +54,7 @@
         <div class="text">
           <h2>Explore the reliability <br />of Jesus</h2>
           <p class="description">
-            "Who do you say that I am?" is the famous question Jesus asked...
+            "Who do you say that I am?" is the famous question Jesus asked his disciples. So who do you think he is?
           </p>
           <a class="primary-btn" href="<?php echo esc_url( get_permalink( get_page_by_path( 'blog' ) ) ); ?>">Blog</a>
         </div>
@@ -99,9 +99,9 @@
 
       <section class="hero-shop">
         <div class="text">
-          <h2>Discover our latest items</h2>
+          <h2>Discover our <br />latest items</h2>
           <p class="description">
-            Thoughtful accessories for readers, believers, and seekers...
+            Thoughtful accessories for readers, believers, and seekers.
           </p>
           <a class="primary-btn" href="<?php echo esc_url( get_permalink( get_page_by_path( 'shop' ) ) ); ?>">Shop</a>
         </div>
@@ -111,7 +111,7 @@
         <div class="text">
           <h2>Learn more about <br />Off Shelf Books</h2>
           <p class="description">
-            Thoughtful accessories for readers, believers, and seekers...
+            Learn a little bit more about the mission of Off Shelf Books, and how the vision all started.
           </p>
           <a class="primary-btn" href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>">About</a>
         </div>
