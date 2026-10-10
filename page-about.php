@@ -26,7 +26,7 @@
     <div class="faq-container">
         <details class="faq-item">
             <summary>Why "Off Shelf Books"?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>The name comes from having too many unread books on my book shelf. Books are never read on the shelf. So the more I read, the more I keep books off my shelf rather than on it. So once a book was read, it would be taken “off the book shelf”. Off Shelf just sounded better.</p>
+            <p>The name comes from having too many unread books on my book shelf. Books are never read if they are sitting on the shelf. So the more I read, the more I keep books off my shelf rather than on it. So once a book was read, it would be taken “off the book shelf”. Off Shelf just sounded better.</p>
         </details>
         <details class="faq-item">
             <summary>Will You review my book?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
@@ -42,7 +42,7 @@
         </details>
         <details class="faq-item">
             <summary>Do you explore other faiths aside from Christianity?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>Yes. While the Christian is faith is the one we overwhelmingly explore, we do want to explore other faiths.</p>
+            <p>Yes. While the Christian faith is the one we overwhelmingly explore, we do want to explore other faiths.</p>
         </details>
         <details class="faq-item">
             <summary>Do you have a bias towards Christianity?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>

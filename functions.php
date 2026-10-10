@@ -231,7 +231,7 @@ add_action( 'init', 'offshelfbooks_card_rewrite_rules', 20 );
 
 // Keep generated excerpts a consistent length across the theme.
 function offshelfbooks_custom_excerpt_length( $length ) {
-    return 20; 
+    return 15; 
 }
 add_filter( 'excerpt_length', 'offshelfbooks_custom_excerpt_length', 999 );
 

@@ -87,7 +87,7 @@ if ( have_posts() ) :
                     if ( 'post' === get_post_type() ) {
                         $blog_page_id = (int) get_option( 'page_for_posts' );
                         $return_url = $blog_page_id ? get_permalink( $blog_page_id ) : home_url( '/' );
-                        $return_label = 'Back to Blog';
+                        $return_label = 'Blog';
                     } else {
                         $post_categories = get_the_terms( get_the_ID(), 'category' );
                         if ( $post_categories && ! is_wp_error( $post_categories ) ) {

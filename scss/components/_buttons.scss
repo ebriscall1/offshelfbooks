@@ -10,13 +10,34 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: $bg-white;
+    color: $charcoal-gray;
     text-decoration: none;
+    transition: all 0.2s ease;
 }
 
 .primary-btn > a {
     color: $bg-white;
     text-decoration: none;
+}
+
+.primary-btn:hover {
+    background-color: $smoke-blue;
+    color: $bg-white;
+}
+
+.blog-card .blog-content .primary-btn:hover {
+    background-color: $smoke-blue;
+    color: $bg-white;
+}
+
+.blog-card .blog-content .primary-btn:active {
+    background-color: $bg-white;
+    color: $light-gray;
+}
+
+.primary-btn:active {
+    background-color: $bg-white;
+    color: $light-gray;
 }
 
 .load-more-button {
@@ -26,7 +47,18 @@
     min-width: max-content;
     display: block;
     margin: 2rem auto;
+    color: $charcoal-gray;
+    transition: all 0.2s ease;
+}
+
+.load-more-button:hover {
+    background-color: $smoke-blue;
     color: $bg-white;
+}
+
+.load-more-button:active {
+    background-color: $bg-white;
+    color: $light-gray;
 }
 
 .post-return-link .primary-btn {

@@ -679,7 +679,7 @@ footer p {
   height: 60px;
   font-size: 22.5px;
   font-weight: 700;
-  background-color: #b4bccb;
+  background-color: #d3d3d3;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
@@ -700,8 +700,9 @@ footer p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fcfcfc;
+  color: #333333;
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .primary-btn > a {
@@ -709,12 +710,32 @@ footer p {
   text-decoration: none;
 }
 
+.primary-btn:hover {
+  background-color: #b4bccb;
+  color: #fcfcfc;
+}
+
+.blog-card .blog-content .primary-btn:hover {
+  background-color: #b4bccb;
+  color: #fcfcfc;
+}
+
+.blog-card .blog-content .primary-btn:active {
+  background-color: #fcfcfc;
+  color: #d3d3d3;
+}
+
+.primary-btn:active {
+  background-color: #fcfcfc;
+  color: #d3d3d3;
+}
+
 .load-more-button {
   width: 167px;
   height: 60px;
   font-size: 22.5px;
   font-weight: 700;
-  background-color: #b4bccb;
+  background-color: #d3d3d3;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
@@ -735,7 +756,18 @@ footer p {
   min-width: max-content;
   display: block;
   margin: 2rem auto;
+  color: #333333;
+  transition: all 0.2s ease;
+}
+
+.load-more-button:hover {
+  background-color: #b4bccb;
   color: #fcfcfc;
+}
+
+.load-more-button:active {
+  background-color: #fcfcfc;
+  color: #d3d3d3;
 }
 
 .post-return-link .primary-btn {
@@ -904,7 +936,7 @@ footer p {
   height: 60px;
   font-size: 22.5px;
   font-weight: 700;
-  background-color: #b4bccb;
+  background-color: #d3d3d3;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
@@ -1044,7 +1076,7 @@ footer p {
 .post-body-container {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 2rem 0 auto;
   padding: 0 20px;
 }
 .post-body-container .wp-block-embed-youtube,
@@ -1404,7 +1436,58 @@ blockquote,
   margin-left: auto;
 }
 
-/* 404 Page */
+/* MEDIA QUERY 800px */
+@media (min-width: 800px) {
+  .hero-content .text h1,
+  .hero-content .text h2,
+  .hero-shop .text h1,
+  .hero-shop .text h2,
+  .hero-blog .text h1,
+  .hero-blog .text h2,
+  .hero-about .text h1,
+  .hero-about .text h2 {
+    max-width: 500px;
+  }
+  .hero-content .text .description,
+  .hero-shop .text .description,
+  .hero-blog .text .description,
+  .hero-about .text .description {
+    max-width: 500px;
+  }
+}
+/* MEDIA QUERY 1280px*/
+@media (min-width: 1280px) {
+  .hero-content,
+  .hero-shop,
+  .hero-blog,
+  .hero-about {
+    padding: 20px 40px 20px 40px;
+  }
+  .hero-content .text,
+  .hero-shop .text,
+  .hero-blog .text,
+  .hero-about .text {
+    margin: auto;
+    max-width: 1270px;
+  }
+  .hero-content .text h1,
+  .hero-content .text h2,
+  .hero-shop .text h1,
+  .hero-shop .text h2,
+  .hero-blog .text h1,
+  .hero-blog .text h2,
+  .hero-about .text h1,
+  .hero-about .text h2 {
+    max-width: 1000px;
+    line-height: 1.2;
+  }
+  .hero-content .text .description,
+  .hero-shop .text .description,
+  .hero-blog .text .description,
+  .hero-about .text .description {
+    max-width: 1000px;
+  }
+}
 .error-page-main {
   display: flex;
   flex: 1;
@@ -1465,59 +1548,6 @@ blockquote,
 @media (max-width: 480px) {
   .error-404 .search-form {
     flex-direction: column;
-  }
-}
-
-/* MEDIA QUERY 800px */
-@media (min-width: 800px) {
-  .hero-content .text h1,
-  .hero-content .text h2,
-  .hero-shop .text h1,
-  .hero-shop .text h2,
-  .hero-blog .text h1,
-  .hero-blog .text h2,
-  .hero-about .text h1,
-  .hero-about .text h2 {
-    max-width: 500px;
-  }
-  .hero-content .text .description,
-  .hero-shop .text .description,
-  .hero-blog .text .description,
-  .hero-about .text .description {
-    max-width: 500px;
-  }
-}
-/* MEDIA QUERY 1280px*/
-@media (min-width: 1280px) {
-  .hero-content,
-  .hero-shop,
-  .hero-blog,
-  .hero-about {
-    padding: 20px 40px 20px 40px;
-  }
-  .hero-content .text,
-  .hero-shop .text,
-  .hero-blog .text,
-  .hero-about .text {
-    margin: auto;
-    max-width: 1270px;
-  }
-  .hero-content .text h1,
-  .hero-content .text h2,
-  .hero-shop .text h1,
-  .hero-shop .text h2,
-  .hero-blog .text h1,
-  .hero-blog .text h2,
-  .hero-about .text h1,
-  .hero-about .text h2 {
-    max-width: 1000px;
-    line-height: 1.2;
-  }
-  .hero-content .text .description,
-  .hero-shop .text .description,
-  .hero-blog .text .description,
-  .hero-about .text .description {
-    max-width: 1000px;
   }
 }
 body.search {

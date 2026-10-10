@@ -18,7 +18,7 @@
         </div>
         <div class="content-card">
             <div class="image-wrapper">
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/conversations-thumb.webp" alt="The Chosen Volume 1 Book Cover" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/conversations-banner.webp" alt="The Chosen Volume 1 Book Cover" />
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'conversations' ) ) ); ?>" class="overlay-button">Conversations</a>
             </div>
             <p>Our series of thought-provoking dialogues that range not just beyond books, but also our culture and our world.</p>
