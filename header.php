@@ -46,10 +46,10 @@
                 </a>
                 <!-- The desktop and mobile toggles share the submenu but have separate responsive behavior. -->
                 <button type="button" class="dropdown-link desktop-dropdown-toggle" aria-label="Toggle Content submenu" aria-expanded="false" aria-controls="dropdownContent">
-                  <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                  <svg class="desktop-chevron" viewBox="0 0 256 256" aria-hidden="true"><path d="M210.7,64l-74.4,74.4c-4.6,4.6-12,4.6-16.6,0L45.3,64c-8.3-8.3-21.9-8.3-30.2,0l0,0c-8.3,8.3-8.3,21.9,0,30.2l104.6,104.6c4.6,4.6,12,4.6,16.6,0L240.9,94.2c8.3-8.3,8.3-21.9,0-30.2l0,0C232.6,55.7,219,55.7,210.7,64z" fill="currentColor" /></svg>
                 </button>
                 <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-label="Toggle Content submenu" aria-expanded="false" aria-controls="dropdownContent">
-                  <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                  <svg class="mobile-chevron" viewBox="0 0 256 256" aria-hidden="true"><path d="M210.7,64l-74.4,74.4c-4.6,4.6-12,4.6-16.6,0L45.3,64c-8.3-8.3-21.9-8.3-30.2,0l0,0c-8.3,8.3-8.3,21.9,0,30.2l104.6,104.6c4.6,4.6,12,4.6,16.6,0L240.9,94.2c8.3-8.3,8.3-21.9,0-30.2l0,0C232.6,55.7,219,55.7,210.7,64z" fill="currentColor" /></svg>
                 </button>
               </div>
               <ul class="second-tier" id="dropdownContent">
@@ -69,10 +69,10 @@
                   About
                 </a>
                 <button type="button" class="dropdown-link desktop-dropdown-toggle" aria-label="Toggle About submenu" aria-expanded="false" aria-controls="dropdownAbout">
-                  <img class="desktop-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                  <svg class="desktop-chevron" viewBox="0 0 256 256" aria-hidden="true"><path d="M210.7,64l-74.4,74.4c-4.6,4.6-12,4.6-16.6,0L45.3,64c-8.3-8.3-21.9-8.3-30.2,0l0,0c-8.3,8.3-8.3,21.9,0,30.2l104.6,104.6c4.6,4.6,12,4.6,16.6,0L240.9,94.2c8.3-8.3,8.3-21.9,0-30.2l0,0C232.6,55.7,219,55.7,210.7,64z" fill="currentColor" /></svg>
                 </button>
                 <button type="button" class="dropdown-link mobile-dropdown-toggle" aria-label="Toggle About submenu" aria-expanded="false" aria-controls="dropdownAbout">
-                  <img class="mobile-chevron" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" />
+                  <svg class="mobile-chevron" viewBox="0 0 256 256" aria-hidden="true"><path d="M210.7,64l-74.4,74.4c-4.6,4.6-12,4.6-16.6,0L45.3,64c-8.3-8.3-21.9-8.3-30.2,0l0,0c-8.3,8.3-8.3,21.9,0,30.2l104.6,104.6c4.6,4.6,12,4.6,16.6,0L240.9,94.2c8.3-8.3,8.3-21.9,0-30.2l0,0C232.6,55.7,219,55.7,210.7,64z" fill="currentColor" /></svg>
                 </button>
               </div>
               <ul class="second-tier" id="dropdownAbout">

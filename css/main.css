@@ -329,6 +329,7 @@ footer p {
   text-decoration: none;
   border: none;
   background: #d3d3d3;
+  transition: color 0.2s ease-in-out;
 }
 .site-header .main-nav .main-menu li a img,
 .site-header .main-nav .main-menu li .dropdown-link img {
@@ -345,7 +346,7 @@ footer p {
   background: #d3d3d3;
   cursor: pointer;
 }
-.site-header .main-nav .main-menu li .mobile-dropdown-toggle img {
+.site-header .main-nav .main-menu li .mobile-dropdown-toggle svg {
   display: block;
   width: 1.125rem;
   margin: 0;
@@ -391,15 +392,31 @@ footer p {
   border-bottom: 1px solid #ddd;
   padding: 0.5rem 0;
   background: #ece6de;
+  transition: background-color 0.2s ease-in-out;
+}
+.site-header .main-nav .main-menu li.has-dropdown .second-tier li:hover {
+  background-color: #b4bccb;
 }
 .site-header .main-nav .main-menu li.has-dropdown .second-tier a {
   color: #333333;
   width: 100%;
-  background: #ece6de;
+  background: transparent;
+}
+.site-header .main-nav .main-menu > li:hover > a,
+.site-header .main-nav .main-menu > li:hover > .dropdown-controls > a,
+.site-header .main-nav .main-menu > li:hover > .dropdown-controls > .dropdown-link {
+  color: #0066cc;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .site-header {
+    transition: none;
+  }
+  .site-header .main-nav .main-menu > li > a,
+  .site-header .main-nav .main-menu > li > .dropdown-controls > .dropdown-link {
+    transition: none;
+  }
+  .site-header .main-nav .main-menu > li .second-tier li {
     transition: none;
   }
 }
@@ -807,6 +824,19 @@ footer p {
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.overlay-button:hover {
+  background-color: #d3d3d3;
+  color: #333333;
+  border: 3px solid #d3d3d3;
+}
+
+.overlay-button:active {
+  background-color: #fcfcfc;
+  color: #b4bccb;
+  border: 3px solid #fcfcfc;
 }
 
 .card {
@@ -828,6 +858,23 @@ footer p {
 .card img {
   width: 230px;
   height: 130px;
+  filter: brightness(100%);
+  transition: filter 0.2s ease;
+}
+
+/* Add the default state and transition directly to the h3 */
+.card h3 {
+  transition: color 0.2s ease;
+}
+
+/* When .card is hovered, brighten the image slightly */
+.card:hover img {
+  filter: brightness(115%); /* Adjust percentage to your liking */
+}
+
+/* Target the h3 specifically when the card is hovered */
+.card:hover h3 {
+  color: #0066cc;
 }
 
 .content-card {
@@ -881,6 +928,8 @@ footer p {
   width: 100%;
   max-width: 230px;
   height: auto;
+  filter: brightness(100%);
+  transition: filter 0.2s ease;
 }
 .subcontent-card h3 {
   font-size: 27px;
@@ -888,6 +937,17 @@ footer p {
   color: #333333;
   line-height: 1.2;
   font-size: clamp(16px, 5vw, 24px);
+  transition: color 0.2s ease;
+}
+
+/* When .subcontent-card is hovered, brighten the image slightly */
+.subcontent-card:hover img {
+  filter: brightness(115%); /* Adjust percentage to your liking */
+}
+
+/* Target the h3 specifically when the subcontent-card is hovered */
+.subcontent-card:hover h3 {
+  color: #0066cc;
 }
 
 .blog-container {

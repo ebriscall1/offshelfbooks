@@ -126,6 +126,7 @@
           text-decoration: none;
           border: none;
           background: $light-gray;
+          transition: color 0.2s ease-in-out;
 
           img {
             margin-left: 0.5rem;
@@ -144,7 +145,7 @@
           background: $light-gray;
           cursor: pointer;
 
-          img {
+          svg {
             display: block;
             width: 1.125rem;
             margin: 0;
@@ -193,9 +194,27 @@
               transition: max-height 0.3s ease, opacity 0.2s ease;
             }
 
-            li { border-bottom: 1px solid #ddd; padding: 0.5rem 0; background: $pampas; }
-            a { color: $charcoal-gray; width: 100%; background: $pampas; }
+            li {
+              border-bottom: 1px solid #ddd;
+              padding: 0.5rem 0;
+              background: $pampas;
+              transition: background-color 0.2s ease-in-out;
+
+              &:hover {
+                background-color: $smoke-blue;
+              }
+            }
+
+            a { color: $charcoal-gray; width: 100%; background: transparent; }
           }
+        }
+      }
+
+      > li:hover {
+        > a,
+        > .dropdown-controls > a,
+        > .dropdown-controls > .dropdown-link {
+          color: #0066cc;
         }
       }
     }
@@ -205,6 +224,17 @@
 @media (prefers-reduced-motion: reduce) {
   .site-header {
     transition: none;
+
+    .main-nav .main-menu > li {
+      > a,
+      > .dropdown-controls > .dropdown-link {
+        transition: none;
+      }
+
+      .second-tier li {
+        transition: none;
+      }
+    }
   }
 }
 

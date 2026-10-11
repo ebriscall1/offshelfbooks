@@ -22,6 +22,23 @@
 .card img {
   width: 230px;
   height: 130px;
+  filter: brightness(100%); 
+  transition: filter 0.2s ease; 
+}
+
+/* Add the default state and transition directly to the h3 */
+.card h3 {
+    transition: color 0.2s ease;
+}
+
+/* When .card is hovered, brighten the image slightly */
+.card:hover img {
+  filter: brightness(115%); /* Adjust percentage to your liking */
+}
+
+/* Target the h3 specifically when the card is hovered */
+.card:hover h3 {
+  color: #0066cc; 
 }
 
 //Content Cards
@@ -77,12 +94,25 @@
         width: 100%;
         max-width: 230px;
         height: auto;
+        filter: brightness(100%); 
+        transition: filter 0.2s ease; 
     }
 
     h3 {
         @include h3-style;
         font-size: clamp(16px, 5vw, 24px);
+        transition: color 0.2s ease;
     }
+}
+
+/* When .subcontent-card is hovered, brighten the image slightly */
+.subcontent-card:hover img {
+  filter: brightness(115%); /* Adjust percentage to your liking */
+}
+
+/* Target the h3 specifically when the subcontent-card is hovered */
+.subcontent-card:hover h3 {
+  color: #0066cc; 
 }
 
 

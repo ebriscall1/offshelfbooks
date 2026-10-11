@@ -101,4 +101,17 @@
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.overlay-button:hover {
+    background-color: $light-gray;
+    color: $charcoal-gray;
+    border: 3px solid $light-gray;
+}
+
+.overlay-button:active {
+    background-color: $bg-white;
+    color: $smoke-blue;
+    border: 3px solid $bg-white;
 }
