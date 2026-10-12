@@ -97,6 +97,10 @@
             }
         }
 
+        html[data-theme="dark"] & summary img {
+            filter: brightness(0) invert(1);
+        }
+
         &[open] summary img {
             transform: rotate(180deg);
         }

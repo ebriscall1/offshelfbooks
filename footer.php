@@ -33,20 +33,20 @@
             <h4>Follow Us</h4>
             <ul>
               <li>
-                <a href="#" class="social-icon social-facebook"
+                <a href="https://www.facebook.com/offshelf" target="_blank" rel="noopener" class="social-icon social-facebook"
                   ><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/facebook.svg" alt="Facebook Logo"
                 /></a>
               </li>
               <li>
-                <a href="#" class="social-icon social-x"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/x.svg" alt="X Logo" /></a>
+                <a href="https://x.com/_offshelf" target="_blank" rel="noopener" class="social-icon social-x"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/x.svg" alt="X Logo" /></a>
               </li>
               <li>
-                <a href="#" class="social-icon social-instagram"
+                <a href="https://www.instagram.com/_offshelf/" target="_blank" rel="noopener" class="social-icon social-instagram"
                   ><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/instagram.svg" alt="Instagram Logo"
                 /></a>
               </li>
               <li>
-                <a href="#" class="social-icon social-youtube"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/youtube.svg" alt="YouTube Logo" /></a>
+                <a href="https://www.youtube.com/@offshelfbooks" target="_blank" rel="noopener" class="social-icon social-youtube"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/youtube.svg" alt="YouTube Logo" /></a>
               </li>
             </ul>
           </div>

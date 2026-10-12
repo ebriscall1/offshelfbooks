@@ -2228,6 +2228,9 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
   width: 1rem;
   transition: transform 0.2s ease;
 }
+html[data-theme=dark] .faq-container .faq-item summary img {
+  filter: brightness(0) invert(1);
+}
 .faq-container .faq-item[open] summary img {
   transform: rotate(180deg);
 }

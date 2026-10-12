@@ -14,14 +14,14 @@
                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/reviews-banner.webp" alt="The Chosen Volume 1 Book Cover" />
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'reviews' ) ) ); ?>" class="overlay-button">Reviews</a>
             </div>
-            <p>The content that started it all. Reviews are our in-depth thoughts and analysis of the books we read.</p>
+            <p>The content that started it all. Our in-depth thoughts and analysis of the books we read.</p>
         </div>
         <div class="content-card">
             <div class="image-wrapper">
                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/conversations-banner.webp" alt="The Chosen Volume 1 Book Cover" />
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'conversations' ) ) ); ?>" class="overlay-button">Conversations</a>
             </div>
-            <p>Our series of thought-provoking dialogues that range not just beyond books, but also our culture and our world.</p>
+            <p>Our series of thought-provoking dialogues that range from books to cultures.</p>
         </div>
         <div class="content-card">
             <div class="image-wrapper">
@@ -35,21 +35,21 @@
                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/talk-banner.webp" alt="The Chosen Volume 1 Book Cover" />
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'talks' ) ) ); ?>" class="overlay-button">Talks</a>
             </div>
-            <p>The content that started it all. Reviews are our in-depth thoughts and analysis of the books we read.</p>
+            <p>Simple direct monologues that share thoughts, insights, experiences, and ideas.</p>
         </div>
         <div class="content-card">
             <div class="image-wrapper">
                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/topic-banner.webp" alt="The Chosen Volume 1 Book Cover" />
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'topics' ) ) ); ?>" class="overlay-button">Topics</a>
             </div>
-            <p>Our series of thought-provoking dialogues that range not just beyond books, but also our culture and our world.</p>
+            <p>Investigative pieces on various subjects related and unrelated to faith based books.</p>
         </div>
         <div class="content-card">
             <div class="image-wrapper">
                 <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/tour-banner.webp" alt="The Chosen Volume 1 Book Cover" />
                 <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'tours' ) ) ); ?>" class="overlay-button">Tours</a>
             </div>
-            <p>Taking a deeper look at the physical pages and artwork of unique books and products.</p>
+            <p>Visiting and exploring fascinating locations and events both physically and digitally.</p>
         </div>
     </div>
 </section>
