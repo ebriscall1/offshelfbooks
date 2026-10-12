@@ -33,7 +33,75 @@ footer {
 .footer-links img {
   width: 30px;
   height: 30px;
+  filter: none;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
 }
+
+.footer-links .social-icon,
+.article-share .social-icon {
+  position: relative;
+  display: block;
+}
+
+.footer-links .social-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.article-share .social-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-links .social-icon::after,
+.article-share .social-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.footer-links .social-icon:hover img,
+.article-share .social-icon:hover img {
+  opacity: 0;
+}
+
+.footer-links .social-icon:hover::after,
+.article-share .social-icon:hover::after {
+  opacity: 0.9;
+}
+
+/* 1. Facebook (Deep Blue - #1877F2) */
+.footer-links .social-facebook::after,
+.article-share .social-facebook::after {
+  background-image: url("../img/facebook.svg");
+  filter: invert(39%) sepia(58%) saturate(5412%) hue-rotate(204deg) brightness(97%) contrast(96%);
+}
+
+/* 2. X / Twitter (Classic Sky Blue - #1DA1F2) */
+.footer-links .social-x::after,
+.article-share .social-x::after {
+  background-image: url("../img/x.svg");
+  filter: invert(53%) sepia(87%) saturate(2758%) hue-rotate(182deg) brightness(99%) contrast(93%);
+}
+
+/* 3. Instagram (Vibrant Brand Purple - #833AB4) */
+.footer-links .social-instagram::after {
+  background-image: url("../img/instagram.svg");
+  filter: invert(21%) sepia(74%) saturate(3015%) hue-rotate(264deg) brightness(89%) contrast(92%);
+}
+
+/* 4. YouTube (Iconic Pure Red - #FF0000) */
+.footer-links .social-youtube::after {
+  background-image: url("../img/youtube.svg");
+  filter: invert(11%) sepia(100%) saturate(7403%) hue-rotate(359deg) brightness(94%) contrast(116%);
+}
+
 
 .footer-links {
   div {
@@ -63,13 +131,21 @@ footer {
 .footer-links ul li a {
   text-decoration: none;
   color: $charcoal-gray;
+  transition: color 0.2s ease-in-out;
 }
 
 .footer-menu h3 a,
 .footer-links h3 a {
   color: $charcoal-gray;
+  transition: color 0.2s ease-in-out;
 }
 
+.footer-menu h3 a:hover,
+.footer-links h3 a:hover,
+.footer-menu ul li a:hover,
+.footer-links ul li a:hover {
+  color: #0066cc; 
+}
 
 footer p {
   text-align: center;

@@ -2,7 +2,7 @@
     <main>
       <section class="hero-content">
         <div class="text">
-          <h1>Examine the credibility of Christianity</h1>
+          <h1>Explore the credibility of Christianity</h1>
           <p class="description">
             Welcome to Off Shelf Books! We are an online platform dedicated to
             examining the credibility of Christianity and the reliability of
@@ -52,7 +52,7 @@
 
       <section class="hero-blog">
         <div class="text">
-          <h2>Explore the reliability <br />of Jesus</h2>
+          <h2>Examine the reliability <br />of Jesus</h2>
           <p class="description">
             "Who do you say that I am?" is the famous question Jesus asked his disciples. So who do you think he is?
           </p>

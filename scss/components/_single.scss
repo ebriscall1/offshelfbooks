@@ -95,6 +95,10 @@
     a {
         display: inline-flex;
         align-items: center;
+
+        &.social-icon img {
+            transition: opacity 0.2s ease-in-out;
+        }
     }
 
     img {

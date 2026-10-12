@@ -62,6 +62,7 @@ if ( have_posts() ) :
                     <div class="article-share" aria-label="Share this article">
                         <span class="article-share-label">Share this article:</span>
                         <a
+                            class="social-icon social-facebook"
                             href="<?php echo esc_url( add_query_arg( 'u', $share_url, 'https://www.facebook.com/sharer/sharer.php' ) ); ?>"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -70,6 +71,7 @@ if ( have_posts() ) :
                             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/facebook.svg" alt="">
                         </a>
                         <a
+                            class="social-icon social-x"
                             href="<?php echo esc_url( add_query_arg( array( 'url' => $share_url, 'text' => $share_title ), 'https://twitter.com/intent/tweet' ) ); ?>"
                             target="_blank"
                             rel="noopener noreferrer"

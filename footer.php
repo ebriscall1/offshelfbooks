@@ -32,20 +32,20 @@
             <h4>Follow Us</h4>
             <ul>
               <li>
-                <a href="#"
+                <a href="#" class="social-icon social-facebook"
                   ><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/facebook.svg" alt="Facebook Logo"
                 /></a>
               </li>
               <li>
-                <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/x.svg" alt="X Logo" /></a>
+                <a href="#" class="social-icon social-x"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/x.svg" alt="X Logo" /></a>
               </li>
               <li>
-                <a href="#"
+                <a href="#" class="social-icon social-instagram"
                   ><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/instagram.svg" alt="Instagram Logo"
                 /></a>
               </li>
               <li>
-                <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/youtube.svg" alt="YouTube Logo" /></a>
+                <a href="#" class="social-icon social-youtube"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/youtube.svg" alt="YouTube Logo" /></a>
               </li>
             </ul>
           </div>
