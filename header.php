@@ -14,6 +14,19 @@
       rel="stylesheet"
     />
 
+    <script>
+      try {
+        const savedTheme = localStorage.getItem('offshelfbooks-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = savedTheme === 'dark' || savedTheme === 'light'
+          ? savedTheme
+          : (prefersDark ? 'dark' : 'light');
+      } catch (error) {
+        console.error('Unable to load the saved color theme.', error);
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
+
     <?php 
     // CRUCIAL: This allows WordPress to inject your compiled main.css file
     wp_head(); 
@@ -25,15 +38,27 @@
         <div class="header-bar">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
             <img
+              class="logo-light"
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/off-shelf-books-logo.svg"
               alt="Off Shelf Books Logo"
             />
+            <img
+              class="logo-dark"
+              src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/off-shelf-books-logo-white.svg"
+              alt=""
+              aria-hidden="true"
+            />
           </a>
-          <button class="toggle-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-navigation">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </button>
+          <div class="header-actions">
+            <button class="theme-toggle theme-toggle-mobile" type="button" role="switch" aria-label="Dark mode" aria-checked="false">
+              <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+            </button>
+            <button class="toggle-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-navigation">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
         </div>
 
         <!-- Desktop text links navigate; separate arrow buttons toggle their submenus. -->
@@ -80,6 +105,9 @@
               </ul>
             </li>
             <li>
+              <button class="theme-toggle theme-toggle-desktop" type="button" role="switch" aria-label="Dark mode" aria-checked="false">
+                <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+              </button>
               <?php get_search_form(); ?>
             </li>
           </ul>

@@ -1,10 +1,11 @@
 @use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
 
 // Carousel Cards
 // These fixed-width tiles are sized for horizontal scrolling on the homepage.
 .card {
   white-space: normal;
-  background-color: #fff;
+  background-color: $site-panel;
   margin: 1rem 1rem 1rem 0rem;
   text-align: left;
   width: 230px;

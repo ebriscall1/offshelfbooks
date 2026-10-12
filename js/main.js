@@ -1,5 +1,26 @@
 const menuToggle = document.querySelector('.toggle-btn');
 const mainNav = document.querySelector('.main-nav');
+const themeToggles = document.querySelectorAll('.theme-toggle');
+
+themeToggles.forEach(toggle => {
+  toggle.setAttribute('aria-checked', String(document.documentElement.dataset.theme === 'dark'));
+
+  toggle.addEventListener('click', () => {
+    const isDark = document.documentElement.dataset.theme !== 'dark';
+    const theme = isDark ? 'dark' : 'light';
+
+    document.documentElement.dataset.theme = theme;
+    themeToggles.forEach(themeToggle => {
+      themeToggle.setAttribute('aria-checked', String(isDark));
+    });
+
+    try {
+      localStorage.setItem('offshelfbooks-theme', theme);
+    } catch (error) {
+      console.error('Unable to save the selected color theme.', error);
+    }
+  });
+});
 
 // Reset mobile and desktop submenu state whenever the mobile navigation closes.
 function closeMobileNav() {

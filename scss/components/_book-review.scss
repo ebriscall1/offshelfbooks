@@ -9,8 +9,8 @@
     align-items: center;
     width: fit-content;
     max-width: 100%;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
+    background: $site-panel;
+    border: 1px solid $site-border;
     border-radius: 12px;
     padding: 24px;
     margin: 30px auto;
@@ -73,7 +73,7 @@
         .review-count {
             font-size: 0.75rem;
             line-height: 1.3;
-            color: #6b7280;
+            color: $site-muted;
         }
 
         .outlet-logo {
@@ -94,7 +94,7 @@
             letter-spacing: 2px;
 
             .stars-outer {
-                color: #e5e7eb;
+                color: $site-border;
             }
 
             .stars-inner {
@@ -111,16 +111,16 @@
 
         .score-numerical {
             font-size: clamp(0.75rem, 2.5vw, 1.25rem);
-            color: #4b5563;
+            color: $charcoal-gray;
         }
     }
 
     .review-box-footer {
         margin-top: 20px;
         padding-top: 12px;
-        border-top: 1px dashed #e5e7eb;
+        border-top: 1px dashed $site-border;
         font-size: 0.85rem;
-        color: #9ca3af;
+        color: $site-muted;
         text-align: center;
         font-style: italic;
     }

@@ -1,9 +1,38 @@
 // Shared brand palette; update colors here to keep components consistent.
-$charcoal-gray: #333333;
-$light-gray: #d3d3d3;
+$charcoal-gray: var(--site-text);
+$light-gray: var(--site-header);
 $smoke-blue: #b4bccb;
-$pampas: #ece6de;
+$pampas: var(--site-surface);
 $bg-white: #fcfcfc;
+$site-page: var(--site-page);
+$site-panel: var(--site-panel);
+$site-border: var(--site-border);
+$site-muted: var(--site-muted);
+$site-control: var(--site-control);
+
+:root {
+  color-scheme: light;
+  --site-text: #333333;
+  --site-header: #d3d3d3;
+  --site-surface: #ece6de;
+  --site-page: #fcfcfc;
+  --site-panel: #ffffff;
+  --site-border: #dddddd;
+  --site-muted: #6b7280;
+  --site-control: #f4f4f4;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --site-text: #f1f3f5;
+  --site-header: #24282d;
+  --site-surface: #343a40;
+  --site-page: #181b1f;
+  --site-panel: #24282d;
+  --site-border: #4b535c;
+  --site-muted: #b0b7c0;
+  --site-control: #30353b;
+}
 
 // Type families and scale values used by typography and button mixins.
 $red-hat: "Red Hat Display", sans-serif;

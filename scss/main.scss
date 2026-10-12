@@ -50,7 +50,16 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: clip;
+  background: $site-page;
+  color: $charcoal-gray;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   // Let the footer settle at the bottom on short pages.
   display: flex;
   flex-direction: column;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }

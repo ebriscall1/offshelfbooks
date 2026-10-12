@@ -4,6 +4,30 @@ Author: Evan Briscall
 Version: 1.0
 Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 */
+:root {
+  color-scheme: light;
+  --site-text: #333333;
+  --site-header: #d3d3d3;
+  --site-surface: #ece6de;
+  --site-page: #fcfcfc;
+  --site-panel: #ffffff;
+  --site-border: #dddddd;
+  --site-muted: #6b7280;
+  --site-control: #f4f4f4;
+}
+
+html[data-theme=dark] {
+  color-scheme: dark;
+  --site-text: #f1f3f5;
+  --site-header: #24282d;
+  --site-surface: #343a40;
+  --site-page: #181b1f;
+  --site-panel: #24282d;
+  --site-border: #4b535c;
+  --site-muted: #b0b7c0;
+  --site-control: #30353b;
+}
+
 *,
 *::before,
 *::after {
@@ -55,6 +79,18 @@ select {
   font: inherit;
 }
 
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 h1,
 .description {
   color: #fcfcfc;
@@ -64,7 +100,7 @@ h2,
 h3,
 h4,
 p {
-  color: #333333;
+  color: var(--site-text);
 }
 
 h1 {
@@ -83,7 +119,7 @@ h1 {
 h2 {
   font-size: 36px;
   font-weight: bold;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 36px 0;
   line-height: 1.2;
 }
@@ -91,27 +127,33 @@ h2 {
 h3 {
   font-size: 27px;
   font-weight: 700;
-  color: #333333;
+  color: var(--site-text);
   line-height: 1.2;
 }
 
 h4 {
   font-size: 22.5px;
   font-weight: 100;
-  color: #333333;
+  color: var(--site-text);
   line-height: 1.2;
 }
 
 p {
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
 }
 
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 footer {
-  background: #d3d3d3;
+  background: var(--site-header);
   width: 100%;
   padding: 20px;
   margin-top: auto;
@@ -122,6 +164,17 @@ footer {
   max-width: 350px;
   width: 100%;
   justify-self: center;
+}
+
+.footer-logo .logo-dark {
+  display: none;
+}
+
+html[data-theme=dark] .footer-logo .logo-light {
+  display: none;
+}
+html[data-theme=dark] .footer-logo .logo-dark {
+  display: block;
 }
 
 .footer-columns {
@@ -185,6 +238,11 @@ footer {
   opacity: 0.9;
 }
 
+html[data-theme=dark] .footer-links .social-icon img,
+html[data-theme=dark] .article-share .social-icon img {
+  filter: brightness(0) invert(1);
+}
+
 /* 1. Facebook (Deep Blue - #1877F2) */
 .footer-links .social-facebook::after,
 .article-share .social-facebook::after {
@@ -232,13 +290,13 @@ footer {
 .footer-menu ul li a,
 .footer-links ul li a {
   text-decoration: none;
-  color: #333333;
+  color: var(--site-text);
   transition: color 0.2s ease-in-out;
 }
 
 .footer-menu h3 a,
 .footer-links h3 a {
-  color: #333333;
+  color: var(--site-text);
   transition: color 0.2s ease-in-out;
 }
 
@@ -288,16 +346,70 @@ footer p {
     column-gap: 150px;
   }
 }
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .site-header {
   position: sticky;
   width: 100%;
   top: 0;
   z-index: 9999;
-  background: #d3d3d3;
+  background: var(--site-header);
   transition: transform 0.2s ease;
 }
 .site-header.is-hidden {
   transform: translateY(-100%);
+}
+.site-header .theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.site-header .theme-toggle-track {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--site-text);
+}
+.site-header .theme-toggle-thumb {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--site-panel);
+  transition: transform 0.2s ease-in-out;
+}
+.site-header .theme-toggle[aria-checked=true] .theme-toggle-thumb {
+  transform: translateY(-20px);
+}
+.site-header .theme-toggle:focus-visible {
+  outline: 2px solid #b4bccb;
+  outline-offset: 3px;
+}
+.site-header .header-bar .logo img.logo-dark {
+  display: none;
+}
+html[data-theme=dark] .site-header .header-bar .logo img.logo-light {
+  display: none;
+}
+html[data-theme=dark] .site-header .header-bar .logo img.logo-dark {
+  display: block;
+}
+.site-header .main-nav .theme-toggle-desktop {
+  display: none;
 }
 .site-header .header-inner {
   margin: 0;
@@ -318,6 +430,11 @@ footer p {
   width: auto;
   height: 36px;
 }
+.site-header .header-bar .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .site-header .header-bar .toggle-btn {
   background: none;
   border: none;
@@ -336,7 +453,7 @@ footer p {
   width: 24px;
   height: 3px;
   border-radius: 2px;
-  background: #333333;
+  background: var(--site-text);
   transition: transform 0.2s ease, opacity 0.15s ease;
 }
 .site-header .header-bar .toggle-btn[aria-expanded=true] span:first-child {
@@ -376,7 +493,7 @@ footer p {
   padding-bottom: 16px;
 }
 .site-header .main-nav .main-menu li {
-  background: #d3d3d3;
+  background: var(--site-header);
   position: relative;
   display: flex;
   width: 100%;
@@ -400,11 +517,11 @@ footer p {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #333333;
+  color: var(--site-text);
   padding: 1rem;
   text-decoration: none;
   border: none;
-  background: #d3d3d3;
+  background: var(--site-header);
   transition: color 0.2s ease-in-out;
 }
 .site-header .main-nav .main-menu li a img,
@@ -419,7 +536,7 @@ footer p {
   width: auto;
   padding: 1rem 0.5rem;
   border: 0;
-  background: #d3d3d3;
+  background: var(--site-header);
   cursor: pointer;
 }
 .site-header .main-nav .main-menu li .mobile-dropdown-toggle svg {
@@ -465,16 +582,16 @@ footer p {
   transition: max-height 0.3s ease, opacity 0.2s ease;
 }
 .site-header .main-nav .main-menu li.has-dropdown .second-tier li {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--site-border);
   padding: 0.5rem 0;
-  background: #ece6de;
+  background: var(--site-surface);
   transition: background-color 0.2s ease-in-out;
 }
 .site-header .main-nav .main-menu li.has-dropdown .second-tier li:hover {
   background-color: #b4bccb;
 }
 .site-header .main-nav .main-menu li.has-dropdown .second-tier a {
-  color: #333333;
+  color: var(--site-text);
   width: 100%;
   background: transparent;
 }
@@ -486,6 +603,9 @@ footer p {
 
 @media (prefers-reduced-motion: reduce) {
   .site-header {
+    transition: none;
+  }
+  .site-header .theme-toggle-thumb {
     transition: none;
   }
   .site-header .main-nav .main-menu > li > a,
@@ -503,7 +623,7 @@ footer p {
   width: calc(100% - 2rem);
   max-width: 420px;
   height: 44px;
-  background: #f4f4f4;
+  background: var(--site-control);
   border: none;
   border-radius: 999px;
   box-shadow: 0 1px 5px rgba(51, 51, 51, 0.08);
@@ -545,7 +665,7 @@ footer p {
   min-width: 0;
   height: 100%;
   padding: 8px 18px 8px 52px;
-  color: #333333;
+  color: var(--site-text);
   font-size: 18px;
   line-height: 28px;
   background: transparent;
@@ -566,7 +686,7 @@ footer p {
 @media (min-width: 800px) {
   .site-header {
     align-items: center;
-    background: #d3d3d3;
+    background: var(--site-header);
   }
   .site-header .header-inner {
     position: relative;
@@ -595,6 +715,9 @@ footer p {
   .site-header .header-bar .toggle-btn {
     display: none;
   }
+  .site-header .header-bar .theme-toggle-mobile {
+    display: none;
+  }
   .site-header .main-nav {
     position: relative !important;
     top: auto !important;
@@ -615,13 +738,14 @@ footer p {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(4, max-content) minmax(120px, 1fr);
+    grid-template-columns: repeat(4, max-content) minmax(172px, 1fr);
     align-items: center;
     gap: 12px;
   }
   .site-header .main-nav .main-menu > li:last-child {
     padding-top: 0;
     padding-bottom: 0;
+    gap: 12px;
   }
   .site-header .main-nav .main-menu > li {
     margin: 0;
@@ -660,6 +784,10 @@ footer p {
   }
   .site-header .main-nav .main-menu > li .toggle-btn {
     display: none;
+  }
+  .site-header .main-nav .main-menu > li .theme-toggle-desktop {
+    display: flex;
+    flex: 0 0 40px;
   }
   .site-header .main-nav .main-menu > li .dropdown-controls {
     width: auto;
@@ -703,7 +831,7 @@ footer p {
     max-width: calc(100vw - 2rem);
     max-height: none;
     overflow: visible;
-    background-color: #d3d3d3;
+    background-color: var(--site-header);
     flex-direction: column;
     list-style: none;
     min-width: 180px;
@@ -728,10 +856,10 @@ footer p {
     transition-delay: 0s;
   }
   .site-header .main-nav .main-menu > li form.search-form {
-    width: 380px;
     min-width: 120px;
     max-width: none;
-    margin-right: 1rem;
+    flex: 1;
+    width: auto;
     align-self: center;
   }
   .site-header .main-nav .main-menu > li:last-child {
@@ -762,17 +890,23 @@ footer p {
     width: 380px;
   }
   .site-header .main-nav .main-menu {
-    grid-template-columns: repeat(4, max-content) minmax(220px, 380px);
+    grid-template-columns: repeat(4, max-content) minmax(272px, 432px);
     justify-content: end;
     gap: 16px;
   }
 }
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .primary-btn {
   width: 167px;
   height: 60px;
   font-size: 22.5px;
   font-weight: 700;
-  background-color: #d3d3d3;
+  background-color: var(--site-header);
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
@@ -793,7 +927,7 @@ footer p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #333333;
+  color: var(--site-text);
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -814,13 +948,13 @@ footer p {
 }
 
 .blog-card .blog-content .primary-btn:active {
-  background-color: #fcfcfc;
-  color: #d3d3d3;
+  background-color: var(--site-panel);
+  color: var(--site-header);
 }
 
 .primary-btn:active {
-  background-color: #fcfcfc;
-  color: #d3d3d3;
+  background-color: var(--site-panel);
+  color: var(--site-header);
 }
 
 .load-more-button {
@@ -828,7 +962,7 @@ footer p {
   height: 60px;
   font-size: 22.5px;
   font-weight: 700;
-  background-color: #d3d3d3;
+  background-color: var(--site-header);
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
@@ -849,7 +983,7 @@ footer p {
   min-width: max-content;
   display: block;
   margin: 2rem auto;
-  color: #333333;
+  color: var(--site-text);
   transition: all 0.2s ease;
 }
 
@@ -859,8 +993,8 @@ footer p {
 }
 
 .load-more-button:active {
-  background-color: #fcfcfc;
-  color: #d3d3d3;
+  background-color: var(--site-panel);
+  color: var(--site-header);
 }
 
 .post-return-link .primary-btn {
@@ -904,9 +1038,9 @@ footer p {
 }
 
 .overlay-button:hover {
-  background-color: #d3d3d3;
-  color: #333333;
-  border: 3px solid #d3d3d3;
+  background-color: var(--site-header);
+  color: var(--site-text);
+  border: 3px solid var(--site-header);
 }
 
 .overlay-button:active {
@@ -915,9 +1049,15 @@ footer p {
   border: 3px solid #fcfcfc;
 }
 
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .card {
   white-space: normal;
-  background-color: #fff;
+  background-color: var(--site-panel);
   margin: 1rem 1rem 1rem 0rem;
   text-align: left;
   width: 230px;
@@ -973,7 +1113,7 @@ footer p {
 .content-card p {
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
   font-size: clamp(12px, 5vw, 18px);
@@ -1010,7 +1150,7 @@ footer p {
 .subcontent-card h3 {
   font-size: 27px;
   font-weight: 700;
-  color: #333333;
+  color: var(--site-text);
   line-height: 1.2;
   font-size: clamp(16px, 5vw, 24px);
   transition: color 0.2s ease;
@@ -1053,7 +1193,7 @@ footer p {
 .blog-card .blog-content h3 {
   font-size: 27px;
   font-weight: 700;
-  color: #333333;
+  color: var(--site-text);
   line-height: 1.2;
   font-size: clamp(16px, 5vw, 24px);
   margin-top: 1rem;
@@ -1061,7 +1201,7 @@ footer p {
 .blog-card .blog-content p {
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
   font-size: clamp(12px, 5vw, 18px);
@@ -1072,7 +1212,7 @@ footer p {
   height: 60px;
   font-size: 22.5px;
   font-weight: 700;
-  background-color: #d3d3d3;
+  background-color: var(--site-header);
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
@@ -1088,6 +1228,12 @@ footer p {
   }
 }
 
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 /* Carousel */
 .carousel {
   padding: 0 20px 20px 20px;
@@ -1117,7 +1263,7 @@ footer p {
   margin-top: 0.5rem;
   overflow: hidden;
   border-radius: 999px;
-  background: #e2e2e2;
+  background: var(--site-border);
   cursor: pointer;
   touch-action: none;
 }
@@ -1132,7 +1278,7 @@ footer p {
   left: 0;
   height: 100%;
   min-width: 36px;
-  background-color: #333333;
+  background-color: var(--site-text);
   border-radius: 999px;
   cursor: grab;
 }
@@ -1142,13 +1288,17 @@ footer p {
 }
 
 .carousel-scrollbar:focus-visible {
-  outline: 3px solid #333333;
+  outline: 3px solid var(--site-text);
   outline-offset: 3px;
 }
 
 .scrolling-wrapper > .card {
   flex: 0 0 230px;
   height: auto;
+}
+
+html[data-theme=dark] .carousel .card {
+  background-color: transparent;
 }
 
 .scrolling-wrapper > .card > a {
@@ -1180,6 +1330,12 @@ footer p {
     margin: auto;
   }
 }
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .hero-single-page {
   background-position: center;
   background-size: 110% auto;
@@ -1243,7 +1399,7 @@ footer p {
 .post-body-container p {
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
   max-width: 780px;
@@ -1284,7 +1440,7 @@ footer p {
 .related-content h2 {
   font-size: 36px;
   font-weight: bold;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 36px 0;
   line-height: 1.2;
   text-align: center;
@@ -1312,7 +1468,7 @@ footer p {
 .related-content-card h3 {
   font-size: 27px;
   font-weight: 700;
-  color: #333333;
+  color: var(--site-text);
   line-height: 1.2;
 }
 
@@ -1333,11 +1489,17 @@ footer p {
   font-size: 0.75rem;
 }
 
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 blockquote,
 .wp-block-quote {
   margin: 30px auto;
   padding: 16px 24px;
-  color: #374151;
+  color: var(--site-text);
 }
 
 .wp-block-quote p {
@@ -1349,14 +1511,20 @@ blockquote,
   padding: 0rem 1rem;
 }
 
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .book-review-grid-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: fit-content;
   max-width: 100%;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--site-panel);
+  border: 1px solid var(--site-border);
   border-radius: 12px;
   padding: 24px;
   margin: 30px auto;
@@ -1411,7 +1579,7 @@ blockquote,
 .book-review-grid-container .rating-row .review-count {
   font-size: 0.75rem;
   line-height: 1.3;
-  color: #6b7280;
+  color: var(--site-muted);
 }
 .book-review-grid-container .rating-row .outlet-logo {
   width: 36px;
@@ -1429,7 +1597,7 @@ blockquote,
   letter-spacing: 2px;
 }
 .book-review-grid-container .rating-row .star-rating-wrapper .stars-outer {
-  color: #e5e7eb;
+  color: var(--site-border);
 }
 .book-review-grid-container .rating-row .star-rating-wrapper .stars-inner {
   position: absolute;
@@ -1443,14 +1611,14 @@ blockquote,
 }
 .book-review-grid-container .rating-row .score-numerical {
   font-size: clamp(0.75rem, 2.5vw, 1.25rem);
-  color: #4b5563;
+  color: var(--site-text);
 }
 .book-review-grid-container .review-box-footer {
   margin-top: 20px;
   padding-top: 12px;
-  border-top: 1px dashed #e5e7eb;
+  border-top: 1px dashed var(--site-border);
   font-size: 0.85rem;
-  color: #9ca3af;
+  color: var(--site-muted);
   text-align: center;
   font-style: italic;
 }
@@ -1627,6 +1795,12 @@ blockquote,
     max-width: 1000px;
   }
 }
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .error-page-main {
   display: flex;
   flex: 1;
@@ -1645,7 +1819,7 @@ blockquote,
 
 .error-404 .page-title {
   margin-bottom: 1rem;
-  color: #333333;
+  color: var(--site-text);
 }
 
 .error-404 .page-content > p {
@@ -1667,7 +1841,7 @@ blockquote,
   width: 100%;
   min-height: 48px;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #333333;
+  border: 1px solid var(--site-text);
   border-radius: 4px;
 }
 
@@ -1675,7 +1849,7 @@ blockquote,
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 4px;
-  background: #333333;
+  background: var(--site-text);
   color: #fcfcfc;
   cursor: pointer;
 }
@@ -1689,6 +1863,12 @@ blockquote,
     flex-direction: column;
   }
 }
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 body.search {
   margin: 0;
   padding: 0;
@@ -1712,7 +1892,7 @@ body.search {
 .search-title {
   width: 100%;
   margin: 0;
-  color: #333333;
+  color: var(--site-text);
   text-align: center;
 }
 
@@ -1755,7 +1935,7 @@ body.search {
   width: 100%;
   gap: 1rem;
   padding: 1rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--site-border);
 }
 
 .search-result-thumbnail {
@@ -1841,6 +2021,12 @@ body.search {
     grid-template-columns: repeat(3, 1fr); /* Locks into 3 equal columns */
   }
 }
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .hero-blog-page {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/blog-banner.webp") center/cover;
   width: 100%;
@@ -1903,6 +2089,12 @@ body.search {
     margin-top: 0;
   }
 }
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 .hero-shop-page {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/shop-banner.webp") center/cover;
   width: 100%;
@@ -1925,7 +2117,7 @@ body.search {
 .shop-container p {
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
   max-width: 780px;
@@ -1933,6 +2125,12 @@ body.search {
   text-align: center;
 }
 
+/*
+Theme Name: Off Shelf Books
+Author: Evan Briscall
+Version: 1.0
+Description: Custom hand-coded theme for Off Shelf Books portfolio project.
+*/
 :root {
   interpolate-size: allow-keywords; /* Enables height: auto transitions! */
 }
@@ -1965,7 +2163,7 @@ body.search {
 .about-container p {
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
   max-width: 780px;
@@ -1980,7 +2178,7 @@ body.search {
 .faq-container h2 {
   font-size: 36px;
   font-weight: bold;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 36px 0;
   line-height: 1.2;
   text-align: center;
@@ -1990,7 +2188,7 @@ body.search {
   max-width: 780px;
   margin: 0 auto;
   padding: 1rem;
-  background: #ece6de;
+  background: var(--site-surface);
   margin-bottom: 1.5rem;
   border-radius: 4px;
   /* 1. Target the hidden wrapper area natively created by the browser */
@@ -2012,7 +2210,7 @@ body.search {
 .faq-container .faq-item summary {
   font-size: 27px;
   font-weight: 700;
-  color: #333333;
+  color: var(--site-text);
   line-height: 1.2;
   display: flex;
   align-items: center;
@@ -2036,7 +2234,7 @@ body.search {
 .faq-container .faq-item p {
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
   margin-top: 0.75rem;
@@ -2183,6 +2381,17 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: clip;
+  background: var(--site-page);
+  color: var(--site-text);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
-}/*# sourceMappingURL=main.css.map */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -3,7 +3,8 @@
       <!-- Site identity links back to the homepage. -->
       <div class="footer-logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/off-shelf-books-logo.svg" alt="Off Shelf Books Logo" />
+          <img class="logo-light" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/off-shelf-books-logo.svg" alt="Off Shelf Books Logo" />
+          <img class="logo-dark" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/off-shelf-books-logo-white.svg" alt="" aria-hidden="true" />
         </a>
       </div>
       <!-- Footer navigation mirrors the site's main content and About sections. -->

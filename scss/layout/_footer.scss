@@ -15,6 +15,13 @@ footer {
   justify-self: center;
 }
 
+.footer-logo .logo-dark { display: none; }
+
+html[data-theme="dark"] .footer-logo {
+  .logo-light { display: none; }
+  .logo-dark { display: block; }
+}
+
 .footer-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
@@ -74,6 +81,11 @@ footer {
 .footer-links .social-icon:hover::after,
 .article-share .social-icon:hover::after {
   opacity: 0.9;
+}
+
+html[data-theme="dark"] .footer-links .social-icon img,
+html[data-theme="dark"] .article-share .social-icon img {
+  filter: brightness(0) invert(1);
 }
 
 /* 1. Facebook (Deep Blue - #1877F2) */
