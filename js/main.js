@@ -19,6 +19,12 @@ themeToggles.forEach(toggle => {
     } catch (error) {
       console.error('Unable to save the selected color theme.', error);
     }
+
+    try {
+      document.cookie = `offshelfbooks-theme=${theme}; Max-Age=31536000; Path=/; SameSite=Lax`;
+    } catch (error) {
+      console.error('Unable to save the selected color theme cookie.', error);
+    }
   });
 });
 

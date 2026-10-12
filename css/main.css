@@ -1368,7 +1368,7 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
 .post-body-container {
   width: 100%;
   max-width: 1280px;
-  margin: 2rem 0 auto;
+  margin: 2rem auto 0;
   padding: 0 20px;
 }
 .post-body-container .wp-block-embed-youtube,
@@ -2395,6 +2395,4 @@ body {
   body {
     transition: none;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

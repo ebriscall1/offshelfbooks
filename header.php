@@ -15,15 +15,25 @@
     />
 
     <script>
+      let savedTheme;
       try {
-        const savedTheme = localStorage.getItem('offshelfbooks-theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.dataset.theme = savedTheme === 'dark' || savedTheme === 'light'
-          ? savedTheme
-          : (prefersDark ? 'dark' : 'light');
+        savedTheme = localStorage.getItem('offshelfbooks-theme');
       } catch (error) {
-        console.error('Unable to load the saved color theme.', error);
-        document.documentElement.dataset.theme = 'light';
+        console.error('Unable to load the saved color theme from local storage.', error);
+      }
+
+      const themeCookie = document.cookie.split('; ').find(cookie => cookie.startsWith('offshelfbooks-theme='));
+      const cookieTheme = themeCookie ? themeCookie.split('=')[1] : null;
+      const storedTheme = cookieTheme === 'dark' || cookieTheme === 'light'
+        ? cookieTheme
+        : (savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : null);
+      const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+
+      try {
+        document.cookie = `offshelfbooks-theme=${theme}; Max-Age=31536000; Path=/; SameSite=Lax`;
+      } catch (error) {
+        console.error('Unable to save the color theme cookie.', error);
       }
     </script>
 
