@@ -46,7 +46,7 @@
         </details>
         <details class="faq-item">
             <summary>Do you have a bias towards Christianity?<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/down-chevron.svg" alt="" aria-hidden="true" /></summary>
-            <p>Everyone has a bias. We along with everyone should strive to remove as much bias as possible and seek truth above all.</p>
+            <p>No, because bias is based on an unfair and close-minded perspective. We care to seek truth above all by following where the evidence leads. </p>
         </details>
     </div>
 </section>

@@ -1372,6 +1372,7 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
   padding: 0 20px;
 }
 .post-body-container .wp-block-embed-youtube,
+.post-body-container .wp-block-heading,
 .post-body-container .wp-block-embed {
   width: 100%;
   max-width: 780px;
@@ -2240,7 +2241,7 @@ html[data-theme=dark] .faq-container .faq-item summary img {
   color: var(--site-text);
   margin: 0 0 18px 0;
   line-height: 2;
-  margin-top: 0.75rem;
+  margin: 0.75rem 0 0 0;
 }
 
 .hero-contact-page {
