@@ -15,6 +15,7 @@ if ( have_posts() ) :
                     <span class="post-date">Published: <?php echo get_the_date(); ?></span>
                 </div>
             </header>
+            <p class="affiliate-disclaimer"><small><strong>DISCLAIMER:</strong> This article may contain affiliate links that help you find products related to this topic. This means that if you <strong>make a purchase</strong> through one of these links, this site receives a small commission <strong>at no extra cost to you.</strong> While this helps us create more content, <strong>you are in NO WAY obligated to use these links.</strong> Thank you for your support!</small></p>
 
             <!-- 2. The Main Article Body Content -->
             <div class="post-body-container">
@@ -53,7 +54,7 @@ if ( have_posts() ) :
                      * Check if this post is a book review.
                      * Swap 'reviews' below with your exact category slug or category ID if it is different.
                      */
-                    if ( has_category( 'reviews' ) ) {
+                    if ( has_category( array('reviews', 'hands-on', 'talks', 'topics' ) ) ) {
                         get_template_part( 'book-review-box' ); 
                     }
                     ?>
@@ -150,7 +151,6 @@ if ( have_posts() ) :
                                     ?>
                                 </div>
                             </section>
-                            <p class="affiliate-disclaimer"><small><strong>DISCLAIMER:</strong> This article may contain affiliate links that help you find products related to this topic. This means that if you <strong>make a purchase</strong> through one of these links, this site receives a small commission <strong>at no extra cost to you.</strong> While this helps us create more content, <strong>you are in NO WAY obligated to use these links.</strong> Thank you for your support!</small></p>
                     <?php
                         endif;
                         wp_reset_postdata();

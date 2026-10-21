@@ -18,6 +18,27 @@ $barnes_count      = get_field('barnes_and_noble_count');
 $off_shelf_books   = get_field('off_shelf_books_score'); // Optional 4th row
 $off_shelf_count   = get_field('off_shelf_books_count'); // Optional 4th row
 
+$review_box_fields = array(
+    $cover_id,
+    $amazon_url,
+    $amazon_score,
+    $amazon_count,
+    $goodreads_score,
+    $goodreads_count,
+    $barnes_noble,
+    $barnes_count,
+    $off_shelf_books,
+    $off_shelf_count,
+);
+
+$has_review_box_data = false;
+foreach ( $review_box_fields as $field_value ) {
+    if ( $field_value !== null && $field_value !== false && $field_value !== '' && $field_value !== array() ) {
+        $has_review_box_data = true;
+        break;
+    }
+}
+
 // Keep outlet data together so each rating row can use the same rendering logic.
 $outlets = [
     [
@@ -54,6 +75,10 @@ $outlets = [
 function calculate_star_width($rating) {
     if (!$rating) return 0;
     return (floatval($rating) / 5) * 100;
+}
+
+if ( ! $has_review_box_data ) {
+    return;
 }
 ?>
 

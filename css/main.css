@@ -1365,6 +1365,17 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
   font-size: clamp(10px, 5vw, 18px);
 }
 
+.affiliate-disclaimer {
+  width: 100%;
+  line-height: 1.2;
+  max-width: 820px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+.affiliate-disclaimer small {
+  font-size: 0.75rem;
+}
+
 .post-body-container {
   width: 100%;
   max-width: 1280px;
@@ -1372,6 +1383,8 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
   padding: 0 20px;
 }
 .post-body-container .wp-block-embed-youtube,
+.post-body-container .wp-block-preformatted,
+.post-body-container .wp-block-separator,
 .post-body-container .wp-block-heading,
 .post-body-container .wp-block-embed {
   width: 100%;
@@ -1483,13 +1496,6 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-.post-body-container .affiliate-disclaimer {
-  line-height: 1.2;
-}
-.post-body-container .affiliate-disclaimer small {
-  font-size: 0.75rem;
-}
-
 /*
 Theme Name: Off Shelf Books
 Author: Evan Briscall
