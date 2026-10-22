@@ -81,6 +81,10 @@
     }
 }
 
+.blog-card .image-wrapper::after {
+    display: none;
+}
+
 // SubContent Cards
 // Cards shown in category-specific content grids.
 .subcontent-card {

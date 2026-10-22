@@ -1132,6 +1132,10 @@ Description: Custom hand-coded theme for Off Shelf Books portfolio project.
   pointer-events: none;
 }
 
+.blog-card .image-wrapper::after {
+  display: none;
+}
+
 .subcontent-card {
   display: grid;
   grid-template-columns: 1fr;
